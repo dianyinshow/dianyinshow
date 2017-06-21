@@ -5,8 +5,8 @@ module.exports = {
     showMysql: {
         host: '127.0.0.1',
         user: 'root',
-        password: '123456go',
-        database: 'dianyinshow',
+        password: 'root',
+        database: 'showweb',
         port: 3306
     },
     tables: {

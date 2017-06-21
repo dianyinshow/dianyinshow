@@ -8,7 +8,7 @@
 		</div>
 
 		<div class="imgWrap">
-			<img src="/photo/show/<%= article.photo%>" alt="">
+			<img src="/webIndex/images/community/banner01.png" alt="">
 		</div>
 
 		<p><%=article.text%></p>
@@ -22,9 +22,9 @@
 		<p>目前，似乎很少有创业公司瞄准宗教市场，或许是个创业的好机会。 宗教市场是创业新机会？这家公司开发了一款匹配歌词和圣经的APP </p>
 
 		<div class="loveNum">
-			<div class="imgW">
+			<div class="imgW" id="J_praise">
 				<img src="/webIndex/images/community/icon-2.png" alt="">
-				<span>229</span>
+				<span id="J_count">229</span>
 			</div>
 			<ul>
 				<li><img src="/webIndex/images/community/weixin.png" alt=""></li>
@@ -35,11 +35,11 @@
 		<div class="line"></div>
 
 		<div class="comment">
-			<p><b></b>评论<span>9</span></p>
-			<textArea></textArea>
-			<a href="#">发表评论</a>
+			<p><b></b>评论 <span id="J_commentNum">9</span></p>
+			<textArea id="j_comContent"></textArea>
+			<a href="javascript:;" id="j_btnPublish">发表评论</a>
 		</div>
-		<ul class="comment-cont">
+		<ul class="comment-cont" id="J_commentUl">
 			<li>
 				<div>
 					<div class="icon-img">
@@ -183,6 +183,51 @@
 	function btn_reg() {
 		window.location = '/website/reg';
 	}
+	function btn_logout() {
+		window.location.href = '/website/user/logout'
+	}
+
+	var btnPublishEle = document.getElementById("j_btnPublish");
+	var comContentEle = document.getElementById("j_comContent");
+	var praiseEle = document.getElementById("J_praise");
+	var countEle = document.getElementById("J_count");
+	var commentNumEle = document.getElementById("J_commentNum");
+	var commentUlEle = document.getElementById("J_commentUl");
+	//var commentNum = parseInt(commentNumEle.innerHTML);
+	function comment(){
+		//var comContent = comContentEle.innerHTML;
+		//var commentNum = commentNumEle.innerHTML;
+		//var comContent = comContentEle.innerHTML;
+		//var commentNum = commentNumEle.innerHTML;
+
+		commentNumEle.innerHTML = parseInt(commentNumEle.innerHTML)+1;
+
+		var html = '<li><div><div class="icon-img"><img src="/webIndex/images/community/fl.png" alt=""></div><div class="comm-right-wrap"><div><span>fighting~ </span><b> • 1分钟前</b></div><p>'+comContentEle.value+'</p><span class="reply">回复</span></div></div></li>';
+		html +=commentUlEle.innerHTML ;
+		commentUlEle.innerHTML = html;
+	}
+
+
+	btnPublishEle.onclick = function(){
+		comment();
+		//alert(comContent);
+		//alert(commentNum);
+	}
+
+	var praiseFlag = true;
+	praiseEle.onclick = function(){
+		var count = parseInt(countEle.innerHTML);
+		if(praiseFlag){
+			countEle.innerHTML = ++count;
+			praiseFlag = false;
+		}else{
+			countEle.innerHTML = --count;
+			praiseFlag = true;
+		}
+
+
+	}
+
 </script>
 
 </html>
