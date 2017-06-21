@@ -1,4 +1,10 @@
 <%- include ../include/header.html%>
+<style>
+	pre{
+		background: #fff;
+		font-size: 16px;
+	}
+</style>
 <section>
 	<div class="left-wrap">
 		<h2><%= article.title %></h2>
@@ -8,7 +14,7 @@
 		</div>
 
 		<div class="imgWrap">
-			<img src="/webIndex/images/community/banner01.png" alt="">
+			<img src="/photo/show/<%= article.photo%>" alt="">
 		</div>
 
 		<%- article.text%>
