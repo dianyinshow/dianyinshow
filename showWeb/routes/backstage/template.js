@@ -30,7 +30,6 @@ router.get('/', function (req, res){
 });
 
 router.get('/add', function (req, res) {
-
     res.render('backstage/layout/templateAdd', {
         template: {}
     });

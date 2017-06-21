@@ -3,6 +3,8 @@
  */
 var mysql = require('mysql');
 var dbConfig = require("../config/database");
+var  UUID = require('uuid');
+var moment = require('moment');
 //使用连接池
 var pool = mysql.createPool(dbConfig.showMysql);
 module.exports = {
@@ -35,10 +37,28 @@ module.exports = {
             });
         });
     },
-    findOne: function (req, res, callback, id) {
-        // var id = req.session.user.id;
+    create: function (req, res, callback) {
+        var id = UUID.v1();
+        id = id.replace(/-/g, '0');
+        var users = req.body;
+        users.id = id;
+        console.log(users);
+        users.avatarWeb = '' + req.file.filename;
+        users.createTime = moment().format('YYYY-MM-DD  HH:mm:ss');
+        var data = base.formatDbString(users, " ,");
         pool.getConnection(function (err, connection) {
-            var sql = "select * from " + dbConfig.tables.userOs_table + " where id=" + id;
+            var sql = "INSERT INTO " + dbConfig.tables.user_table + " SET " + data.queryString;
+            var val = data.values;
+            connection.query(sql, val, function (err, result) {
+                callback(err, result);
+                // 释放连接
+                connection.release();
+            });
+        });
+    },
+    findOne: function (req, res, callback, id) {
+        pool.getConnection(function (err, connection) {
+            var sql = "select * from " + dbConfig.tables.user_table + " where id='" + id + "'";
             connection.query(sql, function (err, result) {
                 callback(err, result);
                 // 释放连接
@@ -47,20 +67,24 @@ module.exports = {
         });
     },
     update: function (req, res, callback) {
-        var user = req.body;
-        var authority = req.session.user.authority;
-        user.avatar = '/photo/userOs/' + req.file.filename;
-        if (authority == 1) {
-            req.session.user.avatar = user.avatar;
-            req.session.user.name = user.name;
-        }
-        var id = user.id;
-        var data = base.formatDbString(user, " ,");
-        console.log(data);
+        var users = req.body;
+        users.avatarWeb = '/' + req.file.filename;
+        var id = users.id;
+        var data = base.formatDbString(users, " ,");
         pool.getConnection(function (err, connection) {
-            var sql = "update " + dbConfig.tables.userOs_table + " set " + data.queryString + " where id=" + id;
+            var sql = "update " + dbConfig.tables.user_table + " set " + data.queryString + " where id='" + id + "'";
             var val = data.values;
             connection.query(sql, val, function (err, result) {
+                callback(err, result);
+                // 释放连接
+                connection.release();
+            });
+        });
+    },
+    delete: function (req, res, callback, id){
+        pool.getConnection(function (err, connection) {
+            var sql = "delete from " + dbConfig.tables.user_table + " where id='" + id + "'";
+            connection.query(sql,  function (err, result) {
                 callback(err, result);
                 // 释放连接
                 connection.release();
