@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
     var pageNum = req.query.pageNum || 1;
     var index = (pageNum - 1) * pageSize;
     console.log(index);
-
+    var users = req.session.user;
     articleModel.findAllArticles(req, res, function (err, results){
         if (err) {
             console.log(err);
@@ -29,7 +29,8 @@ router.get('/', function (req, res) {
                     articles:result,
                     pageNum:pageNum,
                     pageSize:pageSize,
-                    totalPage:totalPage
+                    totalPage:totalPage,
+                    users: users
                 });
             } else {
                 res.send({

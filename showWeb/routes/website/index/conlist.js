@@ -75,11 +75,12 @@ function updatePrasieCount(req,res,status){
 
 router.get('/', function (req, res, next) {
     //获取文章详情
+    var users = req.session.user;
     articleModel.findArticleById(req, res, function (err, result) {
         if (!err) {
             if (result.length) {
                 console.log(result[0]);
-                res.render('website/index/conlist',{"article":result[0]});
+                res.render('website/index/conlist',{"article":result[0],users: users});
             } else {
                 res.redirect('back');
             }

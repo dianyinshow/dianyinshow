@@ -7,11 +7,10 @@ var router = express.Router();
 
 router.get('/', function (req, res, next) {
     //req.session.user = {username:'username'};
-    var user = req.session.user;
-    console.log(user);
+    var users = req.session.user;
     console.log(req.session.user);
     //console.log(req.session);
-    res.render('website/index',{title:'首页的标题','user':user});
+    res.render('website/index',{title:'首页的标题','users':users});
 });
 
 /*router.get('/website/fun', function (req, res, next) {
