@@ -38,7 +38,7 @@ var webComment = require('./routes/website/index/comment');
 //var newApp = require('./routes/app/app');
 
 var community = require('./routes/website/community');
-var fun = require('./routes/website/index/fun');
+var fun = require('./routes/website/fun');
 
 var app = express();
 
