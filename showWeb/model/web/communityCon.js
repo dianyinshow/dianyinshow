@@ -7,18 +7,18 @@ var moment = require('moment');
 var uuid = require('uuid');
 
 var articleTable = dbConfig.tables.communityCon_table;
-//Ê¹ÓÃÁ¬½Ó³Ø
+//ä½¿ç”¨è¿æ¥æ± 
 var pool = mysql.createPool(dbConfig.showMysql);
 module.exports = {
-    //Í¨¹ıid»ñÈ¡ÎÄÕÂÏêÇé
+    //é€šè¿‡idè·å–æ–‡ç« è¯¦æƒ…
     findArticleById: function (req, res, callback) {
-        var id  = req.query.id || req.body.articleId;
+        var id = req.query.id || req.body.articleId;
         pool.getConnection(function (err, connection) {
-            var sql = "select * from " + dbConfig.tables.communityCon_table+" where id='"+id+"'";
+            var sql = "select * from " + dbConfig.tables.communityCon_table + " where id='" + id + "'";
             console.log(sql);
             connection.query(sql, function (err, result) {
                 callback(err, result);
-                // ÊÍ·ÅÁ¬½Ó
+                // é‡Šæ”¾è¿æ¥
                 connection.release();
             });
         });
@@ -26,21 +26,21 @@ module.exports = {
 
     findAllArticles: function (req, res, callback) {
         pool.getConnection(function (err, connection) {
-            var sql = "select * from " + articleTable ;
+            var sql = "select * from " + articleTable;
             connection.query(sql, function (err, result) {
                 callback(err, result);
-                // ÊÍ·ÅÁ¬½Ó
+                // é‡Šæ”¾è¿æ¥
                 connection.release();
             });
         });
     },
-
     findArticleByType: function (req, res, callback) {
+        var type = req.query.type;
         pool.getConnection(function (err, connection) {
-            var sql = "select * from " + articleTable+" where type="+req.body.type;
+            var sql = "select * from " + articleTable + " where type=" + type;
             connection.query(sql, function (err, result) {
                 callback(err, result);
-                // ÊÍ·ÅÁ¬½Ó
+                // é‡Šæ”¾è¿æ¥
                 connection.release();
             });
         });
@@ -49,73 +49,73 @@ module.exports = {
     findAllConlist: function (req, res, callback) {
         var conId = req.query.id;
         pool.getConnection(function (err, connection) {
-            var userInfo = req.body;//»ñÈ¡urlÖĞµÄid²ÎÊı
+            var userInfo = req.body;//è·å–urlä¸­çš„idå‚æ•°
             var sql = "SELECT * FROM communitycon,USER WHERE communitycon.id='03eec8900517a011e708b2f041cb24c3430e' AND communitycon.`userId` = user.`id`";
             //console.log(sql);
             connection.query(sql, function (err, result) {
                 callback(err, result);
-                // ÊÍ·ÅÁ¬½Ó
+                // é‡Šæ”¾è¿æ¥
                 connection.release();
             });
         });
     },
 
-    //¼ÇÂ¼µãÔŞ×´Ì¬
+    //è®°å½•ç‚¹èµçŠ¶æ€
     insertPraiseStatus: function (req, res, callback) {
-        //»ñÈ¡±íµ¥Ìá½»µÄÄÚÈİ
+        //è·å–è¡¨å•æäº¤çš„å†…å®¹
         var praiseInfo = req.body;
         /*praiseInfo.createTime = moment(new Date()).format("YYYY-MM-DD HH:mm:ss");
-        praiseInfo.updateTime = moment(new Date()).format("YYYY-MM-DD HH:mm:ss");
-        praiseInfo.id = uuid.v1().replace(/\-/g,'0');
-        praiseInfo.userId = "113";
-        praiseInfo.articleId = "223";
-        praiseInfo.status = "1";*/
+         praiseInfo.updateTime = moment(new Date()).format("YYYY-MM-DD HH:mm:ss");
+         praiseInfo.id = uuid.v1().replace(/\-/g,'0');
+         praiseInfo.userId = "113";
+         praiseInfo.articleId = "223";
+         praiseInfo.status = "1";*/
         console.log(praiseInfo);
         pool.getConnection(function (err, connection) {
             var sql = "INSERT INTO " + dbConfig.tables.webPraise_table + " SET ?";
             connection.query(sql, praiseInfo, function (err, result) {
                 //console.log(sql);
                 callback(err, result);
-                // ÊÍ·ÅÁ¬½Ó
+                // é‡Šæ”¾è¿æ¥
                 connection.release();
             });
         });
     },
 
-    //¸üĞÂµãÔŞ×´Ì¬
+    //æ›´æ–°ç‚¹èµçŠ¶æ€
     updatePraiseStatus: function (req, res, callback) {
-        //»ñÈ¡±íµ¥Ìá½»µÄÄÚÈİ
+        //è·å–è¡¨å•æäº¤çš„å†…å®¹
         var praiseInfo = req.body;
         /*praiseInfo.status = 0;
-        praiseInfo.userId = "113";
-        praiseInfo.articleId = "223";*/
+         praiseInfo.userId = "113";
+         praiseInfo.articleId = "223";*/
         console.log(praiseInfo);
         pool.getConnection(function (err, connection) {
             var sql = "update " + dbConfig.tables.webPraise_table + " SET status=? where userId=? and articleId=?";
-            var praise = [praiseInfo.status,praiseInfo.userId,praiseInfo.articleId];
+            var praise = [praiseInfo.status, praiseInfo.userId, praiseInfo.articleId];
             connection.query(sql, praise, function (err, result) {
                 //console.log(sql);
                 callback(err, result);
-                // ÊÍ·ÅÁ¬½Ó
+                // é‡Šæ”¾è¿æ¥
                 connection.release();
             });
         });
     },
 
-    //²éÑ¯µãÔŞ×´Ì¬
+    //æŸ¥è¯¢ç‚¹èµçŠ¶æ€
     getPraiseStatus: function (req, res, callback) {
-        //»ñÈ¡±íµ¥Ìá½»µÄÄÚÈİ
+        //è·å–è¡¨å•æäº¤çš„å†…å®¹
         var praiseInfo = req.body;
         /*praiseInfo.userId = "113";
-        praiseInfo.articleId = "223";*/
+         praiseInfo.articleId = "223";*/
         //console.log(praiseInfo);
 
         pool.getConnection(function (err, connection) {
-            var sql = "select status from " + dbConfig.tables.webPraise_table + " where userId='"+praiseInfo.userId+"' and articleId='"+praiseInfo.articleId+"'";
+            var sql = "select status from " + dbConfig.tables.webPraise_table + " where userId='" + praiseInfo.userId + "' and articleId='" + praiseInfo.articleId + "'";
             connection.query(sql, praiseInfo, function (err, result) {
                 //console.log(sql);
                 callback(err, result);
-                // ÊÍ·ÅÁ¬½Ó
+                // é‡Šæ”¾è¿æ¥
                 connection.release();
             });
         });
@@ -129,7 +129,7 @@ module.exports = {
             var sql = "update " + dbConfig.tables.communityCon_table + " set praiseCount=" + praiseCount + " where id='" + id + "'";
             connection.query(sql, function (err, result) {
                 callback(err, result);
-                // ÊÍ·ÅÁ¬½Ó
+                // é‡Šæ”¾è¿æ¥
                 connection.release();
             });
         });
@@ -140,7 +140,7 @@ module.exports = {
             var sql = "select * from " + dbConfig.tables.communityCon_table;
             connection.query(sql, function (err, result) {
                 callback(err, result);
-                // ÊÍ·ÅÁ¬½Ó
+                // é‡Šæ”¾è¿æ¥
                 connection.release();
             });
         });
@@ -160,7 +160,7 @@ module.exports = {
             var val = data.values;
             connection.query(sql, val, function (err, result) {
                 callback(err, result);
-                // ÊÍ·ÅÁ¬½Ó
+                // é‡Šæ”¾è¿æ¥
                 connection.release();
             });
         });
@@ -172,7 +172,7 @@ module.exports = {
             var sql = "select * from " + dbConfig.tables.communityCon_table + " where id='" + id + "'";
             connection.query(sql, function (err, result) {
                 callback(err, result);
-                // ÊÍ·ÅÁ¬½Ó
+                // é‡Šæ”¾è¿æ¥
                 connection.release();
             });
         });
@@ -188,18 +188,18 @@ module.exports = {
             var val = data.values;
             connection.query(sql, val, function (err, result) {
                 callback(err, result);
-                // ÊÍ·ÅÁ¬½Ó
+                // é‡Šæ”¾è¿æ¥
                 connection.release();
             });
         });
     },
 
-    delete: function (req, res, callback, id){
+    delete: function (req, res, callback, id) {
         pool.getConnection(function (err, connection) {
             var sql = "delete from " + dbConfig.tables.communityCon_table + " where id='" + id + "'";
-            connection.query(sql,  function (err, result) {
+            connection.query(sql, function (err, result) {
                 callback(err, result);
-                // ÊÍ·ÅÁ¬½Ó
+                // é‡Šæ”¾è¿æ¥
                 connection.release();
             });
         });

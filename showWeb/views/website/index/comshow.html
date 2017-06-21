@@ -9,11 +9,11 @@
 <div class="container">
     <div class="wrap">
         <ul class="btn-ul">
-            <li class="li-active">全部</li>
-            <li>商业洞见</li>
-            <li>更新日志</li>
-            <li>精彩活动</li>
-            <li>产品故事</li>
+            <li class="li-active"><a href="/website/comshow">全部</a></li>
+            <li><a href="/website/comshow/type?type='商业洞见'">商业洞见</a></li>
+            <li><a href="/website/comshow/type?type='更新日志'">更新日志</a></li>
+            <li><a href="/website/comshow/type?type='精彩活动'">精彩活动</a></li>
+            <li><a href="/website/comshow/type?type='产品故事'">产品故事</a></li>
         </ul>
     </div>
     <div class="wrap">
@@ -34,16 +34,21 @@
 <div class="use-page">
     <ul class="use-pagination use-pagination-default">
         <li class="use-pagination-pre ">
-            <a href="/website/comshow?pageNum=<%=(pageNum>1)?pageNum-1:1%>&pageSize=<%=pageSize%>" class="">上一页</a>
+            <a href="/website/comshow?pageNum=<%=(pageNum>1)?pageNum-1:1%>" class="">上一页</a>
         </li>
         <%for(var i=1;i<=totalPage;i++){%>
+        <%if(i == pageNum) {%>
+            <li class="">
+                <a class="use-active" href="/website/comshow?pageNum=<%=i%>"><%=i%></a>
+            </li>
+        <%}else {%>
         <li class="">
-            <a class="use-active" href="/website/comshow?pageNum=<%=i%>&pageSize=<%=pageSize%>"><%=i%></a>
+            <a href="/website/comshow?pageNum=<%=i%>"><%=i%></a>
         </li>
         <%}%>
-
+        <%}%>
         <li class="use-pagination-next ">
-            <a href="/website/comshow?pageNum=<%=(pageNum<totalPage)?parseInt(pageNum)+1:totalPage%>&pageSize=<%=pageSize%>" class="">下一页</a>
+            <a href="/website/comshow?pageNum=<%=(pageNum<totalPage)?parseInt(pageNum)+1:totalPage%>" class="">下一页</a>
         </li>
     </ul>
 </div>
@@ -133,54 +138,5 @@
         window.location = '/website/reg'
     }
 
-    $(function () {
-        $('.btn-ul li').each(function (index) {
-            $(this).click(function () {
-                var html = $(this).html();
-                html = encodeURI(html);
-                $.ajax({
-                    type: 'GET',
-                    url: '/website/community/type?type=' + html,
-                    dateType: 'JSON',
-                    success: function (data) {
-                        var text = '';
-                        if (data.code == 1) {
-                            data = data.result;
-                            for (var i = 0; i < data.length; i++) {
-                                var val = data[i].articleId;
-                                if (val) {
-                                    text += '<li> <a href="subCommunity.html"><img src="../photo/show/' + val.photo + '" alt=""></a> <h3>' + val.title + '</h3> <p>' + val.text + '</p> <div><span class="left-text">' + val.type + '</span> <span class="right-time">' + val.createTime + '</span></div> </li>';
-                                }
-                            }
-                            $('.type').html(text);
-                        }
-                    }
-                });
-            });
-        });
-    });
-
-    /*window.onload = function () {
-        var html = '全部';
-        html = encodeURI(html);
-        $.ajax({
-            type: 'GET',
-            url: '/website/community/type?type=' + html,
-            dateType: 'JSON',
-            success: function (data) {
-                var text = '';
-                if (data.code == 1) {
-                    data = data.result;
-                    for (var i = 0; i < data.length; i++) {
-                        var val = data[i].articleId;
-                        if (val) {
-                            text += '<li> <a href="/index/conlist"><img src="../photo/show/' + val.photo + '" alt=""></a> <h3>' + val.title + '</h3> <p>' + val.text + '</p> <div><span class="left-text">' + val.type + '</span> <span class="right-time">' + val.createTime + '</span></div> </li>';
-                        }
-                    }
-                    $('.type').html(text);
-                }
-            }
-        });
-    };*/
 </script>
 </html>
