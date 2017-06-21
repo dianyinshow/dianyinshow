@@ -61,9 +61,15 @@ router.get('/type', function (req, res){
                     users: users
                 });
             } else {
-                res.send({
-                    code: '0'
-                })
+                res.render('website/index/comshow',{
+                    code:"1",
+                    title:'首页的标题',
+                    articles: [],
+                    pageNum:pageNum,
+                    pageSize:pageSize,
+                    totalPage: 0,
+                    users: users
+                });
             }
         }
     })
