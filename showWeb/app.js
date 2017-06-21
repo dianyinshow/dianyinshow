@@ -68,7 +68,7 @@ app.use(function (req, res, next) {
     res.locals.success = req.session.success;
     res.locals.error = req.session.error;
     //把回话对象的user属性取出来 赋给res.locals
-    res.locals.user = req.session.user;
+    res.locals.user = req.session.userOs;
     req.session.success = req.session.error = null;
     next();
 });

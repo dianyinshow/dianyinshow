@@ -24,7 +24,6 @@ router.post('/in', function (req, res) {
             if(result.length) {
                 console.log('登录成功');
                 req.session.userOs = result[0];
-                console.log(req.session.user);
                 res.redirect('/backstage/first');
             }else {
                 console.log('用户密码不正确');
