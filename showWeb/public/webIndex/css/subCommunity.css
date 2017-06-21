@@ -77,7 +77,8 @@ section {
 .imgW span{
     position: absolute;
     top:40px;
-    left:20px;
+    left:22px;
+    text-align: center;
     font-size: 14px;
     font-family: "Microsoft YaHei";
     font-weight: normal;
