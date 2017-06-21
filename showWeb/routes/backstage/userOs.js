@@ -8,7 +8,7 @@ var UserOs = require('../../model/userOs');
 var multer = require('multer');
 var upload = multer({dest: 'public/photo/userOs'});
 router.get('/', function (req, res) {
-    var authority = req.session.user.authority;
+    var authority = req.session.userOs.authority;
     if(authority == 0) {
         UserOs.findAll(req, res, function (err, user){
             if(err) {
@@ -23,7 +23,7 @@ router.get('/', function (req, res) {
             }
         })
     }else {
-        var id = req.session.user.id;
+        var id = req.session.userOs.id;
         UserOs.findOne(req, res, function (err, user){
             if(err) {
                 console.log(err);
