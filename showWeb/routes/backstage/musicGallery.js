@@ -69,50 +69,7 @@ router.post('/add', upload.single('photo'), function (req, res){
             }
         });
     }
-    /*if(music.charge) {
-        music.charge = '收费';
-    }else {
-        music.charge = '不收费';
-    }
-    if(music.nature) {
-        music.nature = '审核通过';
-    }else {
-        music.nature = '审核未通过';
-    }
 
-    music.photo = '/photo/music/' + req.file.filename;
-    if (music._id) {
-        MusicGallery.update({_id: music._id}, {
-            musicName: music.musicName,
-            charge: music.charge,
-            nature: music.nature,
-            money: music.money,
-            photo: music.photo,
-            text: music.text
-        }, function (err, doc) {
-            if (err) {
-                console.log(err);
-            } else {
-                res.redirect('/backstage/musicGallery?pageNum=1');
-            }
-        });
-    }
-    else {
-        delete music._id;
-        MusicGallery.create(music, function (err, doc) {
-            if (err) {
-                console.log(err);
-            } else {
-                if (doc) {
-                    console.log('添加成功');
-                    res.redirect('/backstage/musicGallery?pageNum=1');
-                } else {
-                    console.log('添加的内容不存在');
-                    res.redirect('back');
-                }
-            }
-        });
-    }*/
 });
 router.get('/delete/:_id', function (req, res) {
     var id = req.params._id;

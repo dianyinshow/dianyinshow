@@ -42,7 +42,6 @@ module.exports = {
         id = id.replace(/-/g, '0');
         var users = req.body;
         users.id = id;
-        console.log(users);
         users.avatarWeb = '' + req.file.filename;
         users.createTime = moment().format('YYYY-MM-DD  HH:mm:ss');
         var data = base.formatDbString(users, " ,");

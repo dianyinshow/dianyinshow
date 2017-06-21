@@ -68,51 +68,7 @@ router.post('/add', upload.single('photo'), function (req, res) {
             }
         });
     }
-    /*var photo = req.body;
 
-    if (photo.charge) {
-        photo.charge = '收费';
-    } else {
-        photo.charge = '不收费';
-    }
-    if (photo.nature) {
-        photo.nature = '审核通过';
-    } else {
-        photo.nature = '审核未通过';
-    }
-    photo.photo = req.file.filename;
-    if (photo._id) {
-        PhotoGallery.update({_id: photo._id}, {
-            photoName: photo.photoName,
-            charge: photo.charge,
-            nature: photo.nature,
-            money: photo.money,
-            photo: photo.photo,
-            text: photo.text
-        }, function (err, doc) {
-            if (err) {
-                console.log(err);
-            } else {
-                res.redirect('/backstage/photoGallery?pageNum=1');
-            }
-        });
-    }
-    else {
-        delete photo._id;
-        PhotoGallery.create(photo, function (err, doc) {
-            if (err) {
-                console.log(err);
-            } else {
-                if (doc) {
-                    console.log('添加成功');
-                    res.redirect('/backstage/photoGallery?pageNum=1');
-                } else {
-                    console.log('添加的内容不存在');
-                    res.redirect('back');
-                }
-            }
-        });
-    }*/
 });
 router.get('/delete/:_id', function (req, res) {
     var id = req.params._id;

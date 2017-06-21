@@ -43,7 +43,6 @@ module.exports = {
         pool.getConnection(function (err, connection) {
             var user = req.body;
             var sql = "select * from " + dbConfig.tables.userOs_table + " where name='" + user.name + "'" + " and password='" + user.password + "'";
-
             connection.query(sql, function (err, result) {
                 callback(err, result);
                 // 释放连接

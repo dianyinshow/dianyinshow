@@ -16,8 +16,6 @@ module.exports = {
             pool.getConnection(function (err, connection) {
                 var sql = "select * from " + b ;
                 connection.query(sql, function (err, result) {
-                    //console.log(result);
-                    //console.log(result[0].id);
                     callback(err, result);
                     // 释放连接
                     connection.release();
@@ -55,7 +53,6 @@ module.exports = {
         });
     },
     findOne: function (req, res, callback, id) {
-        // var id = req.session.user.id;
         pool.getConnection(function (err, connection) {
             var sql = "select * from " + dbConfig.tables.community_table + " where id='" + id + "'";
             connection.query(sql, function (err, result) {

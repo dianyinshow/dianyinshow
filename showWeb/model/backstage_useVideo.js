@@ -25,7 +25,6 @@ module.exports = {
             pool.getConnection(function (err, connection) {
                 var sql = "select * from " + dbConfig.tables.useVideo_table  + " where type='" + html.type + "'";
                 connection.query(sql, function (err, result) {
-
                     callback(err, result);
                     // 释放连接
                     connection.release();

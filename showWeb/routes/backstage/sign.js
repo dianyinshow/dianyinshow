@@ -23,7 +23,7 @@ router.post('/in', function (req, res) {
         }else {
             if(result.length) {
                 console.log('登录成功');
-                req.session.user = result[0];
+                req.session.userOs = result[0];
                 console.log(req.session.user);
                 res.redirect('/backstage/first');
             }else {

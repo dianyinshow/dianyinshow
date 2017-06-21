@@ -49,7 +49,7 @@ module.exports = {
         });
     },
     findOne: function (req, res, callback, id) {
-        // var id = req.session.user.id;
+
         pool.getConnection(function (err, connection) {
             var sql = "select * from " + dbConfig.tables.photoGallery_table + " where id='" + id + "'";
             connection.query(sql, function (err, result) {

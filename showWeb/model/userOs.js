@@ -19,7 +19,6 @@ module.exports = {
         });
     },
     findOne: function (req, res, callback, id) {
-        // var id = req.session.user.id;
         pool.getConnection(function (err, connection) {
             var sql = "select * from " + dbConfig.tables.userOs_table + " where id=" + id;
             connection.query(sql, function (err, result) {
@@ -31,11 +30,11 @@ module.exports = {
     },
     update: function (req, res, callback) {
         var user = req.body;
-        var authority = req.session.user.authority;
+        var authority = req.session.userOs.authority;
         user.avatar = '/photo/userOs/' + req.file.filename;
         if (authority == 1) {
-            req.session.user.avatar = user.avatar;
-            req.session.user.name = user.name;
+            req.session.userOs.avatar = user.avatar;
+            req.session.userOs.name = user.name;
         }
         var id = user.id;
         var data = base.formatDbString(user, " ,");
