@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>编辑名字</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/Hui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/css.css"/>
+	</head>
+	<body>
+		<div id="wrap">
+			<header id="header">
+				<div class="back">
+	        		<img src="../image/back.png">
+	        	</div>
+	        	<h2 class="pagetitle">
+	        		编辑名字
+	        	</h2>
+	        	<div class="save">保存</div>			
+			</header>
+			<div id="main">
+				<ul>
+					<li class="e_editname">
+						<input id="name" type="text" value="约合风高" class="e_edit">				
+						<span class="e_close">
+						</span>
+					</li> 
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/H.js"></script>
+<script src="../script/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../script/click.js"></script>   
+<script type="text/javascript">
+	window.onload = function() {
+      		var eclose = document.getElementsByClassName('e_close')[0];
+      		var eedit = document.getElementsByClassName('e_edit')[0];
+      		var back = document.getElementsByClassName('back')[0];
+
+      		eclose.addEventListener('touchstart', function(event) {
+	      		eedit.value="";
+      		 	// eedit.focus();
+			},false);
+			
+			back.addEventListener('touchstart', function(event) {
+	      		H.openWin('mydata','mydata.html');
+			},false);
+    } 	
+	$(function() {
+		
+		var mobile = localStorage.mobile;
+		var name = document.getElementById("name");
+		  $.ajax({
+		  	type:"get",
+		  	url:"/app/html/getUserInfo?mobile=" + mobile,
+		  	async:true
+		  }).success(function(data) {
+		  	console.log(data);
+		  	name.value = data.userId.username;
+		  });
+		  
+		name.onblur = function() {
+			var newName = name.value;
+			var userInfo = {};
+			userInfo.mobile = mobile;
+			userInfo.username = newName;
+			$.ajax({
+				type:"post",
+				url:"/app/html/updateUserName",
+				async:true,
+				data:userInfo,
+				dataType:'json'
+			}).success(function(data) {
+				console.log(data);
+				name.value = JSON.parse(data);
+			});
+		}
+	})
+	
+</script>

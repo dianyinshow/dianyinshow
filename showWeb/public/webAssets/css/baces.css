@@ -1,0 +1,194 @@
+/*内容*/
+.contents{
+	width: 100%;
+	z-index: -100;
+	
+}
+.am-conin-h{
+	width: 100%;
+	margin:0 auto;
+	padding-left: 260px;
+	position: relative;
+
+	
+}
+.am-conin-recharge{
+	width: 100%;
+	margin:0 auto;
+	/*padding-left: 260px;*/
+	position: relative;
+
+
+}
+/*右结构*/
+.am-messcont-h{
+	width: 100%;
+	margin:0 auto;
+	padding-right: 260px;
+	position: relative;
+}
+/*右结构右边宽*/
+.am-messconright-h{
+	width:240px;
+	margin-left:20px;
+	position: absolute;
+	right:0;
+	top:0;
+	font-size: 14px;
+}
+/*左边宽*/
+.am-conleft-h{
+	width:240px;
+	background: #fff;
+	margin-right:20px;
+	float: left;
+	border:1px solid #dbdbdb;
+	position: absolute;
+	left:0;
+	top:0;
+	font-size: 14px;
+
+}
+/*右边宽*/
+.am-conright-h{
+	background: #fff;
+	width:100%;
+	float: right;
+	border:1px solid #dbdbdb;
+
+}
+.am-conright-recharge{
+	background: #fff;
+	width:100%;
+	border:1px solid #dbdbdb;
+
+}
+@media screen and (min-width: 1201px){
+	/*内容*/
+	.am-conin-h,.am-messcont-h,.am-conin-recharge{
+		width: 1200px;
+
+	}
+	
+}
+/*左边头像*/
+.conleft-img{
+	width: 100%;
+	height:160px;
+	padding:20px 0;
+}
+.conleft-imgin{
+	width:88px;
+	height:88px;
+	margin:0 auto;
+	border:1px solid #dedede;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+.conleft-imgin img{
+	width:88px;
+	height:88px;
+}
+.conleft-img p{
+	text-align: center;
+}
+/*列表*/
+.conleft-list{
+	line-height: 40px;
+}
+.conleft-list a{
+	display: block;
+	padding:0 20px;
+	width: 100%;
+	color:#666;
+	height: 100%;
+}
+.conleft-list a span{
+	display: inline-block;
+	min-width:16px;
+	width:20px; 
+	height: 18px;
+	margin-right: 38px;
+	margin-left: 18px;
+	margin-top:2px;
+}
+.conleft-list-active a{
+	color:#fff;
+	background: #ea5147
+}
+/*列表图标*/
+.conleft-list .baceicon{
+	background: url(../img/mesicon.png) no-repeat;
+}
+.conleft-list .mesicon{
+	background: url(../img/baceicon.png) no-repeat;
+}
+.conleft-list .moneyicon{
+	background: url(../img/moneyicon.png) no-repeat;
+}
+.conleft-list .extendicon{
+	background: url(../img/extendicon.png) no-repeat;
+}
+.conleft-list .membericon{
+	background: url(../img/membericon.png) no-repeat;
+}
+.conleft-list .ordericon{
+	background: url(../img/ordericon.png) no-repeat;
+}
+.conleft-list .collecticon{
+	background: url(../img/collecticon.png) no-repeat;
+}
+.conleft-list .aseticon{
+	background: url(../img/aseticon.png) no-repeat;
+}
+/*直播按钮*/
+.stardirect{
+	padding:20px 20px 40px 20px;
+}
+.stardirect .directbtn{
+	width: 198px;
+	height:40px;
+	border-radius:4px;
+	background: #4bb7f5;
+	margin: auto;
+	text-align: center;
+	line-height: 40px;
+	color:#fff;
+}
+/*分页*/
+.mynew-page{
+width: 100%;
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    bottom: 40px;
+    position: absolute;
+
+}
+.mynew-page li{
+	width: 32px;
+	height: 32px;
+	border:1px solid #dbdbdb;
+}
+.mynew-page li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 32px;
+	color:#666;
+}
+.mynew-page li a:hover,.mynew-page li a.am-active{
+	background: #ea5147;
+	color: #fff;
+}
+.mynew-page .am-pagination-first,.mynew-page .am-pagination-last{
+	width: 66px;
+	height:32px;
+	margin-right: 10px;
+	border:1px solid #dbdbdb;
+	margin-left: 10px;
+	line-height: 32px;
+}
+
+

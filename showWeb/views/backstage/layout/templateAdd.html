@@ -1,0 +1,96 @@
+<%- include ../include/header.html%>
+<%- include ../include/left.html%>
+<script>
+    function closewindow() {
+        document.getElementById("settingscontent").style.visibility = 'hidden';
+        window.location.href = '/backstage/template?pageNum=1';
+    }
+</script>
+<div class="row" id="settingscontent" style="background: #ffffff;width: 768px;margin-left: 300px">
+
+    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+        <div class="widget am-cf">
+            <div class="widget-head am-cf">
+                <div class="widget-title am-fl">前台板块发布系统</div>
+                <div class="widget-function am-fr">
+                    <a onclick="closewindow()">关闭</a>
+                </div>
+            </div>
+            <div class="widget-body am-fr">
+                <form class="am-form tpl-form-line-form" method="post" action="/backstage/template/add">
+                    <input type="hidden" name="id" value="<%=template.id%>">
+
+                    <div class="am-form-group">
+                        <label for="temName" class="am-u-sm-3 am-form-label">模板名称 </label>
+                        <div class="am-u-sm-9">
+                            <input type="text" class="tpl-form-input" id="temName" name="temName" value="<%= template.temName%>">
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="temType" class="am-u-sm-3 am-form-label">模板分类<span
+                                class="tpl-form-line-small-title">您的分类</span></label>
+                        <div class="am-u-sm-9">
+                            <select data-am-selected="{searchBox: 1}" style="display: none;" name="temType" id="temType">
+                                <option value="影视活动">影视活动</option>
+                                <option value="商业">商业</option>
+                                <option value="婚庆">婚庆</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="charge" class="am-u-sm-3 am-form-label">售价</label>
+                        <div class="am-u-sm-9">
+                            <input type="text" class="tpl-form-input" id="charge" name="charge" value="<%= template.charge%>">
+
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="nature" class="am-u-sm-3 am-form-label">是否审核通过</label>
+                        <div class="am-u-sm-9">
+                            <div class="tpl-switch">
+                                <input type="checkbox" class="ios-switch bigswitch tpl-switch-btn" checked="" name="nature" id="nature">
+                                <div class="tpl-switch-btn-view">
+                                    <div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="makeUser" class="am-u-sm-3 am-form-label">制作人 </label>
+                        <div class="am-u-sm-9">
+                            <input type="text" class="am-form-field tpl-form-no-bg" value="<%= template.makeUser%>" name="makeUser" id="makeUser">
+
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="user-email" class="am-u-sm-3 am-form-label">发布人 </label>
+                        <div class="am-u-sm-9">
+                            <input type="text" class="am-form-field tpl-form-no-bg" value="万华" readonly="">
+
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label for="user-intro" class="am-u-sm-3 am-form-label"></label>
+                        <div class="am-u-sm-9">
+                            <textarea class="" rows="10" id="user-intro" placeholder="请输入您的描述" name="text" ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="am-form-group">
+                        <div class="am-u-sm-9 am-u-sm-push-3" onclick="closewindow()">
+                            <%if(template.id){%>
+                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">修改</button>&nbsp;
+                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success " onclick="closewindow()">关闭</button>
+                            <%}else{%>
+                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">确认</button>
+                            <%}%>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ../include/footer.html%>

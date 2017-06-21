@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>意见反馈</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/Hui.css"/>
+		<style>
+			body{
+				background: #ffffff;
+			}
+			header {
+				background-color: #ea5147;
+			}
+			.H-yuan-mycircle{
+	            left:12px;
+	            top:14px;
+	            position: absolute;  
+	         }
+			header .border-b {
+				height: 44px;
+				line-height: 44px;
+				text-align: center;
+				color: #ffffff;
+				font-size: 15px;
+				font-weight: bold;
+			}
+			.content .problem p{
+				font: 12px/22px "微软雅黑";
+				color: #888a92;			
+			}
+			.icon{
+				width: 15px;
+				height: 15px;
+				background: #dadada;
+			}
+			.f_active{
+				background: #ea5147;
+			}
+			/*.active{
+				width: 15px;
+				height: 15px;
+				background: #ea5147;	
+			}*/
+			.name{
+				font: 12px/15px "微软雅黑";
+				color: #0f0f0f;
+			}
+			.problem li{
+				height: 15px;
+			}
+			.problem .text{
+				width: 100%;
+				height: 171px;
+				background: #dadada;
+			}
+			.problem .text textarea{
+				width: 100%;
+				height: 171px;
+			}
+			.submit{
+				height: 44px;
+			}
+			.submit button{
+				font: 18px/44px "微软雅黑";
+				background: #ea5147;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap" class="flex-wrap flex-vertical">
+			<header>
+				<div tapmode="" onclick="closewindow()" class="H-yuan-mycircle">
+	        		<img src="../image/iconp.png" style="max-height: 18px">
+	        	</div>
+	        	<h2 class="border-b">
+	        		意见反馈
+	        	</h2>
+			</header>
+			<div class="content H-padding-horizontal-both-12">
+				<div class="problem">
+					<p class="H-margin-vertical-top-15">请你选择使用过程中遇到的问题</p>
+					<ul class="H-margin-vertical-top-8">
+						<li class="choice_list H-clear-both H-padding-vertical-both-11">
+							<span class="icon H-icon H-center-all H-border-radius-circle H-margin-horizontal-auto H-float-left H-margin-horizontal-right-8"><img class="gouxuan H-margin-vertical-top-4" src="../image/gouxuan.png" style="max-height: 7px"></span>
+							<span class="name H-float-left">直播时出现卡顿</span>
+						</li>
+						<li class="choice_list H-clear-both H-padding-vertical-both-11">
+							<span class="icon H-icon H-center-all H-border-radius-circle H-margin-horizontal-auto H-float-left H-margin-horizontal-right-8"><img class="gouxuan H-margin-vertical-top-4" src="../image/gouxuan.png" style="max-height: 7px"></span>
+							<span class="name H-float-left">出现闪退</span>
+						</li>
+						<li class="choice_list H-clear-both H-padding-vertical-both-11">
+							<span class="icon H-icon H-center-all H-border-radius-circle H-margin-horizontal-auto H-float-left H-margin-horizontal-right-8"><img class="gouxuan H-margin-vertical-top-4" src="../image/gouxuan.png" style="max-height: 7px"></span>
+							<span class="name H-float-left">手机过于发烫，耗电</span>
+						</li>
+					</ul>
+					<div class="text H-margin-vertical-top-9">
+						<textarea>
+							
+						</textarea>
+					</div>
+				</div>
+				<div class="submit H-margin-vertical-top-30">
+	                <button onclick="closewindow()"  class="H-bg-color H-button H-width-100-percent H-outline-none H-theme-font-color-white   H-border-radius-4">提交</button>
+	            </div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	  <script type="text/javascript" src="../script/H.js"></script>
+	  <script src="../script/jquery-1.8.3.min.js"></script>
+	  <script type="text/javascript" src="../script/click.js"></script>   
+	  <script type="text/javascript">
+	    apiready = function(){
+	              
+	    };
+	    function opencertification2() {
+	      api.openWin({
+	        name:'opencertification2',
+	        url:'opencertification2.html'
+	      })
+	    }
+
+	    window.onload = function() {
+	      var choicelist  = document.getElementsByClassName('choice_list ');
+	      var icon  = document.getElementsByClassName('icon ');   
+		for(var i=0;i<choicelist.length;i++){		
+        	choicelist[i].index=i;
+        	choicelist[i].onclick = function (){  
+        	   var name = icon[this.index].className;
+        	   var reg = /f_active/;
+        	   var flag = reg.test(name);
+        	   if(flag) {
+        	   	jquery.removeClass(icon[this.index],"f_active");
+        	   }else{
+        	   	jquery.addClass(icon[this.index],"f_active");
+        	   }
+        	}
+      	}
+
+
+	    }     
+  </script>
+</html>

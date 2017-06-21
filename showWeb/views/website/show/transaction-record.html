@@ -1,0 +1,247 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<!-- <meta name="viewport"
+		  content="width=device-width, initial-scale=1"> -->
+	<title>交易记录</title>
+
+	<!-- Set render engine for 360 browser -->
+	<meta name="renderer" content="webkit">
+	<!-- No Baidu Siteapp-->
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+	<link rel="icon" type="image/png" href="webAssets/i/favicon.png">
+	<link rel="stylesheet" href="webAssets/css/amazeui.css">
+	<link rel="stylesheet" href="webAssets/css/app.css">
+	<link rel="stylesheet" href="webAssets/css/header.css">
+	<link rel="stylesheet" href="webAssets/css/baces.css">
+	<link rel="stylesheet" href="webAssets/css/my-wallet.css">
+	<link rel="stylesheet" href="webAssets/css/transaction-record.css">
+	<link rel="stylesheet" href="webAssets/css/paging.css">
+	<script src="webAssets/js/jquery-1.12.0.js"></script>
+	<script src="webAssets/js/personal-center-header.js"></script>
+</head>
+<body>
+<header class="am-topbar am-h-header">
+	<h1 class="am-topbar-brand">
+		<a href="#"><img src="webAssets/img/logo.png" alt="" width=''><span>点映秀</span></a>
+	</h1>
+	<div class="am-topbar-right top-img">
+		<div class='selfpic'>
+			<img class="am-circle" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80" width="36" height="36"/>
+		</div>
+	</div>
+
+	<div class="am-topbar-right top-img">
+		<div class="notice">
+			<span class="am-badge am-badge-red am-round am-notice">6</span>
+		</div>
+	</div>
+	<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+	<div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+		<ul class="am-nav am-nav-pills am-topbar-nav topnav">
+			<li class="am-active">
+				<a href="#">
+					<span class='homesi'></span>
+					首页
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class='search'></span>
+					<!-- <img src="webAssets/img/searchshow.png" alt="" class='modelicon'>
+					<img src="webAssets/img/searchshowa.png" alt="" class='activeicon'> -->
+					找秀场
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class='viewshow'></span>
+					<!-- <img src="webAssets/img/viewshow.png" alt="" class='modelicon'>
+					<img src="webAssets/img/viewshowa.png" alt="" class='activeicon'> -->
+					映秀场
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class='grades'></span>
+					<!-- <img src="webAssets/img/grades.png" alt="" class='modelicon'>
+					<img src="webAssets/img/grades.png" alt="" class='activeicon'> -->
+					映秀社区
+				</a>
+			</li>
+		</ul>
+	</div>
+</header>
+<div class="contents">
+	<div class="am-conin-h">
+		<div class="am-conleft-h">
+			<div class="conleft-img">
+				<div class="conleft-imgin">
+					<img src="webAssets/img/selfimg.png" alt="">
+				</div>
+				<p>kist</p>
+			</div>
+			<div class="conleft-item">
+				<ul>
+		          <li class='conleft-list conleft-list-active'>
+		            <a href="personal-center-header.html"><span class='baceicon'></span>基本信息</a>
+		          </li>
+		          <li class='conleft-list'><a href="myNews.html"><span class='mesicon'></span>我的消息</a></li>
+		          <li class='conleft-list'><a href="my-wallet-voucher.html"><span class='moneyicon'></span>我的钱包</a></li>
+		          <li class='conleft-list'><a href=""><span class='extendicon'></span>秀场推广</a></li>
+		          <li class='conleft-list'><a href=""><span class='membericon'></span>会员中心</a></li>
+		          <li class='conleft-list'><a href="my-goods.html"><span class='ordericon'></span>我的订单</a></li>
+		          <li class='conleft-list'><a href="my-collect.html"><span class='collecticon'></span>我的收藏</a></li>
+		          <li class='conleft-list'><a href="Accountset.html"><span class='aseticon'></span>账户设置</a></li>
+		        </ul>
+			</div>
+			<div class="stardirect">
+				<div class="directbtn">
+					开始直播秀
+				</div>
+
+			</div>
+		</div>
+		<div class="am-conright-h">
+			<!--交易记录-->
+			<div class="my-wallet">
+				<div class="w-nav-menu">
+					<ul class="my-wallet-nav">
+						<li><a href="#">我的钱包</a></li>
+						<li class="cur"><a href="#">交易记录</a></li>
+						<li><a href="#">我的礼物</a></li>
+						<li><a href="#">我的银行卡</a></li>
+						<li><a href="#">模板赚秀币</a></li>
+					</ul>
+				</div>
+				<div class="tr-mun">
+					<ul>
+						<li class="cur-a">全部<span>|</span></li>
+						<li>充值<span>|</span></li>
+						<li>提现<span>|</span></li>
+						<li>支出<span>|</span></li>
+						<li>收入<span>|</span></li>
+						<li>退回</li>
+					</ul>
+				</div>
+				<div class="tr-info-list">
+					<table>
+						<tr>
+							<th>交易号</th>
+							<th>时间</th>
+							<th>交易金额</th>
+							<th>支付详情</th>
+							<th>支付方式</th>
+							<th>状态</th>
+						</tr>
+						<tr>
+							<td>TX2017042300001</td>
+							<td>2017-4-23 13:20</td>
+							<td>+100元</td>
+							<td>【提现】</td>
+							<td>支付宝</td>
+							<td class="t-cur">进行中</td>
+						</tr>
+						<tr>
+							<td>TX2017042300001</td>
+							<td>2017-4-23 13:20</td>
+							<td>+100元</td>
+							<td>【充值】</td>
+							<td>支付宝</td>
+							<td>已完成</td>
+						</tr>
+						<tr>
+							<td>TX2017042300001</td>
+							<td>2017-4-23 13:20</td>
+							<td>+100秀币</td>
+							<td>【红包】</td>
+							<td>支付宝</td>
+							<td>已完成</td>
+						</tr>
+					</table>
+
+
+				</div>
+
+				<!--分页-->
+				<div class="mynew-page">
+					<ul data-am-widget="pagination"
+						class="am-pagination am-pagination-default"
+					>
+
+						<li class="am-pagination-first ">
+							<a href="#" class="">首页</a>
+						</li>
+
+						<li class="am-pagination-prev ">
+							<a href="#" class=""><</a>
+						</li>
+						<li class="">
+							<a href="#" class="">1</a>
+						</li>
+						<li class="am-active">
+							<a href="#" class="am-active">2</a>
+						</li>
+						<li class="">
+							<a href="#" class="">3</a>
+						</li>
+						<li class="">
+							<a href="#" class="">4</a>
+						</li>
+						<li class="">
+							<a href="#" class="">5</a>
+						</li>
+						<li class="">
+							<a href="#">6</a>
+						</li>
+						<li class="">
+							<a href="#" class="">7</a>
+						</li>
+						<li class="">
+							<a href="#" class="">8</a>
+						</li>
+						<li class="">
+							<a href="#" class="">9</a>
+						</li>
+						<li class="am-pagination-next ">
+							<a href="#" class="">></a>
+						</li>
+
+						<li class="am-pagination-last ">
+							<a href="#" class="">尾页</a>
+						</li>
+
+					</ul>
+					<div class="clear"></div>
+				</div>
+
+
+			</div>
+
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="webAssets/js/jquery.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="webAssets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="webAssets/js/amazeui.min.js"></script>
+<script src="webAssets/js/index.js"></script>
+
+
+</body>
+</html>

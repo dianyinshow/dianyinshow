@@ -1,0 +1,244 @@
+<style>
+    input[type=file] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 82px;
+        height: 82px;
+        background: red;
+        opacity: 0;
+    }
+
+    .avatar {
+        position: relative;
+    }
+
+    .img {
+        display: inline-block;
+        width: 82px;
+        height: 82px;
+    }
+
+    .show li, .userList li, .tem li{
+        padding: 6px 30px;
+    }
+
+    .show, .userList, .tem {
+        height: 0;
+        overflow: hidden;
+    }
+</style>
+<div class="left-sidebar">
+    <!-- 用户信息 -->
+    <div class="tpl-sidebar-user-panel">
+        <div class="tpl-user-panel-slide-toggleable">
+            <%if(user instanceof Array ){%>
+            <%user.forEach(function (user){%>
+            <%if(user.authority == 0) {%>
+            <div class="tpl-user-panel-profile-picture avatar">
+                <img src="<%= user.avatar%>" alt="" class="img">
+                <form action="/backstage/sign/up" method="post">
+                    <input type="file" name="avatar" id="avatar">
+                </form>
+            </div>
+            <span class="user-panel-logged-in-text">
+              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+                                <%= user.name%>
+                           <%}%>
+                    <%})%>
+            </span>
+            <%}else{%>
+            <div class="tpl-user-panel-profile-picture avatar">
+                <img src="<%= user.avatar%>" alt="" class="img">
+                <form action="/backstage/sign/up" method="post">
+                    <input type="file" name="avatar" id="avatar">
+                </form>
+            </div>
+            <span class="user-panel-logged-in-text">
+              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+                <%= user.name %>
+            </span>
+            <%}%>
+            <!--<a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>-->
+        </div>
+    </div>
+
+    <!-- 菜单 -->
+    <ul class="sidebar-nav">
+        <li class="sidebar-nav-heading">系统菜单</li>
+        <li class="sidebar-nav-link">
+            <a href="/backstage/first" class="active">
+                <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <div class="user" data-am-dropdown>
+                <a class=" am-dropdown-toggle button" data-am-dropdown-toggle>
+                    <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 用户管理表
+                </a>
+                <ul class="userList">
+                    <li>
+                        <a href="/backstage/userOs">
+                            系统用户管理
+                        </a>
+                    </li>
+                    <li class="am-dropdown-header">
+                        <a href="/backstage/users?pageNum=1">
+                            用户管理表
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="/backstage/manage">
+                <i class="am-icon-calendar sidebar-nav-link-logo"></i>
+                前台板块管理
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <div class="dropdown" data-am-dropdown>
+                <a class=" am-dropdown-toggle button" data-am-dropdown-toggle>
+                    <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 前台展示发布系统
+                </a>
+                <ul class="show">
+                    <li class="am-dropdown-header">
+                        <a href="/backstage/show?pageNum=1">前台展示</a>
+                    </li>
+                    <li class="am-dropdown-header">
+                        <a href="/backstage/showStory?pageNum=1">用户故事</a>
+                    </li>
+                    <li class="am-dropdown-header">
+                        <a href="/backstage/useVideo?pageNum=1">使用教程</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="/backstage/photoGallery?pageNum=1">
+                <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 商业图片库管理
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="/backstage/musicGallery?pageNum=1">
+                <i class="am-icon-bar-chart sidebar-nav-link-logo"></i>
+                商业音乐库管理
+            </a>
+        </li>
+        <li class="sidebar-nav-heading">Page <a href="meiti.html">
+            <i class="am-icon-bar-chart sidebar-nav-link-logo"></i>
+            合作媒体控制
+
+        </a></li>
+        <li class="sidebar-nav-link">
+            <div class="template " data-am-dropdown>
+                <a class=" am-dropdown-toggle button" data-am-dropdown-toggle>
+                    <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 模板管理
+                </a>
+                <ul class="tem">
+                    <li class="am-dropdown-header">
+                        <a href="/backstage/template?pageNum=1">商业模板管理</a>
+                    </li>
+                    <li class="am-dropdown-header">
+                        <a href="/backstage/showStory?pageNum=1">用户上传模板管理</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="bk.html">
+                <i class="am-icon-clone sidebar-nav-link-logo"></i> 秀场板块管理
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="zb.html">
+                <i class="am-icon-clone sidebar-nav-link-logo"></i> 秀场视频直播管理
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="moban.html">
+                <i class="am-icon-clone sidebar-nav-link-logo"></i>
+                H5模板案例管理
+
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="moban.html">
+                <i class="am-icon-clone sidebar-nav-link-logo"></i>
+                素材审核管理
+
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="rw.html">
+                <i class="am-icon-clone sidebar-nav-link-logo"></i>
+                软文审核管理
+
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="order.html">
+                <i class="am-icon-clone sidebar-nav-link-logo"></i>
+                订单管理
+
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="order1.html">
+                <i class="am-icon-clone sidebar-nav-link-logo"></i>
+                收入管理
+
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="xd.html">
+                <i class="am-icon-clone sidebar-nav-link-logo"></i>
+                秀豆管理
+            </a>
+        </li>
+    </ul>
+</div>
+<script>
+    var flag = true;
+    $('.dropdown').click(function () {
+        if (flag) {
+            $('.show').stop().animate({
+                height: 150
+            }, 500);
+            flag = false;
+        } else {
+            $('.show').stop().animate({
+                height: 0
+            }, 500);
+            flag = true;
+        }
+    });
+    var index = true;
+    $('.user').click(function () {
+        if (index) {
+            $('.userList').stop().animate({
+                height: 100
+            }, 500);
+            index = false;
+        } else {
+            $('.userList').stop().animate({
+                height: 0
+            }, 500);
+            index = true;
+        }
+    });
+    var val = true;
+    $('.template').click(function () {
+        if (val) {
+            $('.tem').stop().animate({
+                height: 100
+            }, 500);
+            val = false;
+        } else {
+            $('.tem').stop().animate({
+                height: 0
+            }, 500);
+            val = true;
+        }
+    });
+</script>

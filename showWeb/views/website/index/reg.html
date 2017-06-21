@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>点映秀注册</title>
+    <meta name="description" content="注册新账号">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="/assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="/webIndex/css/amazeui.min.css" />
+    <link rel="stylesheet" href="/webIndex/css/admin.css">
+    <link rel="stylesheet" href="/webIndex/css/login.css">
+    <link rel="stylesheet" href="/webIndex/css/Hui.css">
+    <style>
+        body{
+            background: #ffffff;
+            font-family:'Microsoft YaHei';
+        }
+
+        .loginbutton{
+            border:1px solid #b2b0b0;
+            border-radius: 4px;
+            font-family:'Microsoft YaHei';
+        }
+
+        .regbutton{
+            border:1px solid #b2b0b0;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family:'Microsoft YaHei';
+        }
+
+        .mainfont{
+            font-size: 18px;
+            color:#666;
+            font-family:'Microsoft YaHei';
+        }
+
+        .loginFont{
+            font-size: 18px;
+            color:#4bb7f5;
+            font-family:'Microsoft YaHei';
+        }
+
+        .loginFont:hover{
+            cursor:pointer;
+            color:#f7152b;
+        }
+
+        .myapp-login-logo-text{
+            font-family:'Microsoft YaHei';
+        }
+
+        .am-form{
+            width: 90%;
+            float:left;
+            margin-left: 5%
+        }
+
+        .msg{
+            color:#f7152b;
+            font-family:'Microsoft YaHei';
+            font-size: 14px
+        }
+
+        .login-font{
+            font-size:18px;
+        }
+
+    </style>
+</head>
+
+<body  style="background: #ffffff">
+
+<div class="am-g myapp-login">
+    <div class="myapp-login-logo-block  tpl-login-max">
+        <div class="myapp-login-logo-text">
+            <div class="myapp-login-logo-text" onclick="openindex()">
+                点映秀
+            </div>
+        </div>
+
+        <div class="login-font">
+            注册帐号
+        </div>
+        <div class="am-u-sm-10 login-am-center" >
+            <form class="am-form" >
+                <fieldset style="border:none;">
+                    <div class="H-flexbox-horizontal  H-border-vertical-bottom-margin-both-10-after loginbutton" id="accountWrap">
+                        <input type="text" class="H-textbox H-vertical-align-middle H-vertical-middle H-font-size-16 H-flex-item H-box-sizing-border-box H-border-none H-outline-none H-padding-15 H-theme-background-color-transparent" placeholder="输入您的工作邮箱或手机号" id="account">
+                    </div>
+
+                    <p class="msg"  id="msg"></p>
+                    <p>
+                        <button type="button"  class="am-btn am-btn-default" id="submitBtn">即将开始</button>
+                    </p>
+                    <center><span class="mainfont">已有账号？</span><span class="loginFont" id = "btnLogin">登录</span></center>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="/webIndex/js/jquery.min.js"></script>
+<script src="/webIndex/js/amazeui.min.js"></script>
+<script src="/webIndex/js/app.js"></script>
+<script src="/webIndex/js/H.js"></script>
+</body>
+<script>
+    var accountEle = document.getElementById("account"); //帐号元素
+    var account = accountEle.value; //帐号
+    var submitBtnEle = document.getElementById("submitBtn"); //提交按钮
+    var btnLoginEle = document.getElementById("btnLogin");
+
+    var accountFlag = false;
+
+    //获取焦点
+    accountEle.onfocus = function(){
+        document.getElementById("accountWrap").style.border='1px solid #ea5147';
+    }
+
+    //失去焦点
+    accountEle.onblur = function (){
+        H.D('#msg').innerHTML='';
+        document.getElementById("accountWrap").style.border='1px solid #b2b0b0';
+        account = accountEle.value; //帐号
+        if (account.length==0){
+            H.D('#msg').innerHTML='帐号不能为空';
+            accountFlag = false;
+        }
+        //帐号不为空
+        else { //判断手机还是邮箱
+            if(account.indexOf('@')==-1){
+                var mobileReg = /^1[3|4|5|7|8][0-9]{9}$/;//手机号验证
+                //手机
+                if(isNaN(account)){
+                    H.D('#msg').innerHTML='您输入的手机号无效!';
+                    accountFlag = false;
+                }
+                if (account.length!=11)
+                {
+                    H.D('#msg').innerHTML='请输入正确11位数手机号码!';
+                    accountFlag = false;
+                }else if(isNaN(account) ||!mobileReg.test(account)){
+                    H.D('#msg').innerHTML='非大陆手机号无效!';
+                    accountFlag = false;
+                }else{
+                    $.ajax({
+                        type: 'get',
+                        url: '/website/user/reg/mobile?mobile='+account,
+                    }).success(function (data){
+                        //console.log(data);
+                        if(data=="1"){
+                            H.D('#msg').innerHTML='手机号已注册，立即登录！!';
+                            accountFlag = false;
+                        }else{
+                            accountFlag = true;
+                        }
+                    });
+                }
+            }
+            else{
+                //邮箱
+                var emailReg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+                if(!emailReg.test(account)){
+                    H.D('#msg').innerHTML='您输入的邮箱无效!';
+                    accountFlag = false;
+                }else{
+                    $.ajax({
+                        type: 'get',
+                        url: '/website/user/reg/email?email='+account,
+                    }).success(function (data){
+                        if(data=="1"){
+                            H.D('#msg').innerHTML='该邮箱已注册，立即登录！!';
+                            accountFlag = false;
+                        }else{
+                            accountFlag = true;
+                        }
+                    });
+                }
+            }
+        }
+    }
+
+    //注册
+    submitBtnEle.onclick = function(){
+        accountEle.onblur();
+        if(accountFlag){
+            if(account.indexOf('@')==-1) {
+                //window.location.href = "regMobileVerify.html?mobile="+account;//跳转到手机注册页
+                window.location.href = "/website/reg/regMobileVerify?mobile="+account;
+            }else{
+                window.location.href = "/website/reg/regEmail?email="+account;//跳转到邮箱注册页
+            }
+        }
+    }
+
+    btnLoginEle.onclick = function(){
+        window.location.href = '/website/login'
+    }
+
+
+</script>
+</html>

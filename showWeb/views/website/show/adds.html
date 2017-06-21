@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <style>
+        body{
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            user-select: none;
+        }
+    .checks img{
+        width: 100px;
+        hieght:100px;
+    }
+        .product{
+            width: 360px;
+        }
+        /*table,table th{*/
+            /*text-align: center;*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+<table class="table table-striped" border="1px solid #333">
+    <thead>
+        <button type="'button" class="btn btn-primary btn-lg">添加商品</button>
+        <tr>
+            <th class="checkall">
+                <label>
+                    <input type='checkbox' name="check" >全选
+                </label>
+            </th>
+            <th class="product">商品介绍</th>
+            <th class="mell">单价</th>
+            <th class="maun">数量</th>
+            <th class="allnum"></th>
+            <th class="del">操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="computer" >
+            <td>
+                <label class="checks">
+                <input type="checkbox"> <img src="shop/img/2.jpg" alt="">
+                </label>
+            </td>
+            <td class="content"><a href="">结合该金融和痛苦破【平那么看韩剧了罚款和奖品</a></td>
+            <td>￥<span class="price">30.00</span></td>
+            <td class="chan">
+                <span class="sub">-</span>
+                <input type="text" value="1" class="quantity">
+                <span class="add">+</span>
+            </td>
+            <td class="allprice">￥<span>30.00</span></td>
+            <td class="del">—删除</td>
+        </tr>
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6">总金额 <span class="t"></span> 商品数量 <span class="pn"></span> </td>
+        </tr>
+    </tfoot>
+</table>
+<script>
+$(function () {
+    var data=[
+        {
+            "id":1,
+            "img": "img/2.jpg",
+            "name": "创意烤漆加厚云朵隔板搁板墙壁置物架客厅影视墙装饰架装修层板1",
+            "amount": 30,
+            "count":1,
+            "total": 30
+        },
+        {
+            "id":2,
+            "img":"img/4.jpg",
+            "name":"创意烤漆加厚云朵隔板搁板墙壁置物架客厅影视墙装饰架装修层板2",
+            "amount":50,
+            "count":1,
+            "total":50
+        },
+        {
+            "id":3,
+            "img":"img/8.jpg",
+            "name":"创意烤漆加厚云朵隔板搁板墙壁置物架客厅影视墙装饰架装修层板3",
+            "amount":20,
+            "count":1,
+            "total":20
+        }
+    ];
+    // $.each(data,function(index,value){
+    //     var newtr=$('.computer').clone().removeClass('computer').show().appendTo('tbody');
+    //     newtr.find('td').first().find('img').attr('src','shop/'+value.img).end()
+    //             .next().find('a').text(value.name).end()
+    //             .next().find('span').text(value.amount).end()
+    //             .next().find('input').val(value.count).end()
+    //             .next().find('span').text(value.total)
+    // })
+$('tbody').find('tr').eq(0).remove();
+    var num=1;
+    var price;
+    $('.add').on('click',function(){
+        num=$(this).parent('td').find('input').val();
+        num++
+        $(this).parent('td').find('input').val(num);
+        var price=Number($(this).parents('tr').find('span').eq(0).text());
+        $(this).parents('tr').find('span').eq(3).text(num*price);
+        changs()
+    })
+    $('.sub').on('click',function(){
+        num=$(this).parent('td').find('input').val();
+        num--
+        if(num<1){
+            num=1
+        }
+        $(this).parent('td').find('input').val(num);
+        price=Number($(this).parents('tr').find('span').eq(0).text());
+        $(this).parents('tr').find('span').eq(3).text(num*price);
+        changs()
+    })
+$('.checkall label').on('click',function() {
+    $('.checks').find('input')
+            .prop('checked', $('.checkall').find('input').prop('checked'));
+
+    changs()
+})
+    $('.checks input').on('click',function(){
+
+       changs()
+    })
+    function changs(){
+        var numall=0;
+        var numa=0
+        $('.checks input').each(function(index){
+            if($('.checks input').eq(index).prop('checked')){
+                numa+=1
+                numall+=Number($('.checks input').eq(index).parents('tr').find('span').eq(3).html())
+            }
+        })
+        if(numa===$('.checks input').length){
+            $('.checkall label').find('input').prop('checked',true)
+        }else{
+            $('.checkall label').find('input').prop('checked',false)
+        }
+        $('tfoot').find('span').eq(0).text(numall)
+        $('tfoot').find('span').eq(1).text(numa);
+
+
+    }
+})
+
+</script>
+</body>
+</html>

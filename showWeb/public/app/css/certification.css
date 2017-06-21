@@ -1,0 +1,87 @@
+	/*
+			 
+	 * 实名认证
+	 * 
+	 * */  
+
+	 html,body{
+	 	background: #fff;
+	 	font: 12px/23px "微软雅黑";
+	 }  	
+	header {
+		background-color: #ea5147;
+		height:44px;
+		/*line-height: 44px;*/
+		position: relative;
+	}
+	.H-yuan-mycircle{
+        left:12px;
+        top:13px;
+        position: absolute;  
+     }
+
+     .exit-certification{
+     	right:12px;
+        top:13px;
+        position: absolute;
+     }
+
+	header .border-b {
+		line-height: 44px;
+		text-align: center;
+		color: #ffffff;
+		font-size: 15px;
+		font-weight: normal;
+	}
+	.flex-con .edit{
+		height: 63px;
+		border: 1px dotted #dbdbdb;
+		box-sizing: border-box;
+		font: 12px/23px "微软雅黑";
+		color:#0f0f0f;
+		padding: 20px 12px;
+		position: relative;
+	}
+	.flex-con .edit span{
+		right: 12px;
+        top: 26px;
+        position: absolute; 
+	}	
+
+	/*认证title*/
+	.certi-title{
+		box-sizing:border-box;
+	}
+	.certi-title>ul{
+		height: 26px;
+	}
+	.certi-title>ul>li{
+		height: 26px;
+		line-height: 26px;
+	}
+	.certi-title>ul>li:nth-child(2) {
+		position: relative;
+		left: calc(50% - 100px);
+	}
+	.certi-title>ul>li>span{
+		display: inline-block;
+		width: 17px;
+		height: 17px;
+		line-height: 17px;
+		text-align: center;
+		border-radius: 50%;
+		background-color: #888a92;
+		color: white;
+		margin-right: 5px;
+	}
+	.list-active{
+		border-bottom:solid 1px #ea5147;
+	}
+	.certi-title>ul>li>.bgred{
+		background-color: #ea5147;
+	}
+	.line{
+		height: 5px;
+
+		background-color: #dbdbdb;
+	}

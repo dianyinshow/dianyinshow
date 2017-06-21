@@ -1,0 +1,474 @@
+/*我的钱包*/
+.my-wallet{
+	position: relative;
+	background-color: #FFFFFF;
+	height: auto;
+	margin-bottom: 35px;
+}
+.w-nav-menu{
+	width: 100%;
+	height: 65px;
+	border-bottom: 1px solid #dbdbdb;
+}
+.my-wallet-nav li{
+	height: 65px;
+	line-height: 30px;
+	text-align: center;
+	float: left;
+}
+.my-wallet-nav li a{
+	display: block;
+	color: #666666;
+	font-size: 18px;
+	margin: 33px 0 0 40px;
+
+}
+.my-wallet-nav li.cur  a{
+	border-bottom: 2px solid #ea5147;
+}
+
+.recharge-info{
+	width:860px;
+	height: auto;
+	margin: 40px 0 0 40px;
+}
+.account-xb{
+	width: 860px;
+	height: 234px;
+	border: 1px solid #dbdbdb;
+	background-color: #FFFFFF;
+}
+.account-xd{
+	width: 860px;
+	height: 234px;
+	border: 1px solid #dbdbdb;
+	margin-top: 20px;
+	background-color: #FFFFFF;
+	font-weight: normal;
+}
+.a-title{
+	padding: 13px 0 13px 10px;
+	line-height: 20px;
+	font-size: 14px;
+	color: #666666;
+	background-color: #F2F2F2;
+	font-weight: normal;
+}
+.xb-recharge-info{
+	margin: 0 0 0 100px;
+	float: left;
+}
+.xb-recharge-info p{
+	font-size: 14px;
+	color: #666666;
+}
+.xb-all{
+	margin-top: 17px;
+}
+.xb-all span{
+	font-size: 56px;
+	color: #ea5147;
+	margin: 56px 40px 0 40px;
+	position: relative;
+	top: 15px;
+}
+.xb-profit{
+	margin-top: 20px;
+}
+.xb-profit i{
+
+	margin: 0 27px 0 27px;
+}
+
+.xb-btn{
+	float: left;
+	margin:80px 0 0 75px;
+}
+.xb-btn a{
+	display: block;
+	width: 120px;
+	height: 34px;
+	border-radius: 4px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 34px;
+	float: left;
+}
+.ac-ts{
+	display: none;
+	font-size: 12px;
+	color: #ea5147;
+	width: 329px;
+	height: 50px;
+	left: 512px;
+	position: relative;
+	top: -25px;
+	clear: both;
+}
+.btn-rxb{
+	color: #FFFFFF;
+	background-color: #1aad19;
+
+}
+.btn-wxb{
+	color: #333333;
+	background-color: #f8f8f8;
+	border: 1px solid #dfdfdf;
+	margin-left: 40px;
+}
+
+.dgh{
+	float: left;
+	margin: 60px 0 0 100px;
+}
+
+
+.xd-account-info{
+	margin: 19px 0 0 100px;
+	float: left;
+}
+.xd-account-info p{
+	font-size: 14px;
+	color: #666666;
+}
+
+.xd-all{
+	margin-top: 17px;
+}
+.xd-all span{
+	font-size: 56px;
+	color: #ea5147;
+	margin: 56px 40px 0 40px;
+	position: relative;
+	top: 15px;
+}
+.xd-btn{
+	float: left;
+	margin:80px 0 0 75px;
+}
+.btn-cash{
+	display: block;
+	width: 120px;
+	height: 34px;
+	border-radius: 4px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 34px;
+	float: left;
+	color: #FFFFFF;
+	background-color: #1aad19;
+}
+/**************弹框兑换***************/
+
+.exchange-xd{
+	width: 1014px;
+	height: 594px;
+	margin: 0 auto;
+	display:none;
+	z-index: 9999;
+	position: absolute;
+	left: 95px;
+	top: 35px;
+	clear: both;
+	border: 1px solid #dbdbdb;
+	background-color: #FFFFFF;
+}
+.exchange-top{
+	height: 64px;
+	background-color: #F2F2F2;
+	border-bottom: 1px solid #dbdbdb;
+}
+.exchange-top h3{
+	font-size: 18px;
+	color: #333333;
+	float: left;
+	width: 100px;
+	margin: 20px 0 0 40px;
+	font-weight: normal;
+}
+.popup-close{
+	float: right;
+	margin: 20px 40px 0 0;
+}
+.exchange-middle label{
+	font-size: 16px;
+	color: #666666;
+	font-weight: normal;
+
+}
+.exchange-middle ul{
+	width:320px;
+	height: 100px;
+	position: absolute;
+	top:220px;
+	left: 125px;
+}
+.exchange-middle ul li{
+	cursor: pointer;
+	float: left;
+	width: 60px;
+	height: 40px;
+	border:1px solid #dbdbdb;
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+	margin: 0 20px 20px 0;
+	color: #666666;
+}
+.payment-method{
+	clear: both;
+}
+.em-xb{
+	margin:40px 0 0 40px;
+}
+.exchange-account{
+	margin:30px 0 0 40px;
+}
+.exchange-number{
+	margin:30px 0 0 40px;
+}
+.exchange-number li.cur-li{
+
+	background: url("..//img/ok.png") no-repeat 43px 23px;
+}
+
+.em-xb span,.exchange-account span,.exchange-number ul,.payment-method a,.consume-xb span{
+	margin-left: 40px;
+	color: #666666;
+}
+.payment-method{
+	margin:117px 0 0 40px;
+}
+.consume-xb{
+	margin:40px 0 0 40px ;
+}
+.cxb-a{
+	color: #666666;
+}
+.cxb-n{
+	font-size:18px;
+	color: #666666;
+}
+.p-xb{
+	color: #ea5147;
+	border-bottom: 1px solid #ea5147;
+}
+.rn-checkbox{
+	display: none;
+	position: relative;
+	top:-35px;
+	left: 439px;
+}
+.pm-btn{
+	width:120px;
+	height: 40px;
+	display: block;
+	font-size: 14px;
+	text-align: center;
+	line-height: 40px;
+	position: absolute;
+	top: 352px;
+	left: 125px;;
+	border: 1px solid #ea5147;
+	color: #666666;
+	border-radius: 4px;
+}
+.rn-btn{
+	display: block;
+	width: 198px;
+	height: 40px;
+	border: 1px solid #ea5147;
+	color: #ea5147;
+	font-size: 16px;
+	border-radius: 4px;
+	text-align: center;
+	margin: 39px auto;
+	line-height: 40px;
+}
+.rn-btn:hover{
+	background-color: #ea5147;
+	color: #FFFFFF;
+}
+.rn-cb{
+	position: relative;
+	top:-35px;
+	left: 439px;
+}
+.redeem-now span{
+	position: relative;
+	top:-35px;
+	left: 444px;
+	vertical-align: middle;
+}
+.pm-agr-btn img{
+	position: relative;
+	top: 6px;
+	left: 142px;
+}
+.pm-agr-btn{
+	background: url("..//img/big-ok.png") no-repeat;
+	display: block;
+	width: 20px;
+	height: 20px;
+	float: right;
+	position: relative;
+	right: 726px;
+	top: 15px;
+}
+/***********代金券/优惠券***********/
+.voucher-coupons{
+
+	width: 860px;
+	height: auto;
+	border: 1px solid #dbdbdb;
+	margin-top: 20px;
+	background-color: #FFFFFF;
+}
+/***************无代金券/优惠券*****************/
+.no-voucher{
+	display: none;
+	margin: 40px auto ;
+	width: 60px;
+	height: 92px;
+
+
+}
+.no-voucher span{
+	font-size: 12px;
+	color: #666666;
+}
+/***************有代金券/优惠券*****************/
+.voucher{
+	margin-top:25px;
+}
+.voucher ul li {
+	width: 350px;
+	height: 118px;
+	background: url("..//img/vback.png");
+	display:inline-block;
+	margin: 0 30px 25px 35px;
+	clear: both;
+}
+.voucher-left{
+	float: left;
+	width: 232px;
+	height: 118px;
+}
+
+.voucher-left hr{
+	border: 1px dashed #F2F2F2;
+	width: 231px;
+}
+.voucher-right{
+	float: right;
+	width: 118px;
+	height: 118px;
+	border-radius: 4px;
+	background-color: #ea5147;
+	text-align: center;
+	overflow: hidden;
+}
+.voucher-left span{
+	color: #ea5147;
+	font-size: 56px;
+}
+.voucher-left p{
+	color: #666666;
+	font-size: 12px;
+	position: relative;
+	top: -7px;
+	margin-left: 15px;
+}
+.voucher-left a{
+	color: #666666;
+	font-size: 16px;
+}
+.voucher-right p{
+	color: #FFFFFF;
+	font-size: 12px;
+}
+.voucher-right  button{
+	border-radius: 4px;
+	background-color: #FFFFFF;
+	color: #666666;
+	font-size: 12px;
+	width:80px;
+	height: 24px;
+	border: none;
+	text-align: center;
+	margin-top: 14px;
+}
+.vr-time .dt{
+	font-size: 16px;
+	color: #FFFFFF;
+}
+
+.vr-lo{
+	width: 90px;
+	height: 25px;
+	/* background: url(../../webAssets/img/asigle.png) no-repeat; */
+	display: block;
+	position: relative;
+	left: 55px;
+	top: 10px;
+	text-align: center;
+	background-color: #f39800;
+	-webkit-transform: rotateZ(45deg);
+	-moz-transform: rotateZ(45deg);
+	-ms-transform: rotateZ(45deg);
+	transform: rotateZ(45deg);
+}
+
+.vr-lo span{
+	color: #F2F2F2;
+	font-size: 12px;
+	line-height: 25px;
+	text-align: center;
+	display: block;
+}
+
+.voucher-right-over{
+	float: right;
+	width: 118px;
+	height: 118px;
+	border-radius: 4px;
+	background-color: #989898;
+	text-align: center;
+	overflow: hidden;
+}
+.voucher-left span.vl-black{
+	color: #666666;
+}
+.vr-lo-over span{
+	color: #FFFFFF;
+	font-size: 12px;
+	text-align: center;
+	line-height: 25px;
+	display: block;
+}
+.vr-lo-over{
+	width: 90px;
+	height: 25px;
+	display: block;
+	position: relative;
+	left: 55px;
+	top: 10px;
+	text-align: center;
+	background-color: #797979;
+	-webkit-transform: rotateZ(45deg);
+	-moz-transform: rotateZ(45deg);
+	-ms-transform: rotateZ(45deg);
+	transform: rotateZ(45deg);
+}
+.over-time{
+	margin-top: 20px;
+	display: block;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+.vl-line{
+	border: 1px dashed #F2F2F2;
+	width: 100%;
+	position: relative;
+	top: -18px;
+}

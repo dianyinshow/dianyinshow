@@ -1,0 +1,186 @@
+<%- include ../include/header.html%>
+<div class="Useban">
+    <div class="Usebanin">
+        <p class="course">社区————点映秀</p>
+        <p class="course-time">分享宣发乐趣。分享中创造惊喜</p>
+    </div>
+    <img src="/webIndex/images/comban.png" alt="" class="funimg">
+</div>
+<div class="container">
+    <div class="wrap">
+        <ul class="btn-ul">
+            <li class="li-active">全部</li>
+            <li>商业洞见</li>
+            <li>更新日志</li>
+            <li>精彩活动</li>
+            <li>产品故事</li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <ul class="btn-content type">
+            <%articles.forEach(function(article,index){%>
+            <li>
+                <a href="/website/comshow/conlist?id=<%=article.id%>"><img src="/webIndex/images/community/img-4.png" alt=""></a>
+                <h3><%=article.title%></h3>
+                <p><%=article.text%></p>
+                <div><span class="left-text"><%=article.type%></span> <span class="right-time"><%=article.createTime%></span></div>
+            </li>
+            <%})%>
+        </ul>
+    </div>
+
+    <div class="clear">
+</div>
+<div class="use-page">
+    <ul class="use-pagination use-pagination-default">
+        <li class="use-pagination-pre ">
+            <a href="/website/comshow?pageNum=<%=(pageNum>1)?pageNum-1:1%>&pageSize=<%=pageSize%>" class="">上一页</a>
+        </li>
+        <%for(var i=1;i<=totalPage;i++){%>
+        <li class="">
+            <a class="use-active" href="/website/comshow?pageNum=<%=i%>&pageSize=<%=pageSize%>"><%=i%></a>
+        </li>
+        <%}%>
+
+        <li class="use-pagination-next ">
+            <a href="/website/comshow?pageNum=<%=(pageNum<totalPage)?parseInt(pageNum)+1:totalPage%>&pageSize=<%=pageSize%>" class="">下一页</a>
+        </li>
+    </ul>
+</div>
+<div class="clear">
+
+</div>
+<div class="adban">
+    <!-- <img src="images/adban.png" alt=""> -->
+    <div class="Use-adban">
+        <div class="goexp">
+            <div class="textexp">
+                点映秀
+            </div>
+            <p>无论何时何地，你的作品都能被有效宣发出去，让更多人知道</p>
+            <div class="goexp-btn"><a href="">马上体验</a></div>
+        </div>
+    </div>
+</div>
+<div class="am-container-1">
+    <div class="solutions part-all">
+        <div class="part-title1">
+            <img class="telicon" src="/webIndex/images/tel.png" alt="">
+        </div>
+    </div>
+    <div class="solutions part-all">
+        <div class="part-title1">
+            <a href="#">
+                <span class="am-title-span">新用户咨询专线</span>
+            </a>
+        </div>
+    </div>
+    <div class="solutions part-all">
+        <div class="part-title1">
+            <a href="#">
+                <span class="part-title-span1">通过以下方式联系我们的广告专家，了解更多信息</span>
+            </a>
+        </div>
+    </div>
+    <div class="solutions part-all">
+        <div class="part-title1">
+            <a href="#">
+                <span class="part-title-span2">400-123-1234</span>
+            </a>
+        </div>
+    </div>
+    <div class="solutions part-all">
+        <div class="part-title1">
+            <a href="#">
+                <span class="part-title-span3">专家工作时间周一到周五9:00-18:00</span>
+            </a>
+        </div>
+        <center><img src="/webIndex/images/erweima.png" style="margin-top: 30px"></center>
+    </div>
+
+</div>
+<footer class="footer">
+    <div class="footertitle" style="border:none">
+        <div class="left hw-logo">
+            <p class="corp">点映秀(北京)科技有限公司 &nbsp;&nbsp;&nbsp;版权所有</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="/webAssets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="/webIndex/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="/webIndex/js/amazeui.min.js"></script>
+
+<script src="/webIndex/js/main.js"></script>
+<script src="/webIndex/js/swiper.min.js"></script>
+<script src="/webIndex/js/index.js"></script>
+<script>
+    gold.init();
+
+    function btn_login() {
+        window.location = '/website/login'
+    }
+
+    function btn_reg() {
+        window.location = '/website/reg'
+    }
+
+    $(function () {
+        $('.btn-ul li').each(function (index) {
+            $(this).click(function () {
+                var html = $(this).html();
+                html = encodeURI(html);
+                $.ajax({
+                    type: 'GET',
+                    url: '/website/community/type?type=' + html,
+                    dateType: 'JSON',
+                    success: function (data) {
+                        var text = '';
+                        if (data.code == 1) {
+                            data = data.result;
+                            for (var i = 0; i < data.length; i++) {
+                                var val = data[i].articleId;
+                                if (val) {
+                                    text += '<li> <a href="subCommunity.html"><img src="../photo/show/' + val.photo + '" alt=""></a> <h3>' + val.title + '</h3> <p>' + val.text + '</p> <div><span class="left-text">' + val.type + '</span> <span class="right-time">' + val.createTime + '</span></div> </li>';
+                                }
+                            }
+                            $('.type').html(text);
+                        }
+                    }
+                });
+            });
+        });
+    });
+
+    /*window.onload = function () {
+        var html = '全部';
+        html = encodeURI(html);
+        $.ajax({
+            type: 'GET',
+            url: '/website/community/type?type=' + html,
+            dateType: 'JSON',
+            success: function (data) {
+                var text = '';
+                if (data.code == 1) {
+                    data = data.result;
+                    for (var i = 0; i < data.length; i++) {
+                        var val = data[i].articleId;
+                        if (val) {
+                            text += '<li> <a href="/index/conlist"><img src="../photo/show/' + val.photo + '" alt=""></a> <h3>' + val.title + '</h3> <p>' + val.text + '</p> <div><span class="left-text">' + val.type + '</span> <span class="right-time">' + val.createTime + '</span></div> </li>';
+                        }
+                    }
+                    $('.type').html(text);
+                }
+            }
+        });
+    };*/
+</script>
+</html>

@@ -1,0 +1,652 @@
+body{
+	font-family: 'Microsoft YaHei'
+}
+
+/*我的消息*/
+.am-main-header{
+	width: 100%;
+	height: 100%;
+	border-bottom:1px solid #dbdbdb;
+	position: relative;
+	padding: 40px 40px 0 40px;
+}
+.am-main-header h3{
+	display: block;
+	font-size: 18px;
+    color: #666666;
+    
+    float: left;
+   
+}
+.am-main-header .linebottom{
+width: 72px;
+position: absolute;
+bottom:-1px;
+left:40px;
+height: 1px;
+background: #ea5147;
+}
+/*编辑*/
+.edit{
+	float: right;
+	width: 56px;
+	font-size: 14px;
+}
+
+/*编辑*/
+.am-main-header .edit{
+	cursor: pointer;
+}
+.am-main-header .edit span{
+	display:inline-block;
+	width: 18px;
+	height:16px;
+	background: url(../img/mynewexit.png) no-repeat;
+	margin-right: 6px;
+	margin-top: 4px;
+}
+/*删除完成*/
+.editvd{
+	color: #dbdbdb;
+	display: none;
+}
+.editvd span{
+	color: #666;
+	font-size: 14px;
+	cursor: pointer;
+}
+.edit-voer{
+	margin-left: 12px;
+}
+.edit-del{
+	padding:0 12px;
+}
+.editvd span:hover{
+	color:#ea5147;
+}
+
+/*全选*/
+.allcheck{
+	margin-right:20px;
+	font-size: 14px;
+}
+.allcheck{
+	position: relative;
+}
+.allcheck input{
+	border-radius: 50%;
+	margin-right: 8px;
+	opacity:0;
+	position:relative;
+	z-index:2;
+}
+.allcheck .discheck-state{
+	width:16px;
+	height:16px;
+	background: url(../img/discheak.png) no-repeat;
+	position: absolute;
+    left: 0;
+    top: 4px;
+}
+.allcheck .checkstate{
+	background: url(../img/cheak.png) no-repeat;
+}
+
+/*列表框*/
+.myNews-list{
+height: 600px;
+position: relative;
+}
+/*我的消息列表*/
+.myNews-list ul{
+padding:0 40px;
+}
+.myNews-list .myNews-item{
+	padding:20px 0;
+	border-bottom:1px solid #f2f2f2;
+}
+/*消息头像*/
+.linkup-img{
+	width:50px;
+	height:50px;
+	border:1px solid #dbdbdb;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.linkup-img img{
+	width:50px;
+	height:50px;
+}
+/*消息标题*/
+.myNews-cont{
+	margin-left:20px;
+	color:#666;
+	font-size: 14px;
+	line-height: 24px;
+}
+/*消息状态*/
+.myNews-right-edit{
+	line-height: 50px;
+	font-size: 14px;
+}
+/*时间*/
+.myNews-right-edit .myNews-datas{
+	margin-right:18px;
+	/*display: none;*/
+}
+	/*继续沟通*/
+.myNews-right-edit .myNews-communicate{
+	margin-right: 40px;
+	display: block;
+	width: 98px;
+	height: 34px;
+	text-align: center;
+	color:#fff;
+	background: #ea5147;
+	line-height: 34px;
+	margin-top: 10px;
+	border-radius: 4px;
+	display: none;
+}
+	/*删除右侧
+.myNews-right-edit .myNews-del{
+
+display:block;
+	width: 16px;
+	height: 16px;
+	background: url(../img/del.png) no-repeat;
+	margin-top: 16px;
+	margin-right:32px;
+	margin-left:12px; 
+	display: none;
+}*/
+
+/*右侧全选删除*/
+.myNews-right-edit .myNews-delall{
+	position: relative;
+	display: none;
+}
+.myNews-right-edit .myNews-delall input{
+	position: relative;z-index: 2;
+	opacity:.2;
+}
+
+.myNews-right-edit .myNews-delall .myNew-del-state{
+	display:block;
+	width: 16px;
+	height: 16px;
+	background: url(../img/discheak.png) no-repeat;
+	margin-top: 16px;
+	position: absolute;
+    top: 0;
+    left: 0;
+}
+.myNews-right-edit .myNews-delall .myNew-del-stateall{
+	background: url(../img/cheak.png) no-repeat;
+}
+/*删除下册*/
+/*.delall-btn{
+	width: 98px;
+	height: 34px;
+	border:1px solid #ea5147;
+	border-radius: 4px;
+	font-size: 14px;
+	color: #ea5147;
+	text-align: center;
+	line-height: 34px;
+	margin-left: 40px;
+	margin-top: 40px;
+	cursor: pointer;
+	display: none;
+}*/
+
+
+/*对话框*/
+/*免打扰面试*/
+.H-switch {
+    -webkit-touch-callout: none;
+    cursor: pointer;
+    overflow: hidden;
+    width: 26px;
+    height: 15px;
+    border: 1px solid #dddddd;
+    box-shadow: #dfdfdf 0 0 0 0 inset;
+    border-radius: 13px;
+    background-clip: content-box;
+   -webkit-appearance: none;
+    -webkit-user-select: none;
+    outline: none;
+    transition: border cubic-bezier(0, 0, 0, 1) 0.2s, box-shadow cubic-bezier(0, 0, 0, 1) 0.2s;
+    -webkit-transition: border cubic-bezier(0, 0, 0, 1) 0.2s, box-shadow cubic-bezier(0, 0, 0, 1) 0.2s;
+}
+.H-position-relative {
+    position: relative;
+}
+.H-theme-background-color-white {
+    background-color: #666;
+}
+.H-theme-font-color-black {
+    color: black;
+    font-size: 14px;
+
+}
+.H-switch.H-theme-font-color-black:checked {
+    border-color: #18ad13;
+    box-shadow: #18ad13 0 0 0 26px inset;
+     background-color: #18ad13; 
+}
+.H-switch:checked:before {
+    left: 10px;
+    transition: left 0.2s;
+    -webkit-transition: left 0.2s;
+}
+.H-switch:before {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    -webkit-border-radius: 13px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px #666;
+    content: '';
+    text-indent: 13px;
+    transition: left 0.2s;
+    -webkit-transition: left 0.2s;
+    text-transform: uppercase;
+}
+/*我的消息对话地址栏*/
+.conin-text-mynews a{
+	color:#ea5147;
+}
+/*消息免打扰*/
+.disturb{
+	font-size: 14px;
+	color: #666;
+}
+
+.H-padding-horizontal-both-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.H-margin-vertical-top-10 {
+    margin-top: 10px;
+}
+.H-box-sizing-border-box {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.H-flexbox-horizontal {
+    display: box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-flow: row;
+    flex-flow: row;
+    width: 100%;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+/*聊天*/
+.dialog-myNew{
+	height: 600px;
+}
+.dialog-mynew-up{
+	height: 400px;
+    padding: 40px;
+    border-bottom: 1px solid;
+    border-color: #dbdbdb;
+    overflow-y:auto;
+    overflow-x: hidden;
+}
+	/*聊天框*/
+.chatbox-receiver{
+margin-bottom:20px;
+
+}
+/*头像*/
+.chatbox-img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+
+}
+.chatbox-img img{
+	width: 100%;
+	height: 100%;
+
+}
+/*聊天主体	*/
+.chat-box-left .chatbox-main{
+	margin-left: 50px;
+	color:#0e0e0e;
+font-size:14px;
+}
+.chatbox-content{
+	width: 362px;
+	padding:10px 40px 10px 28px;
+	line-height: 24px;
+	
+	position: relative;
+	border-radius:4px ;
+	
+}
+.chatbox-content-left{
+border:1px solid #bdbdbd;
+background: #fff;
+}
+
+/*小箭头*/
+.chatbox-main .pointwho{
+	width: 0;
+	height: 0;
+	border-top:6px solid transparent;
+	border-bottom:6px solid transparent;
+	border-left:10px solid transparent;
+	border-right:10px solid transparent;
+	position: absolute;
+    top: 20px;
+	
+
+}
+.chatbox-content-left .pointwholeft{
+	border-right-color:#a8a8a8;
+
+    left: -20px;
+  
+}
+.chatbox-content-left .pointwhoinleft{
+	border-right-color:#fff;
+    left: -19px;
+}
+/*头像右*/
+.chat-box-right .chatbox-main{
+margin-right:50px;
+color:#fff;
+font-size:14px;
+}
+/*小箭头右*/
+
+.chatbox-content-right .pointwhoright{
+	border-left-color:#3a7d21;
+   right: -20px;
+ 
+}
+.chatbox-content-right .pointwhoinright{
+	border-left-color:#4ea32f;
+    right: -19px;
+}
+/*右侧框*/
+.chatbox-content-right{
+	background: #4ea32f;
+	border:1px solid #3a7d21;
+}
+/*聊天时间*/
+.dialog-data{
+	font-size: 14px;
+	color:#333;
+	text-align: center;
+	margin-bottom:20px;
+}
+/*文件夹*/
+.chatbox-transferfolder .chatbox-content-right{
+	width: 264px;
+	height:172px; 
+	background: #fdc92a;
+	border:1px solid #dca90d;
+}
+.chatbox-transferfolder .transferfolder-point{
+	border-left-color:#dca90d;
+    right: -20px;
+}
+.chatbox-transferfolder .transferfolder-pointin{
+	border-left-color:#fdc920;
+   right: -19px;
+}
+/*文件框*/
+.chatbox-folder{
+	line-height: 24px;
+    position: relative;
+    border-radius: 4px;
+
+}
+/*文价图标*/
+.transfer-folder-up{
+	height: 124px;
+	width: 100%;
+	border:1px solid transparent;
+}
+/*文件箭头*/
+.transfer-folder-up .transfer-folder{
+	width: 57px;
+	height:62px;
+	margin:20px auto;
+}
+.transfer-folder-up .transfer-folder img{
+	width: 100%;
+	height: 100%;
+}
+/*文件注释*/
+.transfer-folder-down{
+	height:46px;
+	background: #fff;
+	padding:4px 10px ;
+	    border-bottom-left-radius: 4px;
+	     border-bottom-right-radius: 4px;
+}
+.transfer-folder-down .folder-text{
+	/*line-height: */
+	font-size:14px;
+	color: #222;
+	line-height: 22px;
+
+}
+.transfer-folder-down .folder-num{
+	/*line-height: */
+	font-size:12px;
+	color: #222;
+	line-height:20px;
+	
+}
+/*添加好友*/
+.chatbox-addfriend{
+	width:482px;
+	height: 230px;
+	line-height: 24px;
+    position: relative;
+    border-radius: 4px;
+}
+.chatbox-content-text{
+	padding:0 20px;
+}
+.chatbox-addfriend .addfriend-txt{
+	line-height: 40px;
+	font-size: 16px;
+	/*font-weight: bold;*/
+	color:#0e0e0e;
+    border-bottom: 1px solid #cecccc;
+
+}
+/*加好友信息*/
+.friendmsg{
+	margin-top:20px;
+}
+.friendimg{
+	width: 52px;
+	height:52px;
+	border-radius:50%;
+	margin-right: 26px;
+}
+.friendimg img{
+	width: 100%;
+	height: 100%;
+
+}
+.friendtxt{
+	font-size: 14px;
+	line-height: 26px;
+	margin-bottom: 20px;
+}
+.friendtxt .friendname{
+	color: #222;
+}
+.friendtxt .friendsource{
+	color: #666;
+}
+.verifyMessage{
+	color: #333;
+}
+/*加好友同意取消按钮*/
+.statebtn{
+	margin-top: 20px;
+
+}
+.statebtn .agreement,.statebtn .refuse{
+	width: 130px;
+	height: 40px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	border-radius: 4px;
+}
+.statebtn .agreement{
+background: #4ea32f
+}
+.statebtn .refuse{
+background: #ea5147;
+}
+/*输入框*/
+.lialog-mynew-write{
+	height: 198px;
+	padding-left:40px;
+}
+/*表情*/
+.lialog-brow{
+	height: 35px;
+	padding:10px;
+}
+.lialog-brow span{
+display: inline-block;
+width:25px;
+height: 25px;
+margin-right: 20px;
+}
+.lialog-brow .lialog-brow-exp{
+background: url(../img/exp.png) no-repeat;
+}
+.lialog-brow .lialog-brow-file{
+background: url(../img/file.png) no-repeat;
+}
+/*输入框*/
+.dialog-writeseit{
+	padding-right: 40px;
+}
+
+.dialog-writeseit textarea{
+	resize : none;
+	width: 100%;
+	height: 100px;
+	margin-top:5px;
+	border:none;
+}
+.dialog-writeseit textarea:focus{
+	outline: none;
+}
+/*发送按钮*/
+.dialog-send-btn{
+width:180px;
+height: 40px;
+border-radius: 4px;
+margin-right: 10px;
+margin-bottom: 20px;
+background: #ea5147;
+color: #fff;
+text-align: center;
+line-height: 40px;
+cursor: pointer;
+
+}
+
+
+/*全部消息*/
+.all-message-up{
+	width: 240px;
+	height: 130px;
+	border:1px solid #dbdbdb;
+	margin-bottom: 10px;
+	padding:38px 20px 34px 20px;
+	background: #fff;
+	}
+	/*操作列表*/
+.all-message-up .all-message-list{
+display: inline-block;
+
+
+}
+.all-message-up .all-message-list a{
+	color:#333;
+}
+.all-message-up li+li{
+	margin-left:28px;
+}
+.all-message-up .all-message-list span{
+display: block;
+width: 24px;
+height: 24px;
+margin:0 auto;
+margin-bottom: 16px;
+}
+.all-message-up .all-message-list .all-msg-new{
+	background: url(../img/msg.png) no-repeat center;
+}
+.all-message-up .all-message-list .all-msg-show{
+	background: url(../img/appointment.png) no-repeat center;
+}
+.all-message-up .all-message-list .all-msg-item{
+	background: url(../img/dispersing.png) no-repeat center;
+}
+/*二维码直播*/
+.all-message-down{
+	padding:20px 22px;
+	background: #fff;
+	border:1px solid #dbdbdb;
+}
+.all-message-down .qrcode-img{
+	width: 194px;
+	height: 194px;
+	margin:0 auto;
+}
+.all-message-down .qrcode-img img{
+	width: 100%;
+	height: 100%;
+}
+/*二维码文字*/
+.all-message-down .qrcode-notes{
+	font-size:16px;
+	color:#333;
+	line-height: 30px;
+	margin-top: 14px;
+}
+.all-message-down .downshow-app{
+	width:194px;
+	height: 40px;
+	border-radius: 4px;
+	background: #ea5147; 
+	text-align: center;
+	line-height: 40px;
+	margin:0 auto;
+	font-size: 14px;
+	margin-top: 14px;
+}
+.all-message-down .downshow-app a{
+	color:#fff;
+}
+
+
+

@@ -1,0 +1,60 @@
+<%- include ../include/header.html%>
+<%- include ../include/left.html%>
+<script>
+    function closewindow() {
+        document.getElementById("settingscontent").style.visibility = 'hidden';
+        window.location.href = '/backstage/userOs';
+    }
+</script>
+<div class="row" id="settingscontent" style="background: #ffffff;width: 768px;margin-left: 300px">
+    <div class="widget am-cf row-content am-cf">
+        <div class="widget-head am-cf">
+            <div class="widget-title am-fl">用户维护</div>
+            <div class="widget-function am-fr">
+                <a onclick="closewindow()">关闭</a>
+            </div>
+        </div>
+        <div class="widget-body am-fr">
+            <form class="am-form tpl-form-line-form" method="post" role="form" action="/backstage/userOs/update" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<%= user.id%>">
+
+                <div class="am-form-group">
+                    <label for="name" class="am-u-sm-3 am-form-label">系统管理员名字<span class="tpl-form-line-small-title">name</span></label>
+                    <div class="am-u-sm-9">
+                        <input type="text" class="tpl-form-input" id="name" name="name" placeholder="请输入名字" value="<%= user.name%>">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">角色 <span class="tpl-form-line-small-title">team</span></label>
+                    <div class="am-u-sm-9">
+                        <input type="text" name="role" id="role" placeholder="请填写角色" value="<%= user.role%>">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="doc-form-file" class="am-u-sm-3 am-form-label">头像 <span class="tpl-form-line-small-title">avatar</span></label>
+                    <div class="am-u-sm-9">
+                        <div class="am-form-group am-form-file">
+                            <div class="tpl-form-file-img">
+
+                            </div>
+                            <button type="button" class="am-btn am-btn-danger am-btn-sm">
+                                <i class="am-icon-cloud-upload"></i> 添加您的头像
+                            </button>
+                            <input id="doc-form-file" type="file" name="avatar" multiple>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <div class="am-u-sm-9 am-u-sm-push-3" onclick="closewindow()">
+                        <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">修改</button>&nbsp;
+                        <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success " onclick="closewindow()">关闭</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include ../include/footer.html%>

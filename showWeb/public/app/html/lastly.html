@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>最近直播</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/Hui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/css.css"/>
+	</head>
+	<body>
+		<div id="wrap" class="deletepage">
+			<header class="header">
+				<div class="back">
+	        		<img src="../image/back.png">
+	        	</div>
+	        	<h2 class="pagetitle">
+	        		最近直播
+	        	</h2>		
+			</header>
+			<div id="main" class="liverecord">
+				<div class="l_record">
+					<ul class="recordlist H-border-horizontal-left-c">
+						<li class="l_list">
+							<div class="l_date">
+								<span>
+									<img src="../image/point.png">
+								</span>
+								<span>2017.03.12 15:06</span>
+							</div>
+							<p class="l_title">直播了“<span>三生三世</span>“</p>
+							<ul class="bottomlist">
+								<li>
+									<span>
+										<img src="../image/history.png">
+									</span>
+									<span>23分钟</span>
+								</li>
+								<li>
+									<span>
+										<img src="../image/follow2.png">
+									</span>									
+									<span>134</span>
+								</li>
+								<li>
+									<span>
+										<img src="../image/heart.png">
+									</span>									
+									<span>1344</span>
+								</li>
+							</ul> 							
+						</li>
+						<li class="l_list">
+							<div class="l_date">
+								<span>
+									<img src="../image/point.png">
+								</span>
+								<span>2017.03.12 15:06</span>
+							</div>
+							<p class="l_title">直播了“<span>三生三世</span>“</p>
+							<ul class="bottomlist">
+								<li>
+									<span>
+										<img src="../image/history.png">
+									</span>
+									<span>23分钟</span>
+								</li>
+								<li>
+									<span>
+										<img src="../image/follow2.png">
+									</span>									
+									<span>134</span>
+								</li>
+								<li>
+									<span>
+										<img src="../image/heart.png">
+									</span>									
+									<span>1344</span>
+								</li>
+							</ul> 							
+						</li>
+					</ul>
+				</div>			
+			</div>				
+		</div>		
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript" src="../script/H.js"></script>
+	<script src="../script/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../script/click.js"></script>   
+	<script type="text/javascript">
+	    // apiready = function(){
+	              
+	    // };
+	    // function opencertification2() {
+	    //   api.openWin({
+	    //     name:'opencertification2',
+	    //     url:'opencertification2.html'
+	    //   })
+	    // }
+
+	    window.onload = function() {
+	        var back = document.getElementsByClassName('back')[0];
+
+	        back.addEventListener('touchstart', function(event) {
+	        	H.openWin('message','message.html');
+	        },false);
+	    }     
+	</script>
+</html>

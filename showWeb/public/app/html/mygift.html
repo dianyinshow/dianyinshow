@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>礼物</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/Hui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/css.css"/>     
+	</head>
+	<body>
+		<div id="wrap">
+			<header class="header">
+				<div class="back">
+	        		<img src="../image/back.png">
+	        	</div>
+	        	<h2 class="pagetitle">
+	        		我的礼物
+	        	</h2>		
+			</header>
+			<div id="main">
+				<ul>
+					<li class="m_giftlist H-clear-both">
+						<div class="m_gift H-float-left">
+							<span class="giftimg">
+								<img src="../image/gift1.png">
+							</span>
+							<span>火箭</span>
+							<span>x66</span>												
+						</div>
+						<div class="giftval H-float-right">66秀豆</div>
+					</li>
+					<li class="m_giftlist H-clear-both">
+						<div class="m_gift H-float-left">
+							<span class="giftimg">
+								<img src="../image/gift6.png">
+							</span>
+							<span>麦子</span>
+							<span>x99</span>	
+						</div>
+						<div class="giftval H-float-right">99秀豆</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	  <script type="text/javascript" src="../script/api.js"></script>
+	  <script type="text/javascript" src="../script/H.js"></script>
+	  <script src="../script/jquery-1.8.3.min.js"></script>
+	  <script type="text/javascript" src="../script/click.js"></script>   
+	  <script type="text/javascript">
+	    // apiready = function(){
+	              
+	    // };
+	    // function opencertification2() {
+	    //   api.openWin({
+	    //     name:'opencertification2',
+	    //     url:'opencertification2.html'
+	    //   })
+	    // }
+
+	    window.onload = function() {
+	        var back = document.getElementsByClassName('back')[0];
+	        var dfollow = document.getElementsByClassName('d_follow');
+	        var asklist = document.getElementsByClassName('asklist')[0];
+	        var noborder = document.getElementsByClassName('noborder')[0];
+
+	        back.addEventListener('touchstart', function(event) {
+	        	H.openWin('message','message.html');
+	        },false);    	
+	    }     
+	  </script>
+</html>

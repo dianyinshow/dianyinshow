@@ -1,0 +1,591 @@
+		*{
+    		font-family: "MicrosoftYaHei";
+    	}
+    	body{
+    		height: 100%;
+    	}
+		#wrap{
+			height: 100%;
+			background-image: url(../image/otherbg.png);
+			background-size: 100%;
+		}
+
+
+		/*<!-- 主播名称头像 -->*/
+
+		.topbox{
+			height: 41px;
+			padding-left: 12px;
+			box-sizing: border-box;
+			position: relative;
+		}
+		.photobox{
+			width: 127px;
+			height: 31px;
+			border-radius: 15px;
+			position: relative;
+			margin-top: 10px;
+		}
+		.photo-anchor{
+			width: 27px;
+			height: 27px;
+			border-radius: 50%;
+			margin: 2px 11px 2px 2px;
+		}
+		.nametitle{
+			font: 10px/20px "微软雅黑";
+			transform: scale(0.8);
+		}
+		.audience{
+			height: 12px;
+			line-height: 12px;
+			text-align: center;
+			position: absolute;
+			left: 44px;
+			bottom: 0;
+			font: 10px/12px "微软雅黑";
+		}
+		.audience img{
+			width: 7px ;
+			height: 7px;
+			margin-top: 2px;
+		}
+		.audience span{
+			transform: scale(0.8);
+		}
+
+		.heart{
+			width: 22px;
+			height: 22px;
+			border-radius: 50%;
+			position: absolute;
+			top: 5px;
+			right: 5px;
+		}
+		.heart>img{
+			width: 14px;
+			height: 12px;
+			position: relative;
+			top: 6px;
+			left: 4px;
+		}
+		.voice{
+			width: 100%;
+			height: 13px;
+			margin: 10px 0 0 19px;
+			display: none;
+		}
+			
+		/*关注*/
+
+		.follow{
+			width: 34px;
+			height: 14px;
+			line-height: 14px;
+			margin-top: 12px;
+			margin-left: 18px;
+			border-radius: 7px;
+		}
+		.closea{
+			margin-right: 12px;
+			margin-top: 15px;
+			width: 20px;
+			height: 20px;
+		}
+		.closea>img{
+			width: 100%;
+		}
+
+		/*更多头像*/
+		.morephoto{
+			right: 43px;
+			top: 10px;
+			height: 31px;
+		}
+		.morephoto>ul>li{
+			margin-left: 6px;
+			width: 28px;
+			height: 28px;
+			border-radius: 50%;
+		}
+		.morephoto>ul>li>img{
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+		}
+		.more-list{
+			background-color: #968e80;
+			color: #d5decb;
+			text-align: center;
+			font-size: 18px;
+		}
+
+		/*观众列表*/
+		.audience-list{
+			width: 180px;
+			right: 0px;
+			top: 0px;
+			height: 100%;
+			background-color: rgba(0,0,0,0.8);
+			padding: 0px 13px;
+		}
+		.text-title{
+			margin-top:2px;
+			height: 35px;
+			line-height: 35px;
+			border-bottom: solid 1px #47423e;
+		}
+		.exit-list{
+			height: 12px;
+			line-height: 12px;
+			top: 3px;
+			right: 18px;
+			color: white;
+			font-size: 14px;
+
+		}
+		.list{
+
+		}
+		.list>li{
+			height: 35px;
+			line-height: 35px;
+			border-bottom: solid 1px #47423e;
+			color: white;
+		}
+		.list>li>img{
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			vertical-align: middle;
+			margin-right: 8px;
+		}
+
+		
+
+
+		/*p评论*/
+
+		.comment{
+			width: 100%;
+			left: 12px;
+			box-sizing: border-box;
+		}
+		.communicate-gift{
+			width: 146px;
+		}
+		.communicate-gift>li{
+			position: relative;
+			width: 100%;
+			height: 32px;
+			border-radius: 16px;
+			background-color: rgba(0,0,0,0.35);
+			margin-top: 7px;		
+		}
+		.communicate-gift>li>img{
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+		}
+
+		.sendanchor{
+			margin-left: 8px;
+			height: 32px;
+
+		}
+
+		.sendanchor>span{
+			display: inline-block;
+			height: 8px;
+			line-height: 8px;
+			position: relative;
+			color: #ea5147;
+			top: -2px;
+		}
+		.sendanchor>p{
+			position: relative;
+			top: -12px;
+		}
+
+		.sendphoto{
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+
+		}
+		.sendphoto>img{
+			width: 100%;
+			border-radius: 50%;
+			position:relative;
+			top: 50%;
+			left: 0px;
+			transform: translateY(-34%);
+		}
+
+
+		.number{
+			right: -40px; 
+			color: #ea5147;		
+		}
+
+		.system-brotcast{
+			width: 100%;
+			padding-right: 16px;
+			box-sizing: border-box;
+		}
+
+		.system-brotcast>p{
+			font-family: "MicrosoftYaHei";
+			font-size: 12px;
+			color: #ea5147;
+		}
+
+		.communication{
+			width: 120px;
+		}
+
+		.communication>li{
+			margin-top: 10px;
+			padding:0px 10px;
+			height: 20px;
+			line-height: 20px;
+			font-family: "MicrosoftYaHei";
+			font-size: 12px;
+			color: #fff;
+			border-radius: 10px;
+			background-color: rgba(0,0,0,0.5);
+		}
+		.communication>li:nth-child(1) {
+			background-color: #ea5147;
+			opacity: 0.5;		
+		}
+		.usename{
+			font-family: "MicrosoftYaHei";
+			font-size: 12px;
+			color: #ea5147;
+		}
+
+		.communication>li:nth-child(1) .usename{
+			color: white;
+		}
+		
+		
+
+@media all and (orientation : landscape) { /*　　这是匹配横屏的状态，横屏时的css代码　　*/
+	
+	/*隐鲹所有二级框*/
+	.audience-list,.share-more,.share-box{
+		display: none;
+	}
+	.comment{
+		bottom: 10px;
+	}
+	.text-title{
+		margin-top: 2px;
+	}
+	.footer{
+		width: 36px;
+		height: 180px;
+		bottom: 14px;
+		right: 13px;
+	}
+	.footer>ul>li{
+		width: 100%;
+		height: 35px;
+		border-radius: 50%;
+		background-color: rgba(0,0,0,0.8);
+		margin-top:10px;
+	}
+	.footer>ul>li>img{
+		width: 50%;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
+	/*分享框*/
+	.share-box,.share-more{
+		width: 234px;
+		height:100%;
+		top: 0px;
+		right: 0px;
+		background-color: rgba(0,0,0,0.8);
+	}
+	.share-box>p:nth-child(1) {
+		margin-top: 54px;
+		margin-bottom: 7px;
+	}
+	.share-box>p:nth-child(2) {
+		padding: 0px 46px;
+		box-sizing: border-box;
+	}
+	.share-photo{
+		margin-top: 33px;
+		padding: 0px 30px;
+		box-sizing: border-box;
+		height: 100px;
+		position: relative;
+	}
+	.share-photo>div{
+		height: 40px;
+		position: absolute;
+	}
+	.share-photo>div:nth-child(2) {
+		left: 98px;
+		top: 0px;
+	}
+	.share-photo>div:nth-child(3) {
+		right: 30px;
+		top: 0px;
+	}
+	.share-photo>div:nth-child(4) {
+		left: 65px;
+		top: 60px;
+	}
+	.share-photo>div:nth-child(5) {
+		left: 133px;
+		top: 60px;
+	}
+
+	.share-more .share-photo>div:nth-child(4) {
+		left: 65px;
+		top: 78px;
+	}
+	.share-more .share-photo>div:nth-child(5) {
+		left: 133px;
+		top: 78px;
+	}
+	.share-more>.share-photo{
+		margin-top: 90px;
+	}
+
+
+	/*图标背景*/
+
+		.weixinbg{
+			background-color: #1aad19;
+			margin-bottom: 10px;
+		}
+
+		.xinlangbg{
+			background-color: #ea5147;
+			margin-bottom: 10px;
+		}
+
+		.qqbg{
+			background-color: #1284c7;
+			margin-bottom: 10px;
+		}
+
+		.qqkjbg{
+			background-color: #f5be3f;
+			margin-bottom: 10px;
+		}
+
+		.qqkjbg>img{
+			width: 70%;
+		}
+		.weixinbg>img,.xinlangbg>img,.qqbg>img{
+			width: 60%;
+		}
+		.share-more .H-flex-item{
+			color:#dadada;
+			font-family: "MicrosoftYaHei";
+			font-weight: 10px;
+		}
+
+		.share-more .H-flex-item span{
+			background-color: #dadada;
+		}
+		.share-more .H-flex-item:nth-child(2) span,
+		.share-more .H-flex-item:nth-child(3) span{
+			background-color: #ea5147;
+		}
+		.p-hight{
+			position: relative;
+			top: 2px;
+			left: 0px;
+		}
+
+		.share-more .p-hight{
+			top: 4px;
+		}
+
+
+
+
+		/*取消按钮*/
+		.cancel{
+			width: 100%;
+			position: absolute;
+			bottom: 40px;
+			left:0px;
+			text-align: center;
+			padding: 0px 37px;
+			box-sizing: border-box;
+		}
+		.cancel button{
+        	width: 100%;
+        	height: 35px;
+        	font: 15px/35px "微软雅黑";
+        	color: #ffffff;
+        	background: #ea5147;
+        	border-radius: 4px;
+
+        }
+} 
+@media all and (orientation : portrait){ /*　　这是匹配竖屏的状态，竖屏时的css代码　　*/
+	/*底部栏*/
+		.comment{
+			bottom: 74px;
+		}
+		.text-title{
+			margin-top: 25px;
+		}
+		.footer{
+			height: 51px;
+			bottom: 0px;
+			left: 0px;
+			background-color: rgba(0,0,0,0.8);
+		}
+		.footer>ul>li{
+			float: left;
+			width: 25%;
+			height: 51px;
+		}
+		.footer>ul>li>img{
+			width: 20%;
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		.footer>ul>li:nth-child(2n)>img{
+			width: 25%;
+		}
+		/*分享框*/
+		.share-box{
+			height: 234px;
+		}
+
+		.share-more{
+			height: 185px;
+		}
+		.share-box,.share-more{		
+			bottom: 0px;
+			left: 0px;
+			background-color: rgba(0,0,0,0.8);
+			display: none;
+		}
+		
+		.share-box>p:nth-child(1) {
+			margin-top: 23px;
+		}
+
+		.share-where{
+			height: 47px;
+			padding: 0px 50px;
+			box-sizing: border-box;
+		}
+
+		.share-photo{
+			margin-top: 19px;
+		}
+
+		.cancel{
+			margin-top: 9px;
+			text-align: center;
+		}
+		.cancel button{
+        	width: 260px;
+        	height: 44px;
+        	font: 18px/44px "微软雅黑";
+        	color: #ffffff;
+        	background: #ea5147;
+        	border-radius: 4px;
+
+        }
+        button{
+			padding: 0;
+		}
+
+		.p-hight{
+			position: relative;
+			top: 2px;
+			left: 0px;
+		}
+
+		.share-more .p-hight{
+			top: 4px;
+		}
+
+
+		/*图标背景*/
+
+		.weixinbg{
+			background-color: #1aad19;
+			margin-bottom: 10px;
+		}
+
+		.xinlangbg{
+			background-color: #ea5147;
+			margin-bottom: 10px;
+		}
+
+		.qqbg{
+			background-color: #1284c7;
+			margin-bottom: 10px;
+		}
+
+		.qqkjbg{
+			background-color: #f5be3f;
+			margin-bottom: 10px;
+		}
+
+		.qqkjbg>img{
+			width: 70%;
+		}
+		.weixinbg>img,.xinlangbg>img,.qqbg>img{
+			width: 60%;
+		}
+		.share-more .H-flex-item{
+			color:#dadada;
+			font-family: "MicrosoftYaHei";
+			font-weight: 10px;
+		}
+
+		.share-more .H-flex-item span{
+			background-color: #dadada;
+		}
+		.only-text{
+			bottom: 18px;
+			left: 0px;
+			color: white;
+		}
+}
+/*更多背景*/
+.special .special_c{
+	background: url("../image/effects.png") 8px 10px no-repeat;
+	background-size: 24px 21px;
+}
+.gift .gift_c{
+	background: url("../image/allgilf.png") 9px 9px no-repeat;
+	background-size: 23px 22px;
+}
+.com .comment_c{
+	background: url("../image/barrage.png") 8px 11px no-repeat;
+	background-size: 25px 19px;
+}
+.light .light_c{
+	background: url("../image/flashlight.png") 14px 9px no-repeat;
+	background-size: 13px 24px;
+}
+.mute .mute_c{
+	background: url("../image/sounds.png") 8px 12px no-repeat;
+	background-size: 24px 16px;
+}
+
+
+		
+
+		

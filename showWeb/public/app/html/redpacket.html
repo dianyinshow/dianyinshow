@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/Hui.css">
+
+    <style>
+			html,body{
+			 	background: #fff;
+			 	font: 12px/23px "微软雅黑";
+			 }  	
+			header {
+				background-color: #ea5147;
+				height:44px;
+				/*line-height: 44px;*/
+				position: relative;
+			}
+			.H-yuan-mycircle{
+		        left:12px;
+		        top:13px;
+		        position: absolute;  
+		     }
+
+		     .exit-certification{
+		     	right:12px;
+		        top:13px;
+		        position: absolute;
+		     }
+
+			header .border-b {
+				line-height: 44px;
+				text-align: center;
+				color: #ffffff;
+				font-size: 16px;
+			}
+			.flex-con .edit{
+				height: 63px;
+				border: 1px dotted #dbdbdb;
+				box-sizing: border-box;
+				font: 12px/23px "微软雅黑";
+				color:#0f0f0f;
+				padding: 20px 12px;
+				position: relative;
+			}
+			.flex-con .edit span{
+				right: 12px;
+		        top: 26px;
+		        position: absolute; 
+			}
+
+			/*单个金额*/
+			.single-amount,.number-amount{
+				font-family: "MicrosoftYaHeiUl";
+				font-size: 16px;
+				color: #0e0e0e;
+				box-sizing: border-box;
+				padding: 0px 12px;
+			}
+			.single-amount{
+				height: 43px;
+				line-height: 43px;
+			}
+			.single-amount input{			
+				width: 68%;
+				margin-right: 10px;				
+			}
+			.single-amount input,.number-amount input{
+				border: none;
+				outline: medium;
+				color: #0f0f0f;
+			}
+			.single-amount input::placeholder,.number-amount input::placeholder{
+				color: #888a92;
+			}
+
+			.change-amount{
+				height: 27px;
+				line-height: 27px;
+				background-color: #f8f8f8;
+				padding: 0px 12px;
+				color: #888a92;
+				box-sizing: border-box;
+			}
+			.change-amount>p{
+				transform: scale(0.9);
+				position: relative;
+				left: -19px;
+			}
+			.change-amount>p>.change-class{
+				color: #ea5147;
+			}
+			/*红包个数*/
+			.number-amount{
+				height: 44px;
+				line-height: 44px;
+			}
+			.number-amount input{
+				width: 71%;
+				margin-right: 15px;
+			}
+			/*数量显示*/
+			.num-now{
+				height: 166px;
+				padding: 75px 0px 61px 0px;
+				box-sizing: border-box;
+				font-family: 'MicrosoftYaHei';
+				color: #0f0f0f;
+				font-size: 36px;
+			}
+
+
+			.button-submit{
+				padding: 0px 16px;
+			}
+			button.submit{
+				
+				background-color: #ea5147;
+				border: none;
+				box-sizing: border-box;
+			}
+
+			.xtext{
+				margin-top:31px;
+				font-family: 'MicrosoftYaHei';
+				color: #0f0f0f;
+				font-size: 12px;
+			}
+			.xtext>span{
+				color: #ea5147;
+			}
+
+    	
+    </style>
+	
+</head>
+<body>
+	<div id="wrap" class="flex-wrap flex-vertical">
+		<header>
+			<div tapmode="" onclick="closewindow()" class="H-yuan-mycircle">
+	    		<img src="../image/iconp.png" style="max-height: 18px">
+	    	</div>
+	    	<p class="border-b active">
+	    		发红包
+	    	</p>
+		</header>
+		<!-- 单个金额 -->
+		<div class="single-amount H-width-100-percent">
+			<b class="change-money">单个金额</b>
+			<input type="text" class="H-text-align-right" placeholder="填写数量（当前余额2000）">
+			<b class="H-float-right">秀币</b>
+		</div>
+
+		<div class="H-width-100-percent change-amount">
+			<p>当前红包为<span class="change-name">普通</span>红包，<span class="change-class">改为拼手气红包</span></p>
+		</div>
+
+		<!-- 红包个数 -->
+		<div class="number-amount H-width-100-percent">
+			<b>红包个数</b>
+			<input type="text" class="H-text-align-right" placeholder="填写个数">
+			<b class="H-float-right">个</b>
+		</div>
+		<div class="H-width-100-percent change-amount">
+			<p>当前观看人数：6466</p>
+		</div>
+
+		<!-- 额数显示 -->
+		<div class="H-width-100-percent H-text-align-center num-now">￥0.00</div>
+		
+		<!-- 塞秀币进钱包 -->
+		<div class="button-submit">
+			<button class="submit H-bg-color H-button H-width-100-percent  H-font-size-15 H-outline-none H-padding-vertical-both-15 H-padding-horizontal-both-20 H-theme-background-color9 H-theme-font-color-white H-theme-border-color9   H-theme-font-color9-click H-border-radius-3" onclick="opencertification2()">塞秀币进钱包</button>
+		</div>
+
+		<div class="H-width-100-percent H-text-align-center xtext">
+			不够了，<span>充值秀币</span>
+		</div>
+
+	</div>	
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/H.js"></script>
+<script type="text/javascript" src="../script/click.js"></script>
+<script type="text/javascript">
+	apiready = function(){
+		
+	};
+	function opencertification2() {
+		api.openWin({
+			name:'opencertification2',
+			url:'opencertification2.html'
+		})
+	}
+
+	function closewindow() {
+		console.log(11)
+		H.closeWin();
+	}
+	window.onload = function() {
+		changeClass();
+	}
+
+</script>
+</html>

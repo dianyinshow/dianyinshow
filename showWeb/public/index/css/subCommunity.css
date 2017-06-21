@@ -1,0 +1,402 @@
+section {
+    width:1200px;
+    margin:100px auto 0;
+    overflow: hidden;
+    background-color: #fff;
+    padding:50px 80px 72px 80px ;
+}
+
+.left-wrap{
+    float:left;
+    width:70%;
+    /*height:2084px;*/
+    overflow: hidden;
+}
+
+.left-wrap h2{
+    font-family: "Microsoft YaHei";
+    font-size:30px;
+    color:#000;
+    font-weight: normal;
+}
+
+
+
+.small-title{
+    margin-top:5px;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    color:#b2b2b2;
+    font-weight: normal;
+}
+
+.datetime-title{
+    float:left;
+    padding-left:30px;
+    background: url(../images/community/timer.png) no-repeat 2px 0;
+}
+
+.number{
+    float:left;
+    padding-left:30px;
+    margin-left:38px;
+    background: url(../images/community/number.png) no-repeat 2px 2px;
+}
+
+.imgWrap{
+    width:100%;
+    margin-top:42px;
+    margin-bottom: 36px;
+}
+
+.imgWrap img{
+    width:100%;
+}
+
+.left-wrap p{
+    text-align: left;
+    width:100%;
+    margin-top:22px;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    color:#000;
+    font-weight: normal;
+}
+
+.loveNum {
+    margin-top:62px;
+}
+
+.imgW{
+    width:65px;
+    height:65px;
+    margin:0 auto;
+    position: relative;
+}
+
+.imgW span{
+    position: absolute;
+    top:40px;
+    left:20px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: normal;
+    color:#fff;
+}
+
+.loveNum ul{
+    width:90px;
+    height:30px;
+    margin:10px auto 50px;
+}
+
+.loveNum ul li{
+    width:25px;
+    height:30px;
+    float:left;
+    margin-left: 14px;
+}
+
+.line{
+    width:711px;
+    height:1px;
+    background-color:#e5e5e5;
+}
+
+/*评论区*/
+.comment p{
+    margin-top:15px;
+}
+
+.comment b{
+    float: left;
+    width:20px;
+    height:20px;
+    background: url(../images/community/pinglun.png) no-repeat;
+    margin-right:10px;
+    padding-top:5px;
+}
+
+.comment textArea{
+    width:100%;
+    height:120px;
+    border:1px solid #e5e5e5;
+    resize:none;
+    padding: 5px 10px;
+}
+
+.comment textArea:focus{
+    outline: none;
+}
+
+.comment a{
+    float:right;
+    width:100px;
+    height:30px;
+    border-radius:5px;
+    background-color: #e60012;
+    text-align: center;
+    line-height:30px;
+    color:#fff;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: normal;
+    margin-top:10px;
+}
+
+.comment-cont {
+    margin-top:50px;
+}
+
+.icon-img{
+    width:8%;
+}
+
+.comment-cont .icon-img,.comm-right-wrap{
+    float:left;
+}
+
+.comm-right-wrap{
+    margin-left:5px;
+    width:90%;
+}
+
+.comm-right-wrap p{
+    margin-top:5px;
+}
+
+.comm-right-wrap .reply{
+    float:right;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: normal;
+    margin-top:5px;
+    cursor: pointer;
+}
+
+.comment-cont li{
+    width:99%;
+    overflow: hidden;
+    padding:20px 0px 3px;
+    border-bottom:1px solid #e5e5e5;
+}
+
+.comm-right-wrap > div > span,.comm-right-wrap > p{
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: normal;
+    color:#000;
+}
+
+.comm-right-wrap > div > b{
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    font-weight: normal;
+    color:#b2b2b2;
+}
+
+/*右侧*/
+.right-wrap{
+    float:right;
+    width:26%;
+    height:400px;
+}
+
+.outline-wrap{
+    width:100%;
+    height:480px;
+    /*border: 1px solid #e5e5e5;*/
+    padding:15px;
+    position: relative;
+}
+
+
+
+
+.right-content-wrap{
+    width:100%;
+    overflow: hidden;
+}
+
+.divWrap{
+    position: absolute;
+    top:-20px;
+}
+
+.right-content-wrap h3{
+    margin-top:50px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: normal;
+    color:#000;
+}
+
+.article-Num{
+    width:100%;
+    height:40px;
+    line-height: 40px;
+    padding-left:20px;
+    margin-top:15px;
+    border-bottom:1px solid #e5e5e5;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: normal;
+    color:#b2b2b2;
+    background:url(../images/community/article.png) no-repeat 0px 12px;
+}
+
+.right-content-wrap h2{
+    margin-top:10px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: normal;
+    color:#000;
+}
+
+.recent-article{
+    overflow: hidden;
+    margin-top:10px;
+}
+.recent-article li{
+    margin-bottom: 20px;
+}
+
+.recent-article p{
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    font-weight: normal;
+    color:#000;
+}
+
+.recent-article .publish-time{
+    font-family: "Microsoft YaHei";
+    font-weight: normal;
+    font-size: 12px;
+    color:#b2b2b2;
+}
+
+.outline-wrap .read-more{
+    display: block;
+    padding:10px;
+    margin:0 auto;
+    border-radius:5px;
+    background-color: #e60012;
+    text-align: center;
+    line-height:30px;
+    color:#fff;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: normal;
+}
+.bannerwrap{
+    margin-top:80px;
+    position: relative;
+}
+
+.bannerwrap h2{
+    font-family: 微软雅黑;
+    font-size: 36px;
+    color:#fff;
+    position: absolute;
+    top:84px;
+    left:582px;
+    font-weight: normal;
+}
+.bannerwrap h3{
+    font-family: 微软雅黑;
+    font-size: 24px;
+    color:#fff;
+    position: absolute;
+    top:144px;
+    left:552px;
+    font-weight: normal;
+}
+
+.bannerwrap img{
+    width:100%;
+    height: 264px;
+}
+
+.wrap{
+    width:1200px;
+    height:50px;
+    margin:0 auto;
+}
+
+.btn-ul{
+    width:800px;
+    margin:50px auto 0px;
+}
+
+.btn-ul li{
+    float:left;
+    width:120px;
+    height:40px;
+    margin-right: 22px;
+    text-align: center;
+    line-height: 40px;
+    border:1px solid #ff8811;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color:#000;
+    cursor: pointer;
+}
+
+li.li-active{
+    color:#fff;
+    background-color: #ff8811;
+}
+
+.btn-content{
+    width:100%;
+    height:800px;
+}
+
+.btn-content li{
+    width:23%;
+    height:360px;
+    float:left;
+    margin-right: 2%;
+    margin-top:50px;
+    padding:14px;
+    background-color: #fff;
+    position: relative;
+}
+
+.btn-content li h3{
+    margin-top:18px;
+}
+
+.btn-content li p{
+    font-size: 10px;
+    font-family: "微软雅黑";
+    color:#b2b2b2;
+    margin-top:4px;
+}
+
+.btn-content li div{
+    margin-bottom:10px;
+    width:90%;
+    position: absolute;
+    bottom:5px;
+}
+
+.btn-content li div span{
+    font-size: 10px;
+    font-family: "微软雅黑";
+    color:#b2b2b2;
+}
+
+.btn-content li div .left-text{
+    float:left;
+}
+
+.btn-content li div .right-time{
+    float:right;
+}
+
+
+
+

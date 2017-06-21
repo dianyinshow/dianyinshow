@@ -1,0 +1,272 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>新增直播横屏</title>
+		<link href="../css/Hui.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			body{
+				background: #ffffff;
+				position: relative;
+			}
+			.header label{
+				color: #ea5147;
+				font: 15px/44px "微软雅黑";
+				margin-left: 7px;
+			}
+			.content .change{
+				height: 41px;
+			}
+			.content .change .change_btn{
+				display: block; 
+				width: 13px;
+				height: 30px;
+				padding: 2px;
+				float: right;
+				margin-top: 7px;
+				margin-right: 19px;
+				background: url("../image/colscreen.png") 0 0 no-repeat;
+				background-size: 9px 26px;
+				
+			}
+			.content .change .change_btn2{
+				display: block; 
+				width: 30px;
+				height: 13px;
+				padding: 2px;
+				float: right;
+				margin-top: 10px;
+				margin-right: 37px;
+				background: url("../image/rowscreen.png") 0 0 no-repeat;
+				background-size: 26px 9px;
+				
+			}
+			.what{
+				width: 100%;
+				padding: 14px 0 25px 0;
+				box-sizing: border-box;
+				border-bottom: 1px solid #dadada;
+				text-align: center;
+			}
+			.what .whatcon{
+				font: 15px/20px "微软雅黑";
+				color: #0e0e0e;
+			}
+			p{
+			    display: block;
+			    -webkit-margin-before: 0em;
+			    -webkit-margin-after: 0em;
+			    -webkit-margin-start: 0px;
+			    -webkit-margin-end: 0px;
+			}
+			.style{
+				margin-top: 37px;
+				text-align: center;
+			}
+			.style div{
+				font: 12px/22px "微软雅黑";
+			}
+			.style img{
+				margin-left: 11px;
+				padding: 5px;
+			}
+            .H-bg-color{
+	            font: 15px/44px "微软雅黑";	
+		        background: #ea5147;
+		        border:none;
+	        }
+	        .share span{
+	        	margin-left: 1px;
+	        	font: 12px/30px "微软雅黑";
+	        	color: #111111;
+	        }
+	        .sharelist{
+	        	width: 100%;
+	        	background: #333333;
+	        	padding: 19px 0 46px;
+	        	text-align: center;
+	        	position: absolute;
+	        	left: 0;
+	        	bottom: 0;
+	        	display: none;
+	        }
+	        .sharelist .shareto{
+	        	font: 14px/22px "微软雅黑";
+	        	color: #ffffff;
+	        }
+	        .sharelist .shareup{
+	        	font: 12px/19px "微软雅黑";
+	        	color: #ffffff;
+	        }
+	        .cancel button{
+	        	width: 260px;
+	        	height: 44px;
+	        	font: 18px/44px "微软雅黑";
+	        	color: #ffffff;
+	        	background: #ea5147;
+	        }
+	        button{
+				padding: 0;
+			}
+			.attestation{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background: rgba(0,0,0,.3);
+				box-sizing: border-box;
+				display: none;
+			}
+			.attes{
+				position: absolute;
+				top: 259px;
+				left: 50%;
+				margin-left: -125px;
+				width: 250px;
+				height: 110px;
+				background: #f8f8f8;
+				padding-top: 10px;
+				box-sizing: border-box;
+				text-align: center;
+			}
+			.attes h2{
+				font: 15px/25px "微软雅黑";
+				color: #000000;
+				font-weight: bold;
+			}
+			h2 {
+			    -webkit-margin-before: 0;
+			    -webkit-margin-after: 0;
+			    -webkit-margin-start: 0;
+			    -webkit-margin-end: 0;
+			}
+			.attes p{
+				font: 12px/18px "微软雅黑";
+				color: #000000;
+				box-sizing: border-box;
+				border-bottom: 1px solid #aeacac;
+				padding: 4px 0 5px 0;
+			}
+			.attes div{
+				font: 15px/30px "微软雅黑";
+				color: #ea5147;
+			}
+		</style>
+	</head>
+	<body class="H-height-100-percent H-box-sizing-border-box H-overflow-hidden" style="">
+		<header class="H-header header H-padding-horizontal-both-7">
+			<span tapmode="" class="location H-icon H-position-relative H-display-inline-block H-float-left H-vertical-middle H-theme-font-color-white H-padding-horizontal-left-5 H-z-index-100"><img src="../image/location2.png" style="max-height:21px"><label class="H-display-block H-vertical-middle">北京市</label></span>
+			<span onclick="closewin()" class="H-icon H-position-relative H-display-block H-float-right H-vertical-middle H-padding-horizontal-both-5 H-z-index-1000"><img src="../image/closea.png" style="max-height:22px"></span>
+		</header>
+		<div class="content">
+			<div class="change">
+				<span class="change_btn"></span>
+				<!-- <img src="../image/rowscreen.png"  class="point H-padding-5" style="max-height:8px"> -->
+			</div>
+			<div class="what">
+				<p class="whatcon">你想要直播什么呀？</p>
+			</div>
+			<div class="style H-text-list H-flexbox-horizontal  H-theme-background-color-white">
+	        	<div class="H-flex-item H-padding-vertical-both-10">直播类型：<span class="title">剧组囧事</span><img src="../image/more.png"  style="max-height: 10px"></div>   
+	    	</div>
+	      	<div class="start H-margin-vertical-top-47 H-padding-horizontal-both-16">
+	            <button class="H-bg-color H-button H-width-100-percent H-outline-none  H-theme-font-color-white H-theme-border-color9 H-theme-font-color9-click H-border-radius-4">开始直播</button>
+	        </div>
+	        <center class="share H-margin-vertical-top-40">
+	        	<img class="H-padding-5" src="../image/share.png" style="max-height: 20px">
+	            <span>分享给好友</span>
+	        </center>
+	        <div class="sharelist">
+	        	<p class="shareto">分享至</p>
+	        	<p class="shareup">鼓励粉丝用app分享，可以提升你的人气！</p>
+	        	<div class="H-flexbox-horizontal H-text-align-center H-margin-vertical-top-17">
+			    	<div class="H-flex-item">
+			            <span class="H-icon H-center-all H-theme-background-color10 H-border-radius-circle H-margin-horizontal-auto" style="height: 40px; width: 40px;"><i class="H-iconfont H-icon-weixin H-font-size-22 H-theme-font-color-white"></i></span>
+			        </div>
+			      	<div class="H-flex-item">
+			            <span class="H-icon H-center-all H-theme-background-color11 H-border-radius-circle H-margin-horizontal-auto" style="height: 40px; width: 40px;"><i class="H-iconfont H-icon-friends H-font-size-22 H-theme-font-color-white"></i></span>		            
+			        </div>
+			        <div class="H-flex-item">
+			            <span class="H-icon H-center-all H-theme-background-color12 H-border-radius-circle H-margin-horizontal-auto" style="height: 40px; width: 40px;"><i class="H-iconfont H-icon-weibo H-font-size-22 H-theme-font-color-white"></i></span>		            
+			        </div>
+			        <div class="H-flex-item">
+			            <span class="H-icon H-center-all H-theme-background-color13 H-border-radius-circle H-margin-horizontal-auto" style="height: 40px; width: 40px;"><i class="H-iconfont H-icon-qq H-font-size-22 H-theme-font-color-white"></i></span>		            
+			        </div>
+			        <div class="H-flex-item">
+			            <span class="H-icon H-center-all H-theme-background-color14 H-border-radius-circle H-margin-horizontal-auto" style="height: 40px; width: 40px;"><i class="H-iconfont H-icon-qzone H-font-size-22 H-theme-font-color-white"></i></span>		            
+			        </div>
+			    </div>
+			    <div class="cancel H-margin-vertical-top-29">
+		            <button class="H-bg-color H-button H-width-100-percent H-outline-none  H-theme-font-color-white H-theme-border-color9 H-theme-font-color9-click H-border-radius-4">取消</button>
+		        </div> 
+	        </div>
+	        <div class="attestation">
+		        <div class="attes H-border-radius-9">
+		        	<h2>实名认证</h2>
+		        	<p>根据相关法律法规的规定，<br>
+		        	必须完成点映秀认证后才能直播
+		        	</p>
+		        	<div class="toattes">去认证</div>
+		        </div>
+		    </div>
+		</div>
+		
+	</body>
+	  <script type="text/javascript" src="../script/api.js"></script>
+	  <script type="text/javascript" src="../script/H.js"></script>
+	  <script src="../script/jquery-1.8.3.min.js"></script>
+	  <script type="text/javascript" src="../script/click.js"></script>   
+	  <script type="text/javascript">
+	    apiready = function(){
+	              
+	    };
+	    function opencertification2() {
+	      api.openWin({
+	        name:'opencertification2',
+	        url:'opencertification2.html'
+	      })
+	    }
+
+	    window.onload = function() {
+		//显示更多用户操作
+			var btn = document.getElementsByClassName('change')[0].getElementsByTagName("span")[0];
+			//console.log(btn.length)
+			var style = document.getElementsByClassName('style')[0];
+			var share = document.getElementsByClassName('share')[0];
+			var sharelist = document.getElementsByClassName('sharelist')[0];
+			var cancel = document.getElementsByClassName('cancel')[0];
+			var start = document.getElementsByClassName('start')[0];
+			var attestation = document.getElementsByClassName('attestation')[0];
+			var toattes = document.getElementsByClassName('toattes')[0];
+
+		 
+		    style.onclick = function() {
+				H.openWin('type','type.html');
+			};	
+			share.onclick = function() {
+				jquery.show(sharelist);
+			};
+			jquery.close(cancel,sharelist);	
+			// start.onclick = function() {
+			// 	jquery.show(attestation);
+			// };
+			start.onclick = function() {
+				H.openWin('clientanchor2','clientanchor2.html');
+			};
+			jquery.close(cancel,sharelist);	
+
+			toattes.onclick = function() {
+				H.openWin('certification0','certification0.html');
+			};	
+			btn.onclick = function() {
+				if(btn.className=="change_btn"){
+					btn.className = 'change_btn2';
+				}else{
+					btn.className = 'change_btn';
+				}
+			};
+		}   
+  </script>
+</html>

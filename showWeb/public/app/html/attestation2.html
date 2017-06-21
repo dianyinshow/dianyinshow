@@ -1,0 +1,158 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>反馈框</title>
+		<link href="../css/Hui.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			body{
+				background: #ffffff;
+				position: relative;
+			}
+			.header{
+				background: #ffffff;
+			}
+			.header label{
+				color: #ea5147;
+				font: 15px/44px "微软雅黑";
+				margin-left: 7px;
+			}
+			.change{
+				height: 41px;
+			}
+			.point {
+				float: right;
+				margin-top: 13px;
+				margin-right: 40px;
+			}
+			.what{
+				width: 100%;
+				padding: 14px 0 25px 0;
+				box-sizing: border-box;
+				border-bottom: 1px solid #dadada;
+				text-align: center;
+			}
+			.what .whatcon{
+				font: 15px/20px "微软雅黑";
+				color: #0e0e0e;
+			}
+			p{
+			    display: block;
+			    -webkit-margin-before: 0em;
+			    -webkit-margin-after: 0em;
+			    -webkit-margin-start: 0px;
+			    -webkit-margin-end: 0px;
+			}
+			.style{
+				margin-top: 37px;
+				text-align: center;
+			}
+			.style div{
+				font: 12px/22px "微软雅黑";
+			}
+			.style img{
+				margin-left: 11px;
+				padding: 5px;
+			}
+            .H-bg-color{
+	            font: 15px/44px "微软雅黑";	
+		        background: #ea5147;
+		        border:none;
+	        }
+	        .share{
+	        	margin-left: 1px;
+	        	font: 12px/30px "微软雅黑";
+	        	color: #111111;
+	        }
+	        button{
+				padding: 0;
+			}
+			.content{				
+				height: 100%;
+			}
+			.attestation{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background: rgba(0,0,0,.3);
+				box-sizing: border-box;
+			}
+			.attes{
+				position: absolute;
+				top: 259px;
+				left: 50%;
+				margin-left: -125px;
+				width: 250px;
+				height: 110px;
+				background: #f8f8f8;
+				padding-top: 10px;
+				box-sizing: border-box;
+				text-align: center;
+			}
+			.attes h2{
+				font: 15px/25px "微软雅黑";
+				color: #000000;
+				font-weight: bold;
+			}
+			h2 {
+			    -webkit-margin-before: 0;
+			    -webkit-margin-after: 0;
+			    -webkit-margin-start: 0;
+			    -webkit-margin-end: 0;
+			}
+			.attes p{
+				font: 12px/18px "微软雅黑";
+				color: #000000;
+				box-sizing: border-box;
+				border-bottom: 1px solid #aeacac;
+				padding: 4px 0 5px 0;
+			}
+			.attes div{
+				font: 15px/30px "微软雅黑";
+				color: #ea5147;
+			}
+		</style>
+	</head>
+	<body class="H-height-100-percent H-box-sizing-border-box H-overflow-hidden" style="">
+		<header class="H-header header H-padding-horizontal-both-7">
+			<span tapmode=""  class="H-icon H-position-relative H-display-inline-block H-float-left H-vertical-middle H-theme-font-color-white H-padding-horizontal-left-5 H-z-index-100"><img src="../image/location2.png" style="max-height:21px"><label class="H-display-block H-vertical-middle">北京市</label></span>
+			<span  onclick="closewin()" class="H-icon H-position-relative H-display-block H-float-right H-vertical-middle H-padding-horizontal-both-5 H-z-index-1000"><img src="../image/closea.png" style="max-height:22px"></span>
+		</header>
+		<div class="content">
+			<div class="change">
+				<img src="../image/rowscreen.png"  class="point H-padding-5" style="max-height:8px">
+			</div>
+			<div class="what">
+				<p class="whatcon">你想要直播什么呀？</p>
+			</div>
+			<div class="style H-text-list H-flexbox-horizontal  H-theme-background-color-white">
+	        	<div class="H-flex-item H-padding-vertical-both-10">直播类型：剧组囧事<img src="../image/more.png"  style="max-height: 10px"></div>
+	    	</div>
+	      	<div class="start H-margin-vertical-top-47 H-padding-horizontal-both-16">
+	            <button onclick="closewin()"  class="H-bg-color H-button H-width-100-percent H-outline-none  H-theme-font-color-white H-theme-border-color9   H-theme-font-color9-click H-border-radius-4">开始直播</button>
+	        </div>
+	        <center class="H-margin-vertical-top-40"><img class="H-padding-5" src="../image/share.png" style="max-height: 20px">
+	            <span class="share">分享给好友</span>
+	        </center>
+	        <div class="attestation">
+	        	<div class="attes H-border-radius-9">
+	        		<h2>实名认证</h2>
+	        		<p>根据相关法律法规的规定，<br>
+	        		必须完成点映秀认证后才能直播
+	        		</p>
+	        		<div class="toattes">去认证</div>
+	        	</div>
+	        </div>
+		</div>
+		
+	</body>
+</html>
+<script src="../script/H.js"></script>
+<script>
+	function closewin() {
+		H.closeWin()
+	}
+</script>

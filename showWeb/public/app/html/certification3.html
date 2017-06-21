@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/Hui.css">
+    <link rel="stylesheet" type="text/css" href="../css/certification.css">
+    <style>
+
+			
+
+
+			.button-submit{
+				margin-top: 18px;
+				padding: 0px 16px;
+				height: 44px;
+				box-sizing: border-box;
+			}
+			button.submit{
+				/*//margin-top: 29px;*/
+				height: 44px;
+				line-height: 44px;
+				background-color: #ea5147;
+				border: none;
+				
+			}
+
+    	
+    </style>
+	
+</head>
+<body>
+	<div id="wrap" class="flex-wrap flex-vertical">
+		<header>
+			<div tapmode="" onclick="closewindow()" class="H-yuan-mycircle">
+	    		<img src="../image/iconp.png" style="max-height: 18px">
+	    	</div>
+	    	<h2 class="border-b active">
+	    		实名认证
+	    	</h2>
+	    	<div class="exit-certification" onclick="closepage()">
+	    		<img src="../image/close2.png" style="max-height: 18px">
+	    	</div>
+		</header>
+		<!-- certi-title 头部 -->
+		<div class="certi-title H-width-100-percent H-padding-horizontal-both-12 H-height-45">
+			<ul class="H-width-100-percent H-padding-vertical-both-10">
+				<li class="H-float-left"><span>1</span>安全认证</li>
+				<li class="H-float-left"><span>2</span>上传证件照片</li>
+				<li class="H-float-right  list-active"><span class="bgred">3</span>审核完成</li>
+			</ul>
+		</div>
+		<div class="H-width-100-percent line"></div>
+		
+		<div class="result H-width-100-percent">
+			<div class="result-img H-width-100-percent H-text-align-center"></div>
+			<h2 class="H-text-align-center">我们将尽快审核资料，请耐心等待一会</h2>
+			<p class="H-text-align-center">这里有许多好看的内容，剧组囧事</p>
+			<p class="H-text-align-center">主创直播在等你，快去看看吧！</p>
+		</div>
+		
+
+		<!-- 下一步 -->
+		<div class="button-submit">
+			<button class="submit H-bg-color H-button H-width-100-percent  H-font-size-15 H-outline-none  H-padding-horizontal-both-20 H-theme-background-color9 H-theme-font-color-white H-theme-border-color9   H-theme-font-color9-click H-border-radius-3" onclick="opencertification3()">去映秀场</button>
+		</div>	
+
+	</div>	
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/H.js"></script>
+  <script src="../script/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../script/click.js"></script>   
+  <script type="text/javascript">
+    apiready = function(){
+              
+    };
+    function opencertification2() {
+      api.openWin({
+        name:'opencertification2',
+        url:'opencertification2.html'
+      })
+    }
+
+    window.onload = function() {
+      var buttonsubmit = document.getElementsByClassName('button-submit')[0];
+      buttonsubmit.onclick = function() {
+        H.openWin('index','index.html');
+      }
+    }     
+  </script>
+</html>

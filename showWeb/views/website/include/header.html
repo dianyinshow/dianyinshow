@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="stylesheet" href="/webIndex/css/amazeui.css" />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <link rel="stylesheet" href="/webIndex/css/swiper.min.css" />
+    <link rel="stylesheet" href="/webIndex/css/ind.css">
+    <link rel="stylesheet" href="/webIndex/css/subCommunity.css">
+    <!-- <link rel="stylesheet" href="css/index.css" /> -->
+</head>
+
+<body style="overflow-x: hidden;min-width: 1000px;background: rgb(242, 242, 242);">
+<header>
+    <div class="header-wrap">
+        <a href="/" class="logo"><img src="/webIndex/images/logo.png" alt="" class="logoImg">
+        </a>
+        <ul>
+            <li class="active"><b class="triangle"></b><a href="/">首页</a></li>
+            <li><b class="triangle"></b><a href="">功能引导</a></li>
+            <li><b class="triangle"></b><a href="/website/fun">如何用</a></li>
+            <li><b class="triangle"></b><a href="/website/comshow">映秀社区</a></li>
+        </ul>
+        <div class="login">
+            <%if(!user){%>
+            <button class="loginbutton left " id="login_btn" onclick="btn_login()">登录</button>
+            <button class="regbutton left" onclick="btn_reg()">注册</button>
+            <%}else{%>
+            <button class="regbutton center " id="login_out" onclick="btn_logout()">退出</button>
+            <%}%>
+        </div>
+        <div class="clear"></div>
+    </div>
+</header>

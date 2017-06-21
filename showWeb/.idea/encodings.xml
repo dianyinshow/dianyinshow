@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/authentication/auth.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bin/www" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config/database.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/md5" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/backstage_comment.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/base.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/tutorial.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/web/conlist.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/web/test.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model/web/websiteUser.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/index/images/codeImgs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/index/js/verifyCode.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/webIndex/images/codeImgs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/webIndex/js/verifyCode.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/fun.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/index/comment.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/index/comshow.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/index/conlist.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/index/fun.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/index/login.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/index/regEmail.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/index/regMobile.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/index/regMobileVerify.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/index/register.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/index/resetPassword.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/show/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/website/show/myshow.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/backstage/include/footer.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/website/index/webIndex/images/codeImgs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/website/index/webIndex/js/verifyCode.js" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

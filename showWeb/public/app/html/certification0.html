@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>实名认证</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/Hui.css">
+    <style>
+			/*
+			 
+			 * 实名认证
+			 * 
+			 * */  
+			 html,body{
+			 	background: #fff;
+			 	font: 12px/23px "微软雅黑";
+			 }  	
+    		header {
+				background-color: #ea5147;
+				height:44px;
+			}
+			.H-yuan-mycircle{
+	            left:12px;
+	            top:13px;
+	            position: absolute;  
+	         }
+			header .border-b {
+				line-height: 44px;
+				text-align: center;
+				color: #ffffff;
+				font-size: 16px;
+				font-weight: border;
+			}
+			.flex-con .edit{
+				height: 63px;
+				border: 1px dotted #dbdbdb;
+				box-sizing: border-box;
+				font: 12px/23px "微软雅黑";
+				color:#0f0f0f;
+				padding: 20px 12px;
+				position: relative;
+			}
+			.flex-con .edit span{
+				right: 12px;
+	            top: 26px;
+	            position: absolute; 
+			}
+
+			/* 
+				头像、昵称
+
+			 */
+
+			.photo{
+				width: 100%;
+				margin-top: 8px;
+				height: 74px;
+			}
+			.photo>img{
+				width: 74px;
+				height: 74px;
+				border-radius: 50%;
+				position: relative;
+				left: calc(50% - 36px);
+			}
+			.up-photo{
+				text-align: center;
+				margin-top: 15px;
+				font-size: 12px;
+			}
+			.up-photo>a{
+				color: #111111;
+			}
+			.anchor-nickname{
+				width: 100%;
+				margin-top: 18px;
+				text-align: center;
+			}
+			.anchor-nickname>input{
+				width: 100%;
+				height: 54px;
+				text-align: center;
+				color: #dadada;
+				border: none;
+				border-top: solid 1px #f6f6f6;
+				border-bottom: solid 1px #f6f6f6;
+				outline: medium;
+			}
+			/*x兴趣品类*/
+			.class-intrest{
+				width: 100%;
+				padding: 0px 12px;
+				margin-top: 29px;
+			}
+			.intrest-list{
+				padding: 0px 18px;
+				width: 100%;
+			}
+			.intrest-list>li{
+				float: left;
+				width: 143px;
+				height: 34px;
+				line-height: 34px;
+				text-align: center;
+				border:solid 1px #f6f6f6;
+				margin-right: 29px;
+				margin-top: 16px;
+			}
+			.active{
+				border: none;
+				background-color: #ea5147;
+				color: #ffffff;
+			}
+
+			/*提交按钮*/
+			.button-submit{
+				padding: 0px 16px;
+			}
+			button.submit{
+				margin-top: 29px;
+				background-color: #ea5147;
+				border: none;
+				box-sizing: border-box;
+			}
+    	
+    </style>
+	
+</head>
+<body>
+	<div id="wrap" class="flex-wrap flex-vertical">
+		<header>
+			<div tapmode="" onclick="closewindow()" class="H-yuan-mycircle">
+	    		<img src="../image/iconp.png" style="max-height: 18px">
+	    	</div>
+	    	<h2 class="border-b active">
+	    		实名认证
+	    	</h2>
+		</header>
+		<div id="main" class="flex-con">
+			<div class="photo">
+				<img src="../image/selfimg.png">
+			</div>
+			<p class="up-photo"><a href="">上传头像</a></p>	
+			<div class="anchor-nickname">
+				<input type="text" value="填写主播昵称（6个字以内）">
+			</div>
+				<!-- 兴趣品类 -->
+			<div class="class-intrest">
+				<h2>兴趣品类</h2>
+				<ul class="intrest-list">
+					<li class="style active">首映／路演／点映</li>
+					<li class="style">主创直播</li>
+					<li class="style">剧组囧事</li>
+					<li class="style">梦想演艺秀</li>
+					<li class="style">星后援集活动</li>
+					<li class="style">星有缘／星推荐</li>
+				</ul>
+			</div>
+			<!-- 提交按钮 -->
+			<div class="button-submit">
+				<button class="submit H-bg-color H-button H-width-100-percent  H-font-size-15 H-outline-none H-padding-vertical-both-15 H-padding-horizontal-both-20 H-theme-background-color9 H-theme-font-color-white H-theme-border-color9   H-theme-font-color9-click H-border-radius-3" onclick="opencertification1()">提交</button>
+			</div>
+			
+		</div>
+	</div>	
+	
+</body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/H.js"></script>
+  <script src="../script/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../script/click.js"></script>   
+  <script type="text/javascript">
+    apiready = function(){
+              
+    };
+    function opencertification2() {
+      api.openWin({
+        name:'opencertification2',
+        url:'opencertification2.html'
+      })
+    }
+
+    window.onload = function() {
+      var buttonsubmit = document.getElementsByClassName('button-submit')[0];
+      buttonsubmit.onclick = function() {
+        H.openWin('certification1','certification1.html');
+      }
+
+      var style = document.getElementsByClassName('style'); 
+      for(var i=0;i<style.length;i++){
+      	style[i].onclick=function(){
+      		// alert(1)
+      		for(var i=0;i<style.length;i++){
+      			jquery.removeClass(style[i],"active");
+      		}
+      		jquery.addClass(this,"active");
+      	}
+      }
+    }     
+  </script>
+</html>

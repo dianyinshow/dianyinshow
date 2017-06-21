@@ -1,0 +1,168 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>新增直播横屏</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css"/>
+		<link href="../css/Hui.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="../css/css.css"/>
+	</head>
+	<body>
+		<div id="wrap">
+			<header class="h_location">
+				<div class="location">
+	        		<img src="../image/location.png">
+	        		北京市
+	        	</div>
+	        	<div class="close">
+	        		<img src="../image/close2.png">
+	        	</div>
+			</header>
+			<div class="content">
+				<div class="change">
+					<span class="change_btn"></span>
+				</div>
+				<div class="what">
+					<p class="whatcon">你想要直播什么呀？</p>
+				</div>
+				<div class="style H-text-list H-flexbox-horizontal  H-theme-background-color-white">
+		        	<div class="H-flex-item H-padding-vertical-both-10">直播类型：<span class="title" id="type">剧组囧事</span><img src="../image/more.png"  style="max-height: 10px"></div>   
+		    	</div>
+		      	<div class="start H-padding-horizontal-both-16" style="margin-top: 13%">
+		            <button id="start" class="H-bg-color H-button H-width-100-percent H-outline-none  H-theme-font-color-white H-border-radius-4">开始直播</button>
+		        </div>
+		        <center class="share" style="margin-top: 11%">
+		        	<img class="H-padding-5" src="../image/showfriend.png" style="max-height: 20px">
+		            <span>分享给好友</span>
+		        </center>		        	        
+			</div>
+			<div class="sharelist">
+	        	<p class="shareto">分享至</p>
+	        	<p class="shareup">鼓励粉丝用app分享，可以提升你的人气！</p>
+	        	<div class="H-flexbox-horizontal H-text-align-center" style="margin-top: 4%">
+			    	<div class="H-flex-item">
+			            <span class="H-icon H-center-all H-theme-background-color10 H-border-radius-circle H-margin-horizontal-auto" style="height: 40px; width: 40px;"><i class="H-iconfont H-icon-weixin H-font-size-16 H-theme-font-color-white"></i></span>
+			        </div>
+			      	<div class="H-flex-item">
+			            <span class="H-icon H-center-all H-theme-background-color11 H-border-radius-circle H-margin-horizontal-auto" style="height: 40px; width: 40px;"><i class="H-iconfont H-icon-friends H-font-size-16 H-theme-font-color-white"></i></span>		            
+			        </div>
+			        <div class="H-flex-item">
+			            <span class="H-icon H-center-all H-theme-background-color12 H-border-radius-circle H-margin-horizontal-auto" style="height: 40px; width: 40px;"><i class="H-iconfont H-icon-weibo H-font-size-16 H-theme-font-color-white"></i></span>		            
+			        </div>
+			        <div class="H-flex-item">
+			            <span class="H-icon H-center-all H-theme-background-color13 H-border-radius-circle H-margin-horizontal-auto" style="height: 40px; width: 40px;"><i class="H-iconfont H-icon-qq H-font-size-16 H-theme-font-color-white"></i></span>		            
+			        </div>
+			        <div class="H-flex-item">
+			            <span class="H-icon H-center-all H-theme-background-color14 H-border-radius-circle H-margin-horizontal-auto" style="height: 40px; width: 40px;"><i class="H-iconfont H-icon-qzone H-font-size-16 H-theme-font-color-white"></i></span>		            
+			        </div>
+			    </div>
+			    <div class="cancel" style="margin: 8% 0 12% 0">
+		            <button>取消</button>
+		        </div> 
+	        </div>
+			<div class="attestation">
+		        <div class="attes H-border-radius-9">
+		        	<h2>实名认证</h2>
+		        	<p>根据相关法律法规的规定，<br>
+		        	必须完成点映秀认证后才能直播
+		        	</p>
+		        	<div class="toattes">去认证</div>
+		        </div>
+		    </div>
+		</div>	
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript" src="../script/H.js"></script>
+	<script src="../script/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../script/click.js"></script>   
+	<script type="text/javascript">
+	    // apiready = function(){
+	              
+	    // };
+	    // function opencertification2() {
+	    //   api.openWin({
+	    //     name:'opencertification2',
+	    //     url:'opencertification2.html'
+	    //   })
+	    // }
+
+	    window.onload = function() {
+	    	//解析url
+	    	var url = window.location.href;
+	    	var typeTitle='';
+	    	var aa = url.split('?');
+	    	if(aa.length>1) {
+	    		typeTitle = aa[1].split('=')[1];
+	    	}
+	    	//获取直播类型
+		 	var type = document.getElementById("type");
+		 	if(decodeURI(typeTitle)) {
+		 		type.innerHTML = decodeURI(typeTitle);
+		 	}else {
+		 		type.innerHTML = '剧组囧事';
+		 	}
+
+
+		//显示更多用户操作
+			var btn = document.getElementsByClassName('change')[0].getElementsByTagName("span")[0];
+			var style = document.getElementsByClassName('style')[0];
+			var share = document.getElementsByClassName('share')[0];
+			var sharelist = document.getElementsByClassName('sharelist')[0];
+			var cancel = document.getElementsByClassName('cancel')[0];
+			
+			var attestation = document.getElementsByClassName('attestation')[0];
+			var toattes = document.getElementsByClassName('toattes')[0];
+			var close = document.getElementsByClassName('close')[0];
+			var start = document.getElementById("start");
+
+			close.addEventListener('touchstart', function(event) {
+		    	H.openWin('index','index.html');
+		    },false);
+
+		    style.addEventListener('touchstart', function(event) {
+		    	H.openWin('type','type.html');
+		    },false);
+
+		    share.addEventListener('touchstart', function(event) {
+		    	jquery.show(sharelist);
+		    },false);
+
+		    jquery.close(cancel,sharelist);
+	    	var info = {};
+			start.onclick = function() {  //开始横屏竖屏直播
+			// 	H.openWin('clientanchor','clientanchor.html');
+			// 	//获取数据
+				var mobile = localStorage.mobile;
+//				console.log(mobile)
+				var liveType = type.innerHTML;
+				
+				info.mobile = mobile;
+				info.liveType = liveType;
+				$.ajax({
+					type:'post',
+					url:'/app/html/startLive',
+					data:info,
+					dataType:'json'
+				}).success(function(data) {
+					//console.log(data.id);
+					window.location.href = encodeURI('liveTest.html?id=' + data.id); 
+				}).fail(function(){
+					alert('11')
+				})
+			};
+
+		    toattes.addEventListener('touchstart', function(event) {
+		    	H.openWin('certification0','certification0.html');
+		    },false);
+
+		    btn.addEventListener('touchstart', function(event) {
+		    	if(btn.className=="change_btn"){
+					btn.className = 'change_btn2';
+				}else{
+					btn.className = 'change_btn';
+				}
+		    },false);
+		}   
+    </script>
+</html>

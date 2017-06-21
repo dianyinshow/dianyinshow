@@ -1,0 +1,148 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!-- <meta name="viewport"
+        content="width=device-width, initial-scale=1"> -->
+  <title>startmake</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="/webAssets/i/favicon.png">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <!-- <meta name="mobile-webIndex-app-capable" content="yes">
+  -->
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <!-- <meta name="apple-mobile-webIndex-app-capable" content="yes">
+  <meta name="apple-mobile-webIndex-app-status-bar-style" content="black">
+  <meta name="apple-mobile-webIndex-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="/webAssets/i/app-icon72x72@2x.png"> -->
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+ <!--  <meta name="msapplication-TileImage" content="/webAssets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2"> -->
+
+  <link rel="stylesheet" href="/webAssets/css/amazeui.css">
+  <link rel="stylesheet" href="/webAssets/css/app.css">
+   <link rel="stylesheet" href="/webAssets/css/r.css">
+  <link rel="stylesheet" href="/webAssets/css/header.css">
+</head>
+<body>
+  <header class="am-topbar am-h-header">
+  <h1 class="am-topbar-brand">
+    <a href="#"><img src="/webAssets/img/logo.png" alt="" width=''><span>点映秀</span></a>
+  </h1>
+  <div class="am-topbar-right top-img">
+        <div class='selfpic'>
+          <img class="am-circle" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80" width="36" height="36"/>
+        </div>
+      </div>
+
+      <div class="am-topbar-right top-img">
+       <div class="notice">
+         <span class="am-badge am-badge-red am-round am-notice">6</span>
+       </div>
+      </div>
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav topnav">
+        <li class="am-active">
+          <a href="/">
+            <span class='homesi'></span>
+            首页
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class='search'></span>
+            <!-- <img src="/webAssets/img/searchshow.png" alt="" class='modelicon'>
+            <img src="/webAssets/img/searchshowa.png" alt="" class='activeicon'> -->
+            找秀场
+          </a>
+        </li>
+        <li>
+          <a href="#">
+             <span class='viewshow'></span>
+            <!-- <img src="/webAssets/img/viewshow.png" alt="" class='modelicon'>
+            <img src="/webAssets/img/viewshowa.png" alt="" class='activeicon'> -->
+            映秀场
+          </a>
+        </li>
+        <li>
+          <a href="#">
+             <span class='grades'></span>
+            <!-- <img src="/webAssets/img/grades.png" alt="" class='modelicon'>
+            <img src="/webAssets/img/grades.png" alt="" class='activeicon'> -->
+            映秀社区
+          </a>
+        </li>
+      </ul>
+      
+</header>
+<div class="am-container-main">
+  <div class="address">
+      <ol class="am-breadcrumb addresslist">
+        <li class='h-allshow' >
+          <div class="am-dropdown" data-am-dropdown>
+            <div class="am-btn am-dropdown-toggle" data-am-dropdown-toggle>全部秀 <span></span></div>
+            <ul class="am-dropdown-content">
+              <li><a href="#">快乐的方式不只一种</a></li>
+              <li><a href="#">谁都是造物者的光荣</a></li>
+              <li><a href="#">天空海阔 要做最坚强的泡沫</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class='lastshow'><a href="#">最后修改页面</a><span></span></li> 
+        <li class='findshow'>
+          <div class="am-input-group find-show-sm am-input-group-sm">
+            <span class="am-input-group-label find-all-show"><i></i>查找全部秀 <span>|</span></span>
+            <input type="text" class="am-form-field" >
+          </div>
+        </li>
+      </ol>
+      
+<div class="clear"></div>
+  </div>  
+  <div class="content-m">
+        <div class="image">
+          <img src="/webAssets/i/none.png" class='firstcimg'>
+          <p class="none-case">还没有需要秀的作品</p>
+        </div>
+        <p class="begin-case">
+          <a href="#">
+            点击开始制作H5秀、素材秀、直播秀吧！
+          </a>
+        </p>
+        <div class="content-btn">
+          <img src="/webAssets/img/add.png" alt="">
+          <span>开始制作</span>
+      </div>
+      </div>
+</div>
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="/webAssets/js/jquery.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+  <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+  <script src="/webAssets/js/amazeui.ie8polyfill.min.js"></script>
+  <![endif]-->
+<script src="/webAssets/js/amazeui.min.js"></script>
+<script src="/webAssets/js/index.js"></script>
+
+
+</body>
+</html>

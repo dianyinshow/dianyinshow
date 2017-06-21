@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>我的钱包</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/Hui.css"/>
+		<style>
+			body{
+				background: #ffffff;
+			}
+			header {
+				background-color: #ea5147;
+			}
+			.H-yuan-mycircle{
+	            left:12px;
+	            top:14px;
+	            position: absolute;  
+	         }
+			header .border-b {
+				height: 44px;
+				line-height: 44px;
+				text-align: center;
+				color: #ffffff;
+				font-size: 15px;
+				font-weight: bold;
+			}
+			.wallet{
+				text-align: center;
+				padding: 18px 0;
+			}
+			.wallet div{
+				font: 17px/27px "微软雅黑";
+				color: #0f0f0f;
+			}
+			.wallet p{
+				font: 20px/30px "微软雅黑";
+				color: #0f0f0f;
+			}
+			.walletbg{
+				width: 100%;
+				height: 27px;
+				background: #dbdbdb;
+			}
+			.walletcon{
+				font: 11px/21px "微软雅黑";
+				color: #0f0f0f;
+			}
+			.active{
+				color: #ea5147;
+			}
+			.recharge .H-icon{
+				background: url("../image/recharge.png") 0 0 no-repeat;
+				background-size: 26px 22px;
+			}
+			.red_packet .H-icon{
+				background: url("../image/hongbao.png") 2px 0 no-repeat;
+				background-size: 19px 22px;
+			}
+			.cash .H-icon{
+				background: url("../image/withdrawals.png") 0 0 no-repeat;
+				background-size: 25px 22px ;
+			}
+			.bank_card .H-icon{
+				background: url("../image/bank.png") 0 0 no-repeat;
+				background-size: 26px 22px ;
+				margin-left: 4px;
+			}
+			.record .H-icon{
+				background: url("../image/record.png") 0 0 no-repeat;
+				background-size: 20px 22px ;
+				margin-left: 13px;
+			}
+			.red_packet{
+				border-right: 1px solid #eaeaea;
+			}
+			.record{
+				border-right: 1px solid #eaeaea;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap" class="flex-wrap flex-vertical">
+			<header>
+				<div tapmode="" onclick="closewindow()" class="H-yuan-mycircle">
+	        		<img src="../image/iconp.png" style="max-height: 18px">
+	        	</div>
+	        	<h2 class="border-b">
+	        		我的钱包
+	        	</h2>
+			</header>
+			<div class="wallet">
+				<div>秀币</div>
+				<p>¥<span>670</span></p>
+			</div>
+			<div class="walletbg"></div>
+			<div class="H-n-grid H-border-vertical-top-after H-clear-both  H-overflow-auto H-margin-vertical-top-30">
+        		<div class="H-clear-both H-width-100-percent H-display-table H-box-sizing-border-box">
+		            <div class="recharge H-display-table-cell H-float-left H-box-sizing-border-box H-width-avg-3 H-center-all H-theme-background-color-white H-border-horizontal-right-after H-border-vertical-bottom-after H-padding-vertical-both-12" style="min-height: 70px;">
+		                <div class="H-margin-vertical-top-3">
+		                    <span class="H-icon H-display-block H-horizontal-center" style="height: 22px">
+		                    </span>
+		                    <label class="H-display-block walletcon">充值</label>
+		                </div>
+		            </div>
+		            <div class="red_packet H-display-table-cell H-float-left H-box-sizing-border-box H-width-avg-3 H-center-all H-theme-background-color-white H-border-horizontal-right-after H-border-vertical-bottom-after H-padding-vertical-both-12" style="min-height: 70px;">
+		                <div class="H-margin-vertical-top-3">
+		                    <span class="H-icon H-display-block H-horizontal-center" style="height: 22px">
+		                    </span>
+		                    <label class="H-display-block walletcon active">红包</label>
+		                </div>
+		            </div>
+		            <div class="cash H-display-table-cell H-float-left H-box-sizing-border-box H-width-avg-3 H-center-all H-theme-background-color-white H-border-horizontal-right-after H-border-vertical-bottom-after H-padding-vertical-both-12" style="min-height: 70px;">
+		                <div class="H-margin-vertical-top-3">
+		                    <span class="H-icon H-display-block H-horizontal-center" style="height: 22px">
+		                    </span>
+		                    <label class="H-display-block walletcon">提现</label>
+		                </div>
+		            </div>
+		            <div class="bank_card H-display-table-cell H-float-left H-box-sizing-border-box H-width-avg-3 H-center-all H-theme-background-color-white H-border-horizontal-right-after H-border-vertical-bottom-after H-padding-vertical-both-12" style="min-height: 70px;">
+		                <div class="H-margin-vertical-top-3">
+		                    <span class="H-icon H-display-block H-horizontal-center" style="width: 26px;height: 22px">
+		                    </span>
+		                    <label class="H-display-block walletcon">银行卡</label>
+		                </div>
+		            </div>
+		            <div class="record H-display-table-cell H-float-left H-box-sizing-border-box H-width-avg-3 H-center-all H-theme-background-color-white H-border-horizontal-right-after H-border-vertical-bottom-after H-padding-vertical-both-12" style="min-height: 70px;">
+		                <div class="H-margin-vertical-top-3" style="text-align: center;">
+		                    <span class="H-icon H-display-block H-horizontal-center" style="width: 20px;height: 22px">
+		                    </span>
+		                    <label class="H-display-block walletcon">交易记录</label>
+		                </div>
+		            </div>
+		            <div class="H-display-table-cell H-float-left H-box-sizing-border-box H-width-avg-3 H-center-all H-theme-background-color-white H-border-horizontal-right-after H-border-vertical-bottom-after H-padding-vertical-both-12" style="min-height: 70px;">
+		                <div class="H-margin-vertical-top-3">
+		                   
+		                </div>
+		            </div>
+            	</div>
+            </div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+    <script type="text/javascript" src="../script/H.js"></script>
+    <script src="../script/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../script/click.js"></script>   
+    <script type="text/javascript">
+      apiready = function(){
+              
+      };
+      function opencertification2() {
+        api.openWin({
+          name:'opencertification2',
+          url:'opencertification2.html'
+        })
+      }
+
+      window.onload = function() {
+        var recharge = document.getElementsByClassName('recharge')[0];
+        
+        var redpacket = document.getElementsByClassName('red_packet')[0];
+        var cash = document.getElementsByClassName('cash')[0];
+        var bankcard = document.getElementsByClassName('bank_card')[0];
+        var record = document.getElementsByClassName('record')[0];
+        var rspan=record.getElementsByTagName("span")[0];
+        console.log(rspan.length)
+        recharge.onclick = function() {
+          H.openWin('recharge','recharge.html');
+        };
+        redpacket.onclick = function() {
+          H.openWin('redpacket','redpacket.html');
+        };
+        record.onclick = function() {
+		  rspan.style.backgroundImage='url("../image/choice2.png")';
+        }
+      }     
+  </script>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>实名认证</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/Hui.css">
+    <link rel="stylesheet" type="text/css" href="../css/step.css">
+    <link rel="stylesheet" type="text/css" href="../css/css.css">
+</head>
+<style>
+	/*实名验证2*/
+.photo-paper{
+	box-sizing:border-box;
+	margin-top: 3%;
+	width: 100%;
+	height: 321px;
+}
+.photo-paper p:nth-child(1){
+	font-size: 12px;
+	line-height: 23px;
+	color: #0f0f0f;
+	text-align: center;
+}
+.photo-paper .atten{
+	margin-top: 3%;
+	font-size: 12px;
+	height: 23px;
+	color: #0f0f0f;
+	transform: scale(0.83);
+	width: 100%;
+	text-align: center;
+}
+.photo-paper .atten span{
+	color: #ea5147;
+}
+
+
+.photo-paper .upphoto{
+	width: 100%;
+	height: 32%;
+	/*height: 42%;*/
+	/*height: 120px;*/
+	box-sizing: border-box;
+	margin-top: 3%;
+	position: relative;
+	/*padding: 0 87px 0 64px;*/
+}
+.photo-paper .upphoto span:nth-child(1){
+	position: absolute;
+	top: 0;
+	left: 15%;
+	transform: scale(0.75);	
+	line-height: 18px;
+}
+.photo-paper .upphoto span:nth-child(2){
+	/*width: 200px;*/
+	/*height: 120px;*/
+	width: 53%;	
+	height: 100%;
+	background: #eaeaea;
+	position: absolute;
+	top: 0;
+	right: 23%;
+}
+/*.upphoto span:nth-child(2) img{
+	width: 100%;
+	height: 100%;
+}*/
+
+</style>
+<body>
+	<div id="wrap">
+		<header class="header">
+			<div class="back">
+	    		<img src="../image/back.png">
+	    	</div>
+	    	<h2 class="pagetitle">
+	    		实名认证
+	    	</h2>		
+		</header>
+		<!-- certi-title 头部 -->
+		<div class="certi-title">
+			<div class="certitop">
+				<div class="number number_active H-float-left">
+					<span class="ns_active">1</span>
+				</div>
+				<span class="xian xian_active H-float-left"></span>
+				<div class="number number_active H-float-left">
+					<span class="ns_active">2</span>
+				</div>
+				<span class="xian H-float-left"></span>
+				<div class="number H-float-left">
+					<span>3</span>
+				</div>
+			</div>
+			<div class="certibottom">
+				<p>安全认证</p>
+				<p>上传证件照片</p>
+				<p>提交完成</p>
+			</div>
+		</div> 
+		<div class="line"></div>
+		<ul class="vew-list">
+			<li class="choicearea H-clear-both">
+				<span class="list-titles">真实姓名</span>
+				<input type="text" value="请您的姓名" class="entey_name">
+			</li>
+			<li class="choicearea H-clear-both">
+				<span class="list-titles">身份证号</span>
+				<input type="text" value="请输入身份证号" class="entry_card">
+			</li>
+		</ul>
+		<!-- 照片上传 -->
+		<div class="photo-paper">			
+			<p>上传客户手持身份证正／反面</p>
+			<div class="upphoto"> 
+				<span>正面</span>
+				<span>
+					<!-- <img src="../image/zheng.png"> -->
+				</span>				
+			</div>
+			<div class="upphoto"> 
+				<span class="">反面</span>
+				<span>
+					<!-- <img src="../image/fan.png" class=""> -->
+				</span>			
+			</div>
+			<p class="atten">
+				<span>*</span>
+				您的照片仅用户审核，我们将为你严格保密
+			</p>
+		</div>
+		<!-- 下一步 -->
+		<div class="button-submit" style="margin-top: 7%">
+	        <button class="submit">下一步</button>
+	    </div>		
+	</div>	
+
+</body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/H.js"></script>
+  <script src="../script/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../script/click.js"></script>   
+  <script type="text/javascript">
+    // apiready = function(){
+              
+    // };
+    // function opencertification2() {
+    //   api.openWin({
+    //     name:'opencertification2',
+    //     url:'opencertification2.html'
+    //   })
+    // }
+
+    window.onload = function() {
+    	var back = document.getElementsByClassName('back')[0];
+    	var enteyname = document.getElementsByClassName('entey_name')[0];
+    	var entrycard = document.getElementsByClassName('entry_card')[0];
+        var buttonsubmit = document.getElementsByClassName('button-submit')[0];
+
+        back.addEventListener('touchstart', function(event) {
+			H.openWin('stpe1','step1.html');
+		},false);
+
+        enteyname.addEventListener('touchstart', function(event) {
+			enteyname.value=""
+		},false);
+		
+		entrycard.addEventListener('touchstart', function(event) {
+			entrycard.value=""
+		},false);
+		
+        buttonsubmit.addEventListener('touchstart', function(event) {
+        	H.openWin('step3','step3.html');
+      	},false);	
+    }     
+  </script>
+</html>

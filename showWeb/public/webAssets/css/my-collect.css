@@ -1,0 +1,108 @@
+.collectall{
+	margin-bottom: 95px;
+}
+.mycollect{
+	position: relative;
+}
+/*我的消息*/
+.am-main-header{
+	width: 100%;
+	height: 100%;
+	border-bottom:1px solid #dbdbdb;
+	position: relative;
+	padding: 40px 40px 0 40px;
+}
+.am-main-header h3{
+	display: block;
+	font-size: 18px;
+    color: #666666;
+    
+    float: left;
+   
+}
+.am-main-header .linebottom{
+width: 72px;
+position: absolute;
+bottom:-1px;
+left:40px;
+height: 1px;
+background: #ea5147;
+}
+/*编辑*/
+.edit{
+	float: right;
+	width: 56px;
+}/*编辑图标*/
+.am-main-header .edit{
+	cursor: pointer;
+}
+.am-main-header .edit span{
+	display:inline-block;
+	width: 18px;
+	height:16px;
+	background: url(../img/exit.png) no-repeat;
+	margin-right: 6px;
+}
+/*收藏列表框*/
+.collect-list{
+	padding:20px 40px 100px 40px;
+	position: relative;
+}
+/*收藏list*/
+.collect-list-li{
+	padding:10px;
+	background: #f2f2f2;
+	width: 31.5%;
+	margin-right: 2.3%;
+	float: left;
+	margin-bottom: 20px;
+	position: relative;
+}
+.collect-list-ul li:nth-of-type(3n){
+	margin-right: 0;
+}
+.collect-list-li .canlecoll{
+	display: block;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	background: url(../img/canlecool.png) no-repeat #fff;
+	position: absolute;
+	top:-10px;
+	left:-10px;
+	display: none;
+}
+.collect-list-li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	color:#666;
+	font-size: 16px;
+}
+.collect-list-li .collect-img{
+	width: 100%;
+	height: 100%;
+}
+.collect-list-li .collect-img img{
+	width: 100%;
+	height: 100%;
+}
+/*／*收藏列表标题*/
+.collect-list-li .collect-item-head{
+	margin-top: 14px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.collect-list-li .collect-item-type span{
+	display: block;
+	width: 50%;
+	float: left;
+	text-align: center;
+	line-height: 28px;
+	margin-bottom: 5px;
+}
+.collect-item-type .coll-pay{
+
+border-left:1px solid #fff;
+	
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/Hui.css">
+    <link rel="stylesheet" type="text/css" href="../css/certification.css">
+    <style>
+			/*认证信息*/
+			.vew-list>li{
+				height: 52px;
+				line-height: 52px;
+				border-bottom: solid 1px #f6f6f6;
+				box-sizing:border-box;
+			}
+			.vew-list>li img{
+				width: 6px;
+				height: 9px;
+				float: right;
+				position: relative;
+				top: 20px;
+			}
+			.china{
+				position: relative;
+				left: calc(100% - 120px);
+			}
+			.vew-list .list-titles{
+				display: inline-block;
+				width: 60px;
+				height: 52px;
+				line-height: 52px;
+
+			}
+			.vew-list>li input{
+				border: none;
+				outline: medium;
+				color: #f6f6f6;
+			}
+
+			.getnumber{
+				width: 93px;
+				height: 27px;
+				line-height: 27px;
+				position: relative;
+				top: 12px;
+				background-color: #ea5147;
+				color: white;
+				border-radius: 3px;
+				border: none;
+			}
+
+
+			.button-submit{
+				margin-top: 62px;
+				padding: 0px 16px;
+			}
+			button.submit{
+				
+				background-color: #ea5147;
+				border: none;
+				box-sizing: border-box;
+			}
+
+    	
+    </style>
+	
+</head>
+<body>
+	<div id="wrap" class="flex-wrap flex-vertical">
+		<header>
+			<div tapmode="" onclick="closewindow()" class="H-yuan-mycircle">
+	    		<img src="../image/iconp.png" style="max-height: 18px">
+	    	</div>
+	    	<h2 class="border-b active">
+	    		实名认证
+	    	</h2>
+		</header>
+		<!-- certi-title 头部 -->
+		<div class="certi-title H-width-100-percent H-padding-horizontal-both-12 H-height-45">
+			<ul class="H-width-100-percent H-padding-vertical-both-10">
+				<li class="H-float-left list-active"><span class="bgred">1</span>安全认证</li>
+				<li class="H-float-left "><span>2</span>上传证件照片</li>
+				<li class="H-float-right"><span>3</span>审核完成</li>
+			</ul>
+		</div>
+		<div class="H-width-100-percent line"></div>
+		<!-- 认证信息 -->
+		<ul class="H-width-100-percent vew-list">
+			<li class="choicearea H-padding-horizontal-both-12 H-width-100-percent">
+				<span class="list-titles">国家地区</span>
+				<span class="china">中国+86</span>
+				<img src="../image/more.png">
+			</li>
+			<li class="H-padding-horizontal-both-12 H-width-100-percent">
+				<span class="list-titles">手机号</span>
+				<input type="text" value="请输入手机号">
+			</li> 
+			<li class="H-padding-horizontal-both-12 H-width-100-percent">
+				<span class="list-titles">验证码</span>
+				<input type="text" value='请输入验证码'>
+				<button class="H-float-right getnumber" onclick="getnumber()">获取验证码</button>
+			</li>
+		</ul>
+		<!-- 下一步 -->
+		<div class="button-submit">
+			<button class="submit H-bg-color H-button H-width-100-percent  H-font-size-15 H-outline-none H-padding-vertical-both-15 H-padding-horizontal-both-20 H-theme-background-color9 H-theme-font-color-white H-theme-border-color9   H-theme-font-color9-click H-border-radius-3" onclick="opencertification2()">下一步</button>
+		</div>	
+	</div>	
+</body>
+      <script type="text/javascript" src="../script/api.js"></script>
+	  <script type="text/javascript" src="../script/H.js"></script>
+	  <script src="../script/jquery-1.8.3.min.js"></script>
+	  <script type="text/javascript" src="../script/click.js"></script>   
+	  <script type="text/javascript">
+	    apiready = function(){
+	              
+	    };
+	    function opencertification2() {
+	      api.openWin({
+	        name:'opencertification2',
+	        url:'opencertification2.html'
+	      })
+	    }
+
+	    window.onload = function() {
+		//显示更多用户操作
+			var choicearea = document.getElementsByClassName('choicearea')[0];
+			var submit = document.getElementsByClassName('submit')[0];
+		    
+			choicearea.onclick = function() {
+				H.openWin('choice','choice.html');
+			};
+			submit.onclick = function() {
+				H.openWin('certification2','certification2.html');
+			};
+			
+
+			
+		}   
+  </script>
+</html>

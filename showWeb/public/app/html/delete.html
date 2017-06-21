@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>我的关注</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/Hui.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/css.css"/>      
+	</head>
+	<body>
+		<div id="wrap" class="deletepage">
+			<header class="header">
+				<div class="back">
+	        		<img src="../image/back.png">
+	        	</div>
+	        	<h2 class="pagetitle">
+	        		我的关注
+	        	</h2>		
+			</header>
+			<div id="main">
+				<ul class="followlist">
+					<li class="m_fanslist H-clear-both">
+						<div class="H-float-left">
+							<img src="../image/selfimg.png">
+							<span>美美哒0</span>	
+						</div>
+						<div class="d_follow H-float-right">
+							<span></span>
+							<em>已关注</em>
+						</div>
+					</li>
+					<li class="m_fanslist H-clear-both">
+						<div class="H-float-left">
+							<img src="../image/selfimg.png">
+							<span>美美哒1</span>	
+						</div>
+						<div class="d_follow H-float-right">
+							<span></span>
+							<em>已关注</em>
+						</div>
+					</li>
+					<li class="m_fanslist H-clear-both">
+						<div class="H-float-left">
+							<img src="../image/selfimg.png">
+							<span>美美哒2</span>	
+						</div>
+						<div class="d_follow H-float-right">
+							<span></span>
+							<em>已关注</em>
+						</div>
+					</li>
+					<li class="m_fanslist H-clear-both">
+						<div class="H-float-left">
+							<img src="../image/selfimg.png">
+							<span>美美哒3</span>	
+						</div>
+						<div class="d_follow H-float-right">
+							<span></span>
+							<em>已关注</em>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="d_askpage">
+			<ul class="d_asklist">
+				<li class="d_ask">确定不再关注此人？</li>
+				<li class="d_confirm ask_choice">确定</li>
+				<li class="d_noborder ask_choice">取消</li>
+			</ul>	
+		</div>	
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+	<script type="text/javascript" src="../script/H.js"></script>
+	<script src="../script/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="../script/click.js"></script>   
+	<script type="text/javascript">
+	    // apiready = function(){
+	              
+	    // };
+	    // function opencertification2() {
+	    //   api.openWin({
+	    //     name:'opencertification2',
+	    //     url:'opencertification2.html'
+	    //   })
+	    // }
+	    
+	    window.onload = function() {
+	    	var back = document.getElementsByClassName('back')[0];
+	    	var followlist = document.getElementsByClassName('followlist')[0];
+		    var mfanslist = document.getElementsByClassName('m_fanslist');
+	      	var daskpage = document.getElementsByClassName('d_askpage')[0];
+	      	var dnoborder = document.getElementsByClassName('d_noborder')[0];
+	      	var askchoice = document.getElementsByClassName('ask_choice');
+	      	var dconfirm = document.getElementsByClassName('d_confirm')[0];
+	      	var num=0;
+
+	      	for(var i=0;i<mfanslist.length;i++) {	      	
+		      	mfanslist[i].addEventListener('touchstart', function(event) {
+		      		var mfanslist = document.getElementsByClassName('m_fanslist');
+		      		for(var j=0;j<mfanslist.length;j++) {
+		      			mfanslist[j].index=j;
+		      			num=this.index;
+		      		}
+					jquery.show(daskpage);
+				},false);
+	      	}
+
+			// 点击取消
+			dnoborder.addEventListener('touchstart', function(event) {
+				jquery.addClass(dnoborder,"m_active");
+				jquery.close(dnoborder,daskpage);
+			},false);   
+			dnoborder.addEventListener('touchend', function(event) {
+				jquery.removeClass(dnoborder,"m_active");	
+			},false); 
+
+			// 点击确定
+			dconfirm.addEventListener('touchstart', function(event) {
+				jquery.addClass(dconfirm,"m_active");
+				jquery.close(dconfirm,daskpage);
+			},false);
+			dconfirm.addEventListener('touchend', function(event) {
+				jquery.removeClass(dconfirm,"m_active");
+				followlist.removeChild(mfanslist[num]);
+	 		},false);
+
+		    back.addEventListener('touchstart', function(event) {
+		        H.openWin('message','message.html');
+		    },false);  	
+	    }     
+	</script>
+</html>

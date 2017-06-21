@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>点映秀运营系统</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="/backstage-assets/img/index.png">
+    <link rel="apple-touch-icon-precomposed" href="/backstage-assets/img/index.png">
+    <meta name="apple-mobile-web-app-title" content="点映秀运营系统"/>
+    <link rel="stylesheet" href="/backstage-assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/backstage-assets/css/amazeui.datatables.min.css"/>
+    <link rel="stylesheet" href="/backstage-assets/css/app.css">
+    <script src="/backstage-assets/js/jquery.min.js"></script>
+    <style>
+        .in {
+            position: relative;
+        }
+
+        .tip {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body data-type="login">
+<script src="/backstage-assets/js/theme.js"></script>
+<div class="am-g tpl-g" id="login">
+    <!-- 风格切换 -->
+    <div class="tpl-skiner">
+        <div class="tpl-skiner-toggle am-icon-cog">
+        </div>
+        <div class="tpl-skiner-content">
+            <div class="tpl-skiner-content-title">
+                选择主题
+            </div>
+            <div class="tpl-skiner-content-bar">
+                <span class="skiner-color skiner-white" data-color="theme-white"></span>
+                <span class="skiner-color skiner-black" data-color="theme-black"></span>
+            </div>
+        </div>
+    </div>
+    <div class="tpl-login">
+        <div class="tpl-login-content">
+            <div class="tpl-login-logo" style="max-width: 200px">
+
+            </div>
+            <center><span style="color:#fb4747;font-size: 27px;top: -10px;position: relative;">点映秀运营系统</span></center>
+            <form class="am-form tpl-form-line-form" method="post" action="/backstage/sign/in">
+                <div class="am-form-group in">
+                    <input type="text" class="tpl-form-input" name="name" id="name" placeholder="请输入账号">
+
+                </div>
+
+                <div class="am-form-group">
+                    <input type="password" class="tpl-form-input" name="password" id="password"
+                           placeholder="请输入密码">
+
+                </div>
+                <div class="am-form-group tpl-login-remember-me">
+                    <input id="remember-me" type="checkbox" class="rem">
+                    <label for="remember-me">
+                        记住密码
+                    </label>
+                </div>
+                <div class="am-form-group">
+                    <button type="submit" onclick="saveUserInfo()"
+                            class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn">提交
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="/backstage-assets/js/jquery.cookie.js"></script>
+<script src="/backstage-assets/js/amazeui.min.js"></script>
+<!--<script src="/assets/vue.js"></script>-->
+<!--<script src="/operator.js"></script>-->
+<!--<script src="/login.min.js"></script>-->
+<script>
+    //初始化页面时验证是否记住了密码
+    $(document).ready(function () {
+        if ($.cookie("remember-me") == "true") {
+            $(".rem").attr("checked", true);
+            $("#name").val($.cookie("userName"));
+            $("#password").val($.cookie("passWord"));
+        }
+    });
+    //保存用户信息
+    function saveUserInfo() {
+        if ($("#remember-me").prop("checked")) {
+            var userName = $("#name").val();
+            var passWord = $("#password").val();
+            $.cookie("remember-me", "true", {expires: 7}); // 存储一个带7天期限的 cookie
+            $.cookie("userName", userName, {expires: 7}); // 存储一个带7天期限的 cookie
+            $.cookie("passWord", passWord, {expires: 7}); // 存储一个带7天期限的 cookie*!/
+        }
+        else {
+            $.cookie("remember-me", "false", {expires: -1});
+            $.cookie("userName", '', {expires: -1});
+            $.cookie("passWord", '', {expires: -1});
+        }
+    }
+</script>
+</body>
+</html>

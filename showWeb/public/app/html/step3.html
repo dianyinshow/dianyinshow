@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>实名认证</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/Hui.css">
+    <link rel="stylesheet" type="text/css" href="../css/step.css">
+    <link rel="stylesheet" type="text/css" href="../css/css.css">
+</head>
+<body>
+	<div id="wrap">
+		<header class="header">
+			<div class="back">
+	    		<img src="../image/back.png">
+	    	</div>
+	    	<h2 class="pagetitle">
+	    		实名认证
+	    	</h2>		
+		</header>
+		<!-- certi-title 头部 -->
+		<div class="certi-title">
+			<div class="certitop">
+				<div class="number number_active H-float-left">
+					<span class="ns_active">1</span>
+				</div>
+				<span class="xian xian_active H-float-left"></span>
+				<div class="number number_active H-float-left">
+					<span class="ns_active">2</span>
+				</div>
+				<span class="xian xian_active H-float-left"></span>
+				<div class="number number_active H-float-left">
+					<span class="ns_active">3</span>
+				</div>
+			</div>
+			<div class="certibottom">
+				<p>安全认证</p>
+				<p>上传证件照片</p>
+				<p>提交完成</p>
+			</div>
+		</div> 
+		<div class="line"></div>		
+		<div class="result">
+			<div class="result-img">
+				<img src="../image/wait.png">
+			</div>
+			<h2>我们将尽快审核资料，请您耐心等待</h2>
+			<p class="">这里有许多好看的内容，剧组囧事
+				<br>主创直播在等你，快去看看吧啊！
+			</p>			
+		</div>
+		<!-- 下一步 -->
+		<div class="button-submit" style="margin-top: 3%">
+	        <button class="submit">去映秀场</button>
+	    </div>	
+	</div>	
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/H.js"></script>
+  <script src="../script/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../script/click.js"></script>   
+  <script type="text/javascript">
+    // apiready = function(){
+              
+    // };
+    // function opencertification2() {
+    //   api.openWin({
+    //     name:'opencertification2',
+    //     url:'opencertification2.html'
+    //   })
+    // }
+
+    window.onload = function() {
+    	var back = document.getElementsByClassName('back')[0];
+        var buttonsubmit = document.getElementsByClassName('button-submit')[0];
+
+        back.addEventListener('touchstart', function(event) {
+			H.openWin('stpe2','step2.html');
+		},false);
+
+        buttonsubmit.addEventListener('touchstart', function(event) {
+          H.openWin('index','index.html');
+        },false);
+    }     
+  </script>
+</html>

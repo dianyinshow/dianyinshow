@@ -1,0 +1,246 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family:  "Microsoft YaHei";
+}
+ul,li {
+    list-style: none;
+    padding-left: 0;
+}
+/* 导航 */
+.am-topbar {
+    height: 66px;
+    border: none;
+    background: #f4f4f4;
+    margin-bottom: 0;
+}
+.am-topbar-brand a img{
+    display: inline-block;
+    margin-top: -3px;
+    margin-right: 12px;
+ }
+.am-topbar-brand {
+    margin-left: 48px;
+    height: 66px;
+    line-height: 66px;
+}
+.am-topbar-brand a {
+    display: inline-block;
+    color: #ea5147;
+    font-size: 16px;
+}
+.am-topbar-brand a:hover {
+    color: #ea5147;
+}
+.am-nav {
+    position: absolute;
+    left: 50%;
+    margin-left: -256px;
+}
+.am-nav li a {
+    font-size: 18px;
+    margin-top: -6px;
+    padding: 0.4em 26px;
+}
+.am-nav li a i {
+    display: inline-block;
+    margin-right: 6px;
+    height: 16px;
+    width: 14px;
+}
+.am-nav li a .am-icon-user1 {
+    background: url("../img/data.png");
+}
+.am-nav li a .am-icon-user2 {
+    width: 17px;
+    background: url("../img/8E7D430B60599612904458E4594FC8F2.png");
+}
+.am-nav li a .am-icon-user3 {
+    height: 13px;
+    width: 23px;
+    background: url("../img/QQ20170418-0.png");
+}
+.am-nav li a .am-icon-user4 {
+    height: 19px;
+    width: 16px;
+    background: url("../img/EDE71F505433831481E872B6935F7216.png");
+}
+.am-nav > li > a:hover {
+    background-color: #f4f4f4;
+}
+.am-nav > li > a:focus {
+    color: #ea5147;
+    background-color: #f4f4f4;
+}
+.am-icon img{
+    display: inline-block;
+    position: absolute;
+    right: 50px;
+    top: 15px;
+}
+.am-icon img:nth-child(1) {
+    width: 23px;
+    height: 23px;
+    top: 15px;
+    right: 130px;
+}
+.am-icon img:nth-child(2) {
+    width: 33px;
+    height: 33px;
+}
+/* 主题内容 */
+.content {
+    width: 1200px;
+    margin: 0 auto;
+}
+.make {
+    position: relative;
+    margin-top: 35px;
+}
+.make .makeShow {
+    display: inline-block;
+    margin-top: 15px;
+    color: #0f0f0f;
+    font-size: 16px;
+}
+.make a {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.make .backL {
+    position: absolute;
+    left: 0;
+    top: 172px;
+}
+.make .backR {
+    position: absolute;
+    right: 0;
+    top: 172px;
+}
+.make i {
+    display: inline-block;
+    position: absolute;
+    left: 550px;
+    top: 160px;
+    font: 24px normal;
+    color: #ea5147;
+}
+.select-type {
+    margin-top: 223px;
+    height: 280px;
+}
+.select-type li {
+    position: relative;
+    float: left;
+    width: 280px;
+    height: 280px;
+    margin: 0;
+    box-shadow: 0 0 20px 0 #eee;
+}
+.select-type li:nth-child(2) {
+    margin: 0 180px;
+}
+.select-type li div {
+    position: relative;
+    width: 280px;
+    height: 200px;
+}
+.select-type li div img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -35px;
+    margin-top: -40px;
+}
+.select-type li p {
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+}
+.select-type li p a {
+    color: #101010;
+}
+.template {
+    height: 230px;
+    position: relative;
+}
+.template img:nth-of-type(1) {
+    position: absolute;
+    left: 0;
+    top: 130px;
+}
+.template img:nth-of-type(2) {
+    position: absolute;
+    right: 0;
+    top: 130px;
+}
+.template i {
+    display: inline-block;
+    position: absolute;
+    left: 550px;
+    top: 120px;
+    font: 24px normal;
+    color: #ea5147;
+}
+.template-case {
+    height: 635px;
+}
+.template-case li{
+    position: relative;
+    float: left;
+    width: 248px;
+    height: 300px;
+    box-shadow: 0 0 20px 0 #eee;
+    margin-right: 69px;
+    margin-bottom: 35px;
+}
+.template-case li:nth-child(4) {
+    margin: 0;
+}
+.template-case li:nth-child(8) {
+    margin: 0;
+}
+.template-case li .backdrop{
+    display: inline-block;
+    padding: 8px;
+    margin-top: 25px;
+    margin-left: 33px;
+    box-shadow: 0 0 20px 0 #eee;
+}
+.template-case li a {
+    position: absolute;
+    left: 33px;
+    top: 242px;
+    font-size: 16px;
+    color: #111111;
+}
+.template-case li a span{
+    display: block;
+    font-size: 12px;
+    color: #111111;
+}
+.template-case li .back-icon {
+    position: absolute;
+    right: 18px;
+    bottom: 12px;
+}
+.page {
+    position: relative;
+    margin-top: 3px;
+    height: 612px;
+}
+.page span {
+    position: absolute;
+    width: 22px;
+    height: 23px;
+    left: 568px;
+    top: 0;
+    background: url("../img/picture_03.png");
+}
+.page span:nth-child(2) {
+    left: 608px;
+    background: url("../img/picture_04.png");
+}
+
+

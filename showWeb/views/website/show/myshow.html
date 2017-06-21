@@ -1,0 +1,431 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!-- <meta name="viewport"
+        content="width=device-width, initial-scale=1"> -->
+  <title>myshow</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="/webAssets/i/favicon.png">
+  <link rel="stylesheet" href="/webAssets/css/amazeui.css">
+  <link rel="stylesheet" href="/webAssets/css/app.css">
+  <link rel="stylesheet" href="/webAssets/css/r.css">
+  <link rel="stylesheet" href="/webAssets/css/header.css">
+</head>
+<body>
+<header class="am-topbar am-h-header">
+  <h1 class="am-topbar-brand">
+    <a href="#"><img src="/webAssets/img/logo.png" alt="" width=''><span>点映秀</span></a>
+  </h1>
+  <div class="am-topbar-right top-img">
+        <div class='selfpic'>
+          <img class="am-circle" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80" width="36" height="36"/>
+        </div>
+      </div>
+
+      <div class="am-topbar-right top-img">
+       <div class="notice">
+         <span class="am-badge am-badge-red am-round am-notice">6</span>
+       </div>
+      </div>
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav topnav">
+        <li class="am-active">
+          <a href="#">
+            <span class='homesi'></span>
+            首页
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class='search'></span>
+            <!-- <img src="/webAssets/img/searchshow.png" alt="" class='modelicon'>
+            <img src="/webAssets/img/searchshowa.png" alt="" class='activeicon'> -->
+            找秀场
+          </a>
+        </li>
+        <li>
+          <a href="#">
+             <span class='viewshow'></span>
+            <!-- <img src="/webAssets/img/viewshow.png" alt="" class='modelicon'>
+            <img src="/webAssets/img/viewshowa.png" alt="" class='activeicon'> -->
+            映秀场
+          </a>
+        </li>
+        <li>
+          <a href="#">
+             <span class='grades'></span>
+            <!-- <img src="/webAssets/img/grades.png" alt="" class='modelicon'>
+            <img src="/webAssets/img/grades.png" alt="" class='activeicon'> -->
+            映秀社区
+          </a>
+        </li>
+      </ul>
+      
+</header>
+<div class="am-container-main">
+  <div class="address">
+      <ol class="am-breadcrumb addresslist">
+        <li class='h-allshow' >
+          <div class="am-dropdown" data-am-dropdown>
+            <div class="am-btn am-dropdown-toggle" data-am-dropdown-toggle>全部秀 <span></span></div>
+            <ul class="am-dropdown-content">
+              <li><a href="#">快乐的方式不只一种</a></li>
+              <li><a href="#">谁都是造物者的光荣</a></li>
+              <li><a href="#">天空海阔 要做最坚强的泡沫</a></li>
+            </ul>
+          </div>
+         <!--  <a href="#">全部秀</a>
+          <span></span>
+          <select id="doc-select-1">
+                <option value="option1">选项一...</option>
+                <option value="option2">选项二.....</option>
+                <option value="option3">选项三........</option>
+          </select> -->
+        </li>
+        <li class='lastshow'><a href="#">最后修改页面</a><span></span></li> 
+        <li class='findshow'>
+          <div class="am-input-group find-show-sm am-input-group-sm">
+            <span class="am-input-group-label find-all-show"><i></i>查找全部秀 <span>|</span></span>
+            <input type="text" class="am-form-field" >
+          </div>
+        </li>
+      </ol>
+      <div class="addbtn">
+        <img src="/webAssets/img/add.png" alt="">
+        <span>开始制作</span>
+      </div>
+      <div class='clear'></div>
+
+  </div>  
+  <div class="addshow">
+   <ul class='pagelist'>
+ 
+     <li>
+       <div class="gallery-item">
+         <a href="" >
+           <div class='gallery-imgitem' >
+            <img src="/webAssets/img/eg.png" alt="">
+          </div>
+         <h3>三生三世十里桃花</h3>
+         <p>海报秀</p>
+        </a>
+        <div class="shade-item">
+          <div class="edit">
+             <div class='preview'>预览</div>
+             <div class='preview'>编辑</div>
+           </div>
+          <div class="shade-set">
+           <span class='shade-set-item'><img src="/webAssets/img/share.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/exit.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/feedback.png" alt=""></span>
+           <span class="am-dropdown am-dropdown-up" data-am-dropdown>
+            <img src="/webAssets/img/setting.png" alt="" class="am-btn am-dropdown-toggle" data-am-dropdown-toggle>
+              <div class="am-dropdown-content del"> <span>删除</span></div>
+           </span>
+         </div>
+        </div>
+      </div>
+       <span class='checkeditem'></span>
+       
+     </li>
+     <li>
+       <div class="gallery-item">
+         <a href="" >
+           <div class='gallery-imgitem' >
+            <img src="/webAssets/img/eg.png" alt="">
+          </div>
+         <h3>三生三世十里桃花</h3>
+         <p>海报秀</p>
+        </a>
+        <div class="shade-item">
+          <div class="edit">
+             <div class='preview'>预览</div>
+             <div class='preview'>编辑</div>
+           </div>
+          <div class="shade-set">
+           <span class='shade-set-item'><img src="/webAssets/img/share.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/exit.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/feedback.png" alt=""></span>
+           <span class="am-dropdown am-dropdown-up" data-am-dropdown>
+            <img src="/webAssets/img/setting.png" alt="" class="am-btn am-dropdown-toggle" data-am-dropdown-toggle>
+              <div class="am-dropdown-content del"> <span>删除</span></div>
+           </span>
+         </div>
+        </div>
+      </div>
+       <span class='checkeditem'></span>
+       
+     </li>
+     <li>
+       <div class="gallery-item">
+         <a href="" >
+           <div class='gallery-imgitem' >
+            <img src="/webAssets/img/eg.png" alt="">
+          </div>
+         <h3>三生三世十里桃花</h3>
+         <p>海报秀</p>
+        </a>
+        <div class="shade-item">
+          <div class="edit">
+             <div class='preview'>预览</div>
+             <div class='preview'>编辑</div>
+           </div>
+          <div class="shade-set">
+           <span class='shade-set-item'><img src="/webAssets/img/share.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/exit.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/feedback.png" alt=""></span>
+           <span class="am-dropdown am-dropdown-up" data-am-dropdown>
+            <img src="/webAssets/img/setting.png" alt="" class="am-btn am-dropdown-toggle" data-am-dropdown-toggle>
+              <div class="am-dropdown-content del"> <span>删除</span></div>
+           </span>
+         </div>
+        </div>
+      </div>
+       <span class='checkeditem'></span>
+       
+     </li>
+     <li>
+       <div class="gallery-item">
+         <a href="" >
+           <div class='gallery-imgitem' >
+            <img src="/webAssets/img/eg.png" alt="">
+          </div>
+         <h3>三生三世十里桃花</h3>
+         <p>海报秀</p>
+        </a>
+        <div class="shade-item">
+          <div class="edit">
+             <div class='preview'>预览</div>
+             <div class='preview'>编辑</div>
+           </div>
+          <div class="shade-set">
+           <span class='shade-set-item'><img src="/webAssets/img/share.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/exit.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/feedback.png" alt=""></span>
+           <span class="am-dropdown am-dropdown-up" data-am-dropdown>
+            <img src="/webAssets/img/setting.png" alt="" class="am-btn am-dropdown-toggle" data-am-dropdown-toggle>
+              <div class="am-dropdown-content del"> <span>删除</span></div>
+           </span>
+         </div>
+        </div>
+      </div>
+       <span class='checkeditem'></span>
+       
+     </li>
+     <li>
+       <div class="gallery-item">
+         <a href="" >
+           <div class='gallery-imgitem' >
+            <img src="/webAssets/img/eg.png" alt="">
+          </div>
+         <h3>三生三世十里桃花</h3>
+         <p>海报秀</p>
+        </a>
+        <div class="shade-item">
+          <div class="edit">
+             <div class='preview'>预览</div>
+             <div class='preview'>编辑</div>
+           </div>
+          <div class="shade-set">
+           <span class='shade-set-item'><img src="/webAssets/img/share.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/exit.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/feedback.png" alt=""></span>
+           <span class="am-dropdown am-dropdown-up" data-am-dropdown>
+            <img src="/webAssets/img/setting.png" alt="" class="am-btn am-dropdown-toggle" data-am-dropdown-toggle>
+              <div class="am-dropdown-content del"> <span>删除</span></div>
+           </span>
+         </div>
+        </div>
+      </div>
+       <span class='checkeditem'></span>
+       
+     </li>
+     <li>
+       <div class="gallery-item">
+         <a href="" >
+           <div class='gallery-imgitem' >
+            <img src="/webAssets/img/eg.png" alt="">
+          </div>
+         <h3>三生三世十里桃花</h3>
+         <p>海报秀</p>
+        </a>
+        <div class="shade-item">
+          <div class="edit">
+             <div class='preview'>预览</div>
+             <div class='preview'>编辑</div>
+           </div>
+          <div class="shade-set">
+           <span class='shade-set-item'><img src="/webAssets/img/share.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/exit.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/feedback.png" alt=""></span>
+           <span class="am-dropdown am-dropdown-up" data-am-dropdown>
+            <img src="/webAssets/img/setting.png" alt="" class="am-btn am-dropdown-toggle" data-am-dropdown-toggle>
+              <div class="am-dropdown-content del"> <span>删除</span></div>
+           </span>
+         </div>
+        </div>
+      </div>
+       <span class='checkeditem'></span>
+       
+     </li>
+     <li>
+       <div class="gallery-item">
+         <a href="" >
+           <div class='gallery-imgitem' >
+            <img src="/webAssets/img/eg.png" alt="">
+          </div>
+         <h3>三生三世十里桃花</h3>
+         <p>海报秀</p>
+        </a>
+        <div class="shade-item">
+          <div class="edit">
+             <div class='preview'>预览</div>
+             <div class='preview'>编辑</div>
+           </div>
+          <div class="shade-set">
+           <span class='shade-set-item'><img src="/webAssets/img/share.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/exit.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/feedback.png" alt=""></span>
+           <span class="am-dropdown am-dropdown-up" data-am-dropdown>
+            <img src="/webAssets/img/setting.png" alt="" class="am-btn am-dropdown-toggle" data-am-dropdown-toggle>
+              <div class="am-dropdown-content del"> <span>删除</span></div>
+           </span>
+         </div>
+        </div>
+      </div>
+       <span class='checkeditem'></span>
+       
+     </li>
+     <li>
+       <div class="gallery-item">
+         <a href="" >
+           <div class='gallery-imgitem' >
+            <img src="/webAssets/img/eg.png" alt="">
+          </div>
+         <h3>三生三世十里桃花</h3>
+         <p>海报秀</p>
+        </a>
+        <div class="shade-item">
+          <div class="edit">
+             <div class='preview'>预览</div>
+             <div class='preview'>编辑</div>
+           </div>
+          <div class="shade-set">
+           <span class='shade-set-item'><img src="/webAssets/img/share.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/exit.png" alt=""></span>
+           <span class='shade-set-item'><img src="/webAssets/img/feedback.png" alt=""></span>
+           <span class="am-dropdown am-dropdown-up" data-am-dropdown>
+            <img src="/webAssets/img/setting.png" alt="" class="am-btn am-dropdown-toggle" data-am-dropdown-toggle>
+              <div class="am-dropdown-content del"> <span>删除</span></div>
+           </span>
+         </div>
+        </div>
+      </div>
+       <span class='checkeditem'></span>
+       
+     </li>
+
+     <div style='clear:both'></div>
+   </ul>
+   <ul class="am-pagination am-pagination-centered h-show-page">
+
+      <li class='h-pagebtn-show'>
+        <button class="">FRIST</button>
+      </li>
+       <li class='h-pagebtn-show'>
+        <button class="">LAST</button>
+      </li>
+
+      <li class='h-pagebtn-show'>
+        <button class="">PREV</button>
+      </li>
+      <li class="am-active h-pagelist">
+        <a href="#" class="">1</a>
+      </li>
+      <li class="h-pagelist">
+        <a href="#">2</a>
+      </li>
+      <li class=" h-pagelist">
+        <a href="#" class="">3</a>
+      </li>
+      <li class=" h-pagelist">
+        <a href="#" class="">4</a>
+      </li>
+      <!-- <li class=" h-pagelist h-pagelist-last">
+        <a href="#" class=""><span>...</span></a>
+      </li> -->
+      <li class=" h-pagelist">
+        <a href="">
+          <img src="/webAssets/img/icond.png" alt="">
+        </a>
+      </li>
+      <li class='h-pagebtn-show'>
+        <button  class="">NEXT</button>
+      </li>
+      <li class='h-pagebtn-go'>
+        <!-- <a href="Javastript:;" class=""> -->
+          <input type="text" value='02'>
+        <!-- </a> -->
+      </li>
+
+      <li class="am-active h-pagelist h-pagego">
+        <a href="#" class="">GO</a>
+      </li>
+  </ul>
+  </div>
+  
+
+</div>
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="/webAssets/js/jquery.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="/webAssets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="/webAssets/js/amazeui.min.js"></script>
+<script src="/webAssets/js/index.js"></script>
+
+<script>
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r!=null) return (r[2]);
+        return null;
+    }
+    var userId = GetQueryString("id");
+    console.log(userId);
+
+    $.ajax({
+        type: 'get',
+        url: '/website/user/get/user?id='+userId,
+    }).success(function (data){
+        if(data){
+            var user = data;
+            console.log(user);
+        }else{
+            console.log("无数据");
+        }
+    })
+
+
+</script>
+
+
+</body>
+</html>

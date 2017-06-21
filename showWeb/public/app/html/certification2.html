@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/Hui.css">
+    <link rel="stylesheet" type="text/css" href="../css/certification.css">
+    <style>
+
+			/*认证信息*/
+			.paper-list>li{
+				height: 57px;
+				line-height: 57px;
+				border-bottom: solid 1px #f6f6f6;
+
+			}
+			.paper-list>li input{
+				border: none;
+				outline: medium;
+				color: #ebebeb;
+				padding-left: 20px;
+				width: 70%;
+			}
+			/*照片上传*/
+			.photo-paper{
+				padding: 0px 68px;
+				box-sizing:border-box;
+				margin-top: 15px;
+			}
+			.photo-paper>div img{
+				width: 100%;
+				height: 136px;
+			}
+			.photo-paper>div img:nth-child(1){
+				margin-top: 7px;
+			}
+
+
+			.button-submit{
+				margin-top: 18px;
+				padding: 0px 16px;
+				height: 44px;
+				box-sizing: border-box;
+			}
+			button.submit{
+				/*//margin-top: 29px;*/
+				height: 44px;
+				line-height: 44px;
+				background-color: #ea5147;
+				border: none;
+				
+			}
+
+    	
+    </style>
+	
+</head>
+<body>
+	<div id="wrap" class="flex-wrap flex-vertical">
+		<header>
+			<div tapmode="" onclick="closewindow()" class="H-yuan-mycircle">
+	    		<img src="../image/iconp.png" style="max-height: 18px">
+	    	</div>
+	    	<h2 class="border-b active">
+	    		实名认证
+	    	</h2>
+		</header>
+		<!-- certi-title 头部 -->
+		<div class="certi-title H-width-100-percent H-padding-horizontal-both-12 H-height-45">
+			<ul class="H-width-100-percent H-padding-vertical-both-10">
+				<li class="H-float-left"><span>1</span>安全认证</li>
+				<li class="H-float-left list-active"><span class="bgred">2</span>上传证件照片</li>
+				<li class="H-float-right"><span>3</span>审核完成</li>
+			</ul>
+		</div>
+		<div class="H-width-100-percent line"></div>
+		<ul class="H-width-100-percent paper-list">
+			<li class="H-width-100-percent H-padding-horizontal-both-12 ">
+				<span>真实姓名</span>
+				<input type="text">
+			</li>
+			<li class="H-width-100-percent H-padding-horizontal-both-12 ">
+				<span>身份证号</span>
+				<input type="text" value="请输入身份证号">
+			</li>
+		</ul>
+
+		<!-- 照片上传 -->
+		<div class="H-width-100-percent photo-paper">
+			<p class="H-width-100-percent H-text-align-center">您的照片仅用户审核，我们将为你严格保密</p>
+			<p class="H-width-100-percent H-text-align-center">上传客户手持身份证正／反</p>
+			<div class="H-width-100-percent"> 
+				<img src="../image/selfimg.png" class="H-width-100-percent">
+			</div>
+			<div class="H-width-100-percent"> 
+				<img src="../image/selfimg.png" class="H-width-100-percent">
+			</div>
+		</div>
+
+		<!-- 下一步 -->
+		<div class="button-submit">
+			<button class="submit H-bg-color H-button H-width-100-percent  H-font-size-15 H-outline-none  H-padding-horizontal-both-20 H-theme-background-color9 H-theme-font-color-white H-theme-border-color9   H-theme-font-color9-click H-border-radius-3" onclick="opencertification3()">下一步</button>
+		</div>	
+
+	</div>	
+
+</body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/H.js"></script>
+  <script src="../script/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../script/click.js"></script>   
+  <script type="text/javascript">
+    apiready = function(){
+              
+    };
+    function opencertification2() {
+      api.openWin({
+        name:'opencertification2',
+        url:'opencertification2.html'
+      })
+    }
+
+    window.onload = function() {
+      var buttonsubmit = document.getElementsByClassName('button-submit')[0];
+      buttonsubmit.onclick = function() {
+        H.openWin('certification3','certification3.html');
+      }
+    }     
+  </script>
+</html>

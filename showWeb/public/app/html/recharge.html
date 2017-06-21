@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>充值</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/Hui.css"/>
+		<style>
+			body{
+				background: #ffffff;
+			}
+			header {
+				background-color: #ea5147;
+			}
+			.H-yuan-mycircle{
+	            left:12px;
+	            top:14px;
+	            position: absolute;  
+	         }
+			header .border-b {
+				height: 44px;
+				line-height: 44px;
+				text-align: center;
+				color: #ffffff;
+				font-size: 15px;
+				font-weight: bold;
+			}
+			.recharge {
+				box-sizing: border-box;
+				border-bottom: 1px solid #dbdbdb;
+				padding-bottom: 24px
+			}
+			.recharge .regular{
+				font: 12px/22px "微软雅黑";
+				color: #0f0f0f;
+			}
+			.number{
+				width: 143px;
+				height: 34px;
+				font: 11px/34px "微软雅黑";
+				color: #0f0f0f;
+			}
+			.r_active{
+				background: #ea5147;
+				color: #ffffff;
+			}			
+			.name{
+				font: 12px/19px "微软雅黑";
+				color: #0f0f0f;
+			}
+			.choicelist li{
+				height: 19px;
+			}
+			.choicelist li .icon{
+				width: 18px;
+				height: 18px; 
+				background: #dadada;
+			}
+			.r_active2{
+				background: #4bb7f5 !important;
+			}
+			.pay .choicelist .way{
+				background: url("../image/choice2.png") 300px 13px no-repeat;
+				background-size: 13px 13px;
+			}
+			.pay .go{
+				height: 44px;
+			}
+			.pay .go button{
+				font: 18px/44px "微软雅黑";
+				background: #ea5147;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap" class="flex-wrap flex-vertical">
+			<header>
+				<div tapmode="" onclick="closewindow()" class="H-yuan-mycircle">
+	        		<img src="../image/iconp.png" style="max-height: 18px">
+	        	</div>
+	        	<h2 class="border-b">
+	        		充值
+	        	</h2>
+			</header>
+			<div class="recharge">
+				<p class="regular H-margin-vertical-top-12 H-margin-horizontal-left-12">充值金额（一人民币可充值一秀币）</p>
+				<div>
+					<div class="H-flexbox-horizontal H-theme-background-color-white H-margin-vertical-top-11">
+				       	<div class="H-flexbox-horizontal H-theme-background-color-white H-margin-horizontal-left-14 ">
+					        <div class="number r_active H-flex-item H-center-all H-theme-border-color-gray H-margin-horizontal-both-14">10秀币（¥10）</div>
+					        <div class="number H-flex-item H-center-all H-theme-border-color-gray H-margin-horizontal-both-14">50秀币（¥50）</div>
+					    </div>
+				    </div>
+				    <div class="H-flexbox-horizontal H-theme-background-color-white H-margin-vertical-top-16">
+				       	<div class="H-flexbox-horizontal H-theme-background-color-white H-margin-horizontal-left-14 ">
+					        <div class="number H-flex-item H-center-all H-theme-border-color-white H-theme-border-color-gray H-margin-horizontal-both-14">100秀币（¥100）</div>
+					        <div class="number H-flex-item H-center-all H-theme-border-color-white H-theme-border-color-gray H-margin-horizontal-both-14">300秀币（¥300）</div>
+					    </div>
+				    </div>
+				    <div class="H-flexbox-horizontal H-theme-background-color-white H-margin-vertical-top-16">
+				       	<div class="H-flexbox-horizontal H-theme-background-color-white H-margin-horizontal-left-14 ">
+					        <div class="number H-flex-item H-center-all H-theme-border-color-white H-theme-border-color-gray H-margin-horizontal-both-14">500秀币（¥500）</div>
+					        <div class="number H-flex-item H-center-all H-theme-border-color-white H-theme-border-color-gray H-margin-horizontal-both-14">800秀币（¥800）</div>
+					    </div>
+				    </div>
+				    <div class="H-flexbox-horizontal H-theme-background-color-white H-margin-vertical-top-16">
+				       	<div class="H-flexbox-horizontal H-theme-background-color-white H-margin-horizontal-left-14 ">
+					        <div class="number H-flex-item H-center-all H-theme-border-color-white H-theme-border-color-gray H-margin-horizontal-both-14">1000秀币（¥1000）</div>
+					        <div class="number H-flex-item H-center-all H-theme-border-color-white H-theme-border-color-gray H-margin-horizontal-both-14">2000秀币（¥2000）</div>
+					    </div>
+				    </div>
+				</div>
+			</div>
+			<div class="pay H-padding-horizontal-both-16 ">
+				<ul class="choicelist H-margin-vertical-top-18 H-padding-horizontal-both-13">
+					<li class="way H-clear-both H-padding-vertical-both-10">
+						<span class="icon H-icon H-center-all H-border-radius-circle H-margin-horizontal-auto H-float-left H-margin-horizontal-right-12"><img src="../image/weixin.png" style="max-height: 10px"></span>
+						<span class="name H-float-left">微信</span>
+					</li>
+					<li class="way H-clear-both H-padding-vertical-both-10">
+						<span class="icon H-icon H-center-all H-border-radius-circle H-margin-horizontal-auto H-float-left H-margin-horizontal-right-12"><img src="../image/weixin.png" style="max-height: 11px"></span>
+						<span class="name H-float-left">支付宝</span>						
+						<span class="choice H-float-right H-margin-vertical-top-2" style="width: 13px;height: 13px"></span>
+					</li>
+					<li class="way H-clear-both H-padding-vertical-both-10">
+						<span class="icon H-icon H-center-all H-border-radius-circle H-margin-horizontal-auto H-float-left H-margin-horizontal-right-12"><img src="../image/apple.png" style="max-height: 12px"></span>
+						<span class="name H-float-left">APPLE</span>
+					</li>
+				</ul>
+				<div class="go H-margin-vertical-top-33">
+	                <button onclick="closewindow()"  class="H-bg-color H-button H-width-100-percent H-outline-none H-theme-font-color-white   H-border-radius-4">去充值</button>
+	            </div>
+			</div>
+		</div>
+	</body>
+	  <script type="text/javascript" src="../script/api.js"></script>
+	  <script type="text/javascript" src="../script/H.js"></script>
+	  <script src="../script/jquery-1.8.3.min.js"></script>
+	  <script type="text/javascript" src="../script/click.js"></script>   
+	  <script type="text/javascript">
+	    apiready = function(){
+	              
+	    };
+	    function opencertification2() {
+	      api.openWin({
+	        name:'opencertification2',
+	        url:'opencertification2.html'
+	      })
+	    }
+
+	    window.onload = function() {
+			var number = document.getElementsByClassName('number');
+			var way = document.getElementsByClassName('way');
+			var icon = document.getElementsByClassName('icon');
+			for(var i=0;i<number.length;i++){
+				number[i].onclick=function(){
+					for(var i=0;i<number.length;i++){
+						jquery.removeClass(number[i],"r_active");
+					}
+					jquery.addClass(this,"r_active");
+				}
+
+			}
+
+			for(var i=0;i<way.length;i++){
+				way[i].index=i;
+				way[i].onclick=function(){
+					for(var i=0;i<icon.length;i++){
+						jquery.removeClass(icon[i],"r_active2");
+						way[i].style.backgroundImage='url("../image/choice2.png")';
+					}
+					jquery.addClass(icon[this.index],"r_active2");
+					this.style.backgroundImage='url("../image/choice.png")';
+
+				}
+
+			}
+		}			 			
+		   
+  </script>
+</html>

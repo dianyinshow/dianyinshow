@@ -1,0 +1,134 @@
+<%- include ../include/header.html%>
+<%- include ../include/left.html%>
+<!-- 前端展示发布系统 -->
+<style>
+    a:focus, a:hover {
+        color: #fff;
+    }
+    .add{
+        display: inline-block;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+    }
+    td, th {
+        width: 20%;
+        text-align: center;
+    }
+    .active{
+        background: #00B7FF;
+    }
+    .page {
+        position: absolute;
+        top: 260px;
+        left: 570px;
+        height: 36px;
+        margin: 10px auto;
+        text-align: center;
+    }
+    .all {
+        position: relative;
+    }
+    .page li {
+        float: left;
+        width: 36px;
+        height: 24px;
+        line-height: 24px;
+        margin-left: 10px;
+        border: 1px solid #fff;
+        cursor: pointer;
+    }
+    .page li span {
+        display: inline-block;
+        width: 36px;
+        height: 24px;
+        font-size: 16px;
+        text-align: center;
+        color: #fff;
+    }
+    .page li a {
+        display: inline-block;
+        width: 36px;
+        height: 24px;
+        font-size: 16px;
+        text-align: center;
+        color: #fff;
+    }
+</style>
+
+<div class="tpl-content-wrapper">
+    <div class="row-content am-cf">
+        <div class="row">
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                <div class="widget am-cf">
+                    <div class="widget-head am-cf">
+                        <div class="widget-title am-fl">使用教程</div>
+                        <div class="widget-function am-fr">
+                            <a href="javascript:;" class="am-icon-cog"></a>
+                        </div>
+                    </div>
+                    <div class="widget-body  widget-body-lg am-fr all">
+
+                        <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                            <thead>
+                            <tr>
+                                <th>教程名称</th>
+                                <th>父级别模块</th>
+                                <th>发布时间</th>
+                                <th>作者</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <%videos.forEach(function (video){%>
+                            <tr class="gradeX">
+                                <td><%= video.title%></td>
+                                <td><%= video.type%></td>
+                                <td><%= video.createTime%></td>
+                                <td><%= video.author%></td>
+                                <td>
+                                    <div class="tpl-table-black-operation">
+                                        <a href="/backstage/useVideo/update/<%=video.id%>">
+                                            <i class="am-icon-pencil"></i> 编辑
+                                        </a>
+                                        <a href="/backstage/useVideo/delete/<%= video.id%>" class="tpl-table-black-operation-del">
+                                            <i class="am-icon-trash"></i> 删除
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <%})%>
+                            <!-- more data -->
+                            </tbody>
+                        </table>
+                        <%if(totalPage != 1) {%>
+                        <ul class="page">
+                            <%for (var i = 0; i < totalPage; i++) {%>
+                            <%if(currentPage == (i + 1)) {%>
+                            <li class="active">
+                                <span><%= currentPage%></span>
+                            </li>
+                            <%}else {%>
+                            <li>
+                                <a href="/backstage/useVideo?pageNum=<%- i + 1%>"><%- i + 1%></a>
+                            </li>
+                            <%}%>
+                            <%}%>
+                        </ul>
+                        <%}%>
+
+                        <a href="/backstage/useVideo/add" class="add">
+                            增加
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ../include/footer.html%>

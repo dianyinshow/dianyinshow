@@ -1,0 +1,566 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>点映秀注册</title>
+    <meta name="description" content="注册新账号">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="../assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="css/amazeui.min.css" />
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/Hui.css">
+    <style>
+        body{
+            background: #ffffff;
+            font-family:'Microsoft YaHei';
+        }
+
+        .loginbutton{
+            border:1px solid #b2b0b0;
+            border-radius: 4px;
+            font-family:'Microsoft YaHei';
+        }
+
+        .regbutton{
+            border:1px solid #b2b0b0;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family:'Microsoft YaHei';
+        }
+
+        .mainfont{
+            font-size: 18px;
+            color:#666;
+            font-family:'Microsoft YaHei';
+        }
+
+        .loginFont{
+            font-size: 18px;
+            color:#4bb7f5;
+            font-family:'Microsoft YaHei';
+        }
+        .myapp-login-logo-text{
+            font-family:'Microsoft YaHei';
+        }
+        .am-form{
+            width: 90%;
+            float:left;
+            margin-left: 5%
+        }
+        .msg{
+            color:#f7152b;
+            font-family:'Microsoft YaHei';
+            font-size: 14px;
+            margin-top:10px;
+        }
+        .login-font{
+            font-size:18px;
+        }
+
+        .marker{
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            background: url(images/codeImgs/marker.png) no-repeat;
+        }
+        .refresh{
+            width: 53px;
+            height: 22px;
+            right: 3px;
+            top: 0;
+            cursor: pointer;
+            position: absolute;
+            background: url(images/codeImgs/refresh.png) no-repeat;
+        }
+        .img-verify {
+            width: 428px;
+            height: 130px;
+            border: 1px solid #b2b2b2;
+            border-radius: 4px;
+            padding: 12px;
+        }
+
+    </style>
+</head>
+
+<body  style="background: #ffffff">
+
+<div class="am-g myapp-login">
+    <div class="myapp-login-logo-block  tpl-login-max">
+        <div class="myapp-login-logo-text">
+            <div class="myapp-login-logo-text" onclick="openindex()">
+                点映秀
+            </div>
+        </div>
+
+        <div class="login-font">
+            注册新账号
+        </div>
+        <div class="am-u-sm-10 login-am-center" >
+            <form class="am-form" >
+                <fieldset style="border:none;" id ="formWrap">
+                    <div class="H-flexbox-horizontal  H-border-vertical-bottom-margin-both-10-after loginbutton" id="mainuser1">
+                        <input type="text" class="H-textbox H-vertical-align-middle H-vertical-middle H-font-size-16 H-flex-item H-box-sizing-border-box H-border-none H-outline-none H-padding-15 H-theme-background-color-transparent" placeholder="请输入您的工作邮箱"  id="email" disabled>
+                    </div>
+                    <p class="msg"  id="email_msg"></p>
+
+                    <div class="H-flexbox-horizontal  H-border-vertical-bottom-margin-both-10-after loginbutton" id="usernameWrap">
+                        <input type="text" class="H-textbox H-vertical-align-middle H-vertical-middle H-font-size-16 H-flex-item H-box-sizing-border-box H-border-none H-outline-none H-padding-15 H-theme-background-color-transparent" placeholder="用户昵称（1-10位中文字符）"  id="username">
+                    </div>
+                    <p class="msg"  id="username_msg"></p>
+
+                    <div class="H-flexbox-horizontal  H-border-vertical-bottom-margin-both-10-after loginbutton" id="passwordWrap">
+                        <input type="password" class="H-textbox H-vertical-align-middle H-vertical-middle H-font-size-16 H-flex-item H-box-sizing-border-box H-border-none H-outline-none H-padding-15 H-theme-background-color-transparent" placeholder="密码（字母、数字、至少6位）"  id="password">
+                    </div>
+                    <p class="msg"  id="password_msg"></p>
+
+                    <div class="img-verify" id="imgCode"></div>
+                    <br/>
+                    <p class="msg" id="imgCode_msg"></p>
+                    <p>
+                        <button type="button"  class="am-btn am-btn-default"  id = "btnReg">注册</button>
+                    </p>
+                    <p><button type="button" class="am-btn am-btn-wx">使用微信登录</button></p>
+                    <center><span class="mainfont">已有账号？</span><span class="loginFont" id = "btnLogin">登录</span></center>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/amazeui.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/H.js"></script>
+<script type="text/javascript" src="js/verifyCode.js"></script>
+</body>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        var emailEle = document.getElementById("email");      //邮箱输入框节点
+        var usernameEle = document.getElementById("username");//昵称输入框节点
+        var passwordEle = document.getElementById('password');//密码输入框节点
+        var btnRegEle = document.getElementById("btnReg");   //注册按钮
+        var emailFlag = true;
+        var usernameFlag = false;
+        var passwordFlag = false;
+        var imgCodeFlag = false;
+
+        //获取url中的参数
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r!=null) return (r[2]);
+            return null;
+        }
+        var email = GetQueryString("email");
+        emailEle.value = email;//邮箱赋值
+
+        emailEle.onblur = function(){
+            //邮箱
+            H.D('#email_msg').innerHTML='';
+            var emailReg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+            if(!emailReg.test(email)){
+                H.D('#email_msg').innerHTML='该邮箱无效!';
+                emailFlag = false;
+                return emailFlag;
+            }else{
+                $.ajax({
+                    type: 'get',
+                    url: '/website/user/reg/email?email='+email,
+                }).success(function (data){
+                    if(data=="1"){
+                        H.D('#email_msg').innerHTML='该邮箱已注册，立即登录!';
+                        emailFlag = false;
+                    }else{
+                        emailFlag = true;
+                    }
+                });
+            }
+        }
+
+        //获取下一个元素节点
+        function next(obj){
+            var nextNode = obj.nextSibling;
+            if(nextNode != 1){
+                nextNode = nextNode.nextSibling;
+            }
+            return nextNode;
+        }
+
+        //昵称校验
+        usernameEle.onblur = function(){
+            H.D('#username_msg').innerHTML='';
+            document.getElementById("usernameWrap").style.border='1px solid #b2b0b0';
+            var username = usernameEle.value;
+            var usernameReg = /^[\u4e00-\u9fa5]+$/g;//判断是否为纯中文字符
+            if(username.length==0){
+                H.D('#username_msg').innerHTML='昵称不能为空！';
+                usernameFlag = false;
+            }else if(!usernameReg.test(username)||username.length>10){
+                H.D('#username_msg').innerHTML='昵称必须为1-10位中文字符!';
+                usernameFlag = false;
+            }else{
+                $.ajax({
+                    type: 'get',
+                    url: '/website/user/reg/username?username='+username,
+                }).success(function (data){
+                    console.log(data);
+                    if(data=="1"){
+                        H.D('#username_msg').innerHTML='该昵称已被占用！';
+                        usernameFlag = false;
+                    }else{
+                        usernameFlag = true;
+                        console.log(usernameFlag);
+                    }
+                });
+            }
+        }
+
+        usernameEle.onfocus = function(){
+            document.getElementById("usernameWrap").style.border='1px solid #ea5147';
+        }
+
+
+        //密码框失去焦点校验
+        passwordEle.onblur = function(){
+            H.D('#password_msg').innerHTML='';
+            document.getElementById("passwordWrap").style.border='1px solid #b2b0b0';
+            var password = passwordEle.value;
+            var passwordReg = /^[A-Za-z0-9]+$/g;
+            var allNumberReg = /^\d+$/g;
+            var allCharReg = /^[A-Za-z]+$/g;
+            //var regStr = "^([A-Z]|[a-z]|[0-9]|[`~!@#$%^&*()+=|{}':;',\\\\[\\\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]){6,20}$";
+
+            //6位及以上字母、数字组合
+            if(password.length < 6){
+                H.D('#password_msg').innerHTML='请输入6位以上密码';
+                passwordFlag = false;
+            }else if(password.length > 20){
+                H.D('#password_msg').innerHTML='密码最大长度20位';
+                passwordFlag = false;
+            }else if(allNumberReg.test(password)){
+                H.D('#password_msg').innerHTML='密码不能为纯数字';
+                passwordFlag = false;
+            }else if(allCharReg.test(password)) {
+                H.D('#password_msg').innerHTML='密码不能为纯字母';
+                passwordFlag = false;
+            }else if(!passwordReg.test(password)){
+                H.D('#password_msg').innerHTML='密码只能为字母和数字组合';
+                passwordFlag = false;
+            }else{
+                passwordFlag = true;
+            }
+        }
+
+        //密码框获得焦点校验
+        passwordEle.onfocus = function(){
+            document.getElementById("passwordWrap").style.border='1px solid #ea5147';
+        }
+
+        //console.log(({}+[]).length+"长度");15
+
+
+        Code.init();
+        $(document).on("click","#codeContainer canvas",function(event){
+            var uid = createInput(convertPoint($(this),event.pageX,event.pageY));
+            createMarker(event.pageX,event.pageY,uid);
+        });
+        $(document).on("click",".marker",function(event){
+            var _this = $(this),uid = _this.data("uid");
+            _this.remove();
+            $('.u'+uid).remove();
+        });
+        $("#btnSendCode").on("click",function(){
+            var code = [];
+            $(".code-value").each(function(){
+                code.push(JSON.parse($(this).val()));
+            });
+            imgCodeFlag = Code.verify(code,reset);
+            if(imgCodeFlag){
+                window.location.href = "regMobile.html?mobile="+mobileEle.value;//跳转到完善手机注册页
+            }else{
+
+                H.D('#imgCode_msg').innerHTML='图片选择错误！';
+                Code.reload();
+                reset();
+            }
+        });
+        $(".refresh").on("click",function(){
+            H.D('#imgCode_msg').innerHTML='';
+            Code.reload();
+            reset();
+        })
+        function createInput(point){
+            var uid = new Date().getTime();
+            $("<input />").attr({
+                'value' : JSON.stringify(point),
+                'class' : 'code-value u'+uid
+            }).appendTo("body").hide();
+            return uid;
+        }
+        function reset(){
+            $(".code-value").remove();
+            $(".marker").remove();
+        }
+        function createMarker(x,y,uid){
+            $("<div />").attr({
+                'class' : 'marker',
+                'data-uid' : uid
+            }).css({
+                left : x - 13,
+                top : y -5
+            }).appendTo('body');
+        }
+        function convertPoint(elem,x,y){
+            var offset = elem.offset();
+            return {
+                x : x - offset.left,
+                y : y - offset.top
+            }
+        }
+
+
+        btnRegEle.onclick = function(){
+            emailEle.onblur();
+            if(!emailFlag){
+                return;
+            }
+            console.log(emailFlag);
+            usernameEle.onblur();//ajax异步问题  导致ajax的结果还未返回时就已经执行了后面判断语句 而此时的usernameFlag还是false
+            if(!usernameFlag){
+                console.log(usernameFlag);
+                return;
+            }
+            console.log(usernameFlag);
+
+            passwordEle.onblur();
+            if(!passwordFlag){
+                return;
+            }
+            console.log(passwordFlag);
+            var code = [];
+            $(".code-value").each(function(){
+                code.push(JSON.parse($(this).val()));
+            });
+            imgCodeFlag = Code.verify(code,reset);
+            console.log(imgCodeFlag);
+
+            if(!imgCodeFlag){
+                H.D('#imgCode_msg').innerHTML='图片选择错误！';
+                Code.reload();
+                reset();
+                return;
+            }
+
+            if(emailFlag&&usernameFlag&&passwordFlag&&imgCodeFlag){
+                var username = document.getElementById("username").value;
+                var password = document.getElementById('password').value;
+                email = document.getElementById("email").value;
+                var user = {};
+                user.username = username;
+                user.password = password;
+                user.email = email;
+                console.log(user);
+                $.ajax({
+                    type: 'post',
+                    url: '/website/user/reg/email',
+                    data:user,
+                    dataType:'json'
+                }).success(function (data){
+                    console.log(data);
+                    if(data=="1"){
+
+                        window.location.href="./login.html";
+                    }else{
+                        H.D('#imgCode_msg').innerHTML='注册失败！';
+                    }
+                });
+            }
+        }
+    });
+
+
+
+</script>
+
+<!--<script>
+    var usernameEle = document.getElementById("username");//昵称输入框节点
+    var emailEle = document.getElementById("email");      //邮箱输入框节点
+    var passwordEle = document.getElementById('password');//密码输入框节点
+    var passwordFlag = false;
+
+    //获取url中的参数
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r!=null) return (r[2]);
+        return null;
+    }
+    var email = GetQueryString("email");
+    emailEle.value = email;//邮箱赋值
+
+    //获取下一个元素节点
+    function next(obj){
+        var nextNode = obj.nextSibling;
+        if(nextNode != 1){
+            nextNode = nextNode.nextSibling;
+        }
+        return nextNode;
+    }
+
+    //昵称失去焦点校验
+    usernameEle.onblur = function(){
+        document.getElementById("usernameWrap").style.border='1px solid #b2b0b0';
+        var username = usernameEle.value;
+        var usernameReg = /^[\u4e00-\u9fa5]+$/g;//判断是否为纯中文字符
+        if(username.length==0){
+            H.D('#msg').innerHTML='名称不能为空！';
+        }else if(!usernameReg.test(username)||username.length>10){
+            H.D('#msg').innerHTML='昵称必须为1-10位中文字符!';
+        }else{
+            $.ajax({
+                type: 'get',
+                url: '/webIndex/user/reg/username?username='+username,
+            }).success(function (data){
+                console.log(data);
+                if(data=="1"){
+                    H.D('#msg').innerHTML='该昵称已被占用！';
+                }else{
+                    H.D('#msg').innerHTML='';
+                }
+            });
+        }
+    }
+
+    //昵称获得焦点
+    usernameEle.onfocus = function(){
+        document.getElementById("usernameWrap").style.border='1px solid #ea5147';
+    }
+
+
+    //密码框失去焦点校验
+    passwordEle.onblur = function(){
+        document.getElementById("passwordWrap").style.border='1px solid #b2b0b0';
+        var password = passwordEle.value;
+        var passwordReg = /^[A-Za-z0-9]+$/g;
+        var allNumberReg = /^\d+$/g;
+        var allCharReg = /^[A-Za-z]+$/g;
+        //var regStr = "^([A-Z]|[a-z]|[0-9]|[`~!@#$%^&*()+=|{}':;',\\\\[\\\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]){6,20}$";
+
+        //6位及以上字母、数字组合
+        if(password.length < 6){
+            H.D('#msg').innerHTML='请输入6位以上密码';
+        }else if(password.length > 20){
+            H.D('#msg').innerHTML='密码最大长度20位';
+        }else if(allNumberReg.test(password)){
+            H.D('#msg').innerHTML='密码不能为纯数字';
+        }else if(allCharReg.test(password)) {
+            H.D('#msg').innerHTML='密码不能为纯字母';
+        }else if(!passwordReg.test(password)){
+            H.D('#msg').innerHTML='密码只能为字母和数字组合';
+        }else{
+            H.D('#msg').innerHTML='';
+            passwordFlag = true;
+        }
+
+    }
+
+    //密码框获得焦点校验
+    passwordEle.onfocus = function(){
+        document.getElementById("passwordWrap").style.border='1px solid #ea5147';
+    }
+
+    //console.log(({}+[]).length+"长度");
+    function changecolor(){
+        document.getElementById("mainuser1").style.border='1px solid #ea5147'
+    }
+    function setdefault(){
+        document.getElementById("mainuser2").style.border='1px solid #b2b0b0'
+    }
+    function changecolor1(){
+        document.getElementById("mainpass3").style.border='1px solid #ea5147';
+    }
+    function setdefault1(){
+        document.getElementById("mainpass4").style.border='1px solid #b2b0b0';
+    }
+     function openReg(){
+     	window.location='/webIndex/user/reg.html'
+     }
+     function openmyform(){
+        window.location='login.html'
+     }
+
+     function checkuser(){
+          var username = document.getElementById("username").value;
+          var password = document.getElementById('password').value;
+          email = document.getElementById("email").value;
+          //var name = document.getElementById('username').value;
+            // var  password=document.getElementById("password").value
+          /*  if (username.length==0){
+                H.D('#msg').innerHTML='注册用户名不能为空！';
+              return false
+            }
+            //用户名称不能为空
+            else {
+              //手机还是邮箱
+
+                if(username.indexOf('@')==-1){
+                //手机
+            if (username.length!=11)
+             {
+                 H.D('#msg').innerHTML='您的输入不是11位的手机号！';
+                 return false;
+             }
+             if(isNaN(username)){
+                       H.D('#msg').innerHTML='您的手机号是非法的，请检查！';
+                 return false;
+             }
+             }
+                   else{
+                      //邮箱
+                  var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+                  if(!myreg.test(username)){
+                  H.D('#msg').innerHTML='请输入合法的邮箱！';
+                   return (false);
+
+              }
+
+             }
+
+            }
+            // if (password.length==0){
+            //     H.D('#msg').innerHTML='密码不能为空！'
+            //     return false
+            // }*/
+
+          var user = {};
+          user.username = username;
+          user.password = password;
+          user.email = email;
+          console.log(user);
+          $.ajax({
+              type: 'post',
+              url: '/webIndex/user/reg/email',
+              data:user,
+              dataType:'json'
+          }).success(function (data){
+              console.log(data);
+              if(data=="1"){
+                  window.location.href="./login.html";
+              }
+          });
+      }
+
+
+</script>-->
+</html>

@@ -1,0 +1,164 @@
+.add-bankcord{
+	width:860px ;
+	height: auto;
+	margin: 40px 0 0 55px;
+}
+.adc-btn{
+	width:388px;
+	height: 120px;
+	border: 1px dashed #666666;
+	color: #666666;
+	font-size: 14px;
+	display: block;
+	/*margin: 40px 0 0 25px;*/
+	margin-left: 50px;
+	text-align: center;
+	line-height: 120px;
+	float: left;
+}
+/***********添加银行卡************/
+.add-mb-title{
+	margin:40px 0 0 40px;
+}
+.add-mb-title span{
+	font-size: 16px;
+	color: #333333;
+}
+.add-mb-title span.cuss{
+	color: #ea5147;
+}
+.add-bc-list{
+	margin: -10px 0 0 40px;
+}
+.add-bc-list div{
+	margin-top:40px;
+}
+.add-bc-list label{
+	color: #666666;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.add-bc-list input{
+	width: 362px;
+	height: 40px;
+	border: 1px solid #666666;
+	border-radius: 4px;
+	color: #666666;
+	font-size: 14px;
+
+}
+.abl-bc input{
+	margin-left: 100px;
+}
+
+.abl-cp input,.abl-id input,.abl-id input,.abl-ph input,.abl-yz input{
+	margin-left: 116px;
+}
+.abl-ph input{
+	width: 245px;
+}
+.abl-yz input{
+	width: 120px;
+}
+.abl-ph .vc{
+	display: block;
+	width: 88px;
+	height: 40px;
+	border-radius: 4px;
+	background-color: #ea5147;
+	color: #FFFFFF;
+	line-height: 40px;
+	text-align: center;
+	font-size: 14px;
+	position: absolute;
+	left: 509px;
+	top: 400px;
+}
+.btn-submit-bank {
+	display: block;
+	width: 198px;
+	height: 40px;
+	border-radius: 4px;
+	background-color: #ea5147;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 40px;
+}
+.agree-info{
+	color: #666666;
+	font-size: 14px;
+	vertical-align: middle;
+}
+.a-c{
+	display: none;
+}
+
+.bankcord{
+	width: 388px;
+	height: 120px;
+	border-bottom: 1px solid #666666;
+	float: left;
+}
+.bankcord-type {
+	display: block;
+	width: 368px;
+	height: 120px;
+	border: 1px solid #666666;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	border-bottom: none;
+	margin-left: 10px;
+
+}
+.bankcord-type img{
+	margin:23px 0 0 17px;
+	float: left;
+}
+.bct-info{
+	width: 175px;
+	height: 60px;
+	float: left;
+	margin:35px 0 0 40px;
+}
+.bct-b{
+	color: #333333;
+	font-size: 16px;
+}
+.bct-n,.bct-c{
+	color: #666666;
+	font-size: 14px;
+}
+.xl{
+	cursor: pointer;
+	display: block;
+	position: relative;
+	left: 14px;
+	top:-10px;
+}
+.box-ts{
+	width:110px;
+	height: 68px;
+	border: 1px solid #dbdbdb;
+	-webkit-box-shadow:0 0 10px 2px #dbdbdb;
+	-moz-box-shadow:0 0 10px 2px #dbdbdb;
+	box-shadow:0 0 10px 2px #dbdbdb;
+	background-color: #ffffff;
+	position: relative;
+	top: -93px;
+	left: 253px;
+	display: none;
+}
+.box-ts span{
+	display: block;
+	font-size: 14px;
+	color: #000000;
+	margin-top: 12px;
+	padding: 0 0 0 12px;
+	cursor: pointer;
+
+}
+.box-ts span:hover{
+	color: #ea5147;
+	background-color:#F2F2F2;
+}

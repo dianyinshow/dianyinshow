@@ -1,0 +1,188 @@
+<%- include ../include/header.html%>
+<%- include ../include/left.html%>
+<!-- 所有注册用户管理表 -->
+<style>
+    a:focus, a:hover {
+        color: #fff;
+    }
+    .add{
+        display: inline-block;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+    }
+    td, th {
+        width: 20%;
+        text-align: center;
+    }
+    .active{
+        background: #00B7FF;
+    }
+    .page {
+        position: absolute;
+        top: 260px;
+        left: 570px;
+        height: 36px;
+        margin: 10px auto;
+        text-align: center;
+    }
+    .all {
+        position: relative;
+    }
+    .page li {
+        float: left;
+        width: 36px;
+        height: 24px;
+        line-height: 24px;
+        margin-left: 10px;
+        border: 1px solid #fff;
+        cursor: pointer;
+    }
+    .page li span {
+        display: inline-block;
+        width: 36px;
+        height: 24px;
+        font-size: 16px;
+        text-align: center;
+        color: #fff;
+    }
+    .page li a {
+        display: inline-block;
+        width: 36px;
+        height: 24px;
+        font-size: 16px;
+        text-align: center;
+        color: #fff;
+    }
+    .user {
+        position: relative;
+    }
+    .user .pushMess {
+        position: absolute;
+        top: 8px;
+        left: 49px;
+        width: 52px;
+        color: #fff;
+        background: #3a87ad;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .messageAll {
+        position: relative;
+    }
+    #message {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 380px;
+        width: 600px;
+        height: 250px;
+        background: #3f4649;
+        border-radius: 4px;
+    }
+    .confirm {
+        display: none;
+        position: absolute;
+        bottom: 10px;
+        right: 650px;
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 4px;
+        border: 1px solid #fff;
+        cursor: pointer;
+    }
+</style>
+<div class="tpl-content-wrapper">
+    <div class="row-content am-cf">
+        <div class="row">
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                <div class="widget am-cf">
+                    <div class="widget-head am-cf">
+                        <div class="widget-title am-fl">板块管理</div>
+                        <div class="widget-function am-fr">
+                            <a href="javascript:;" class="am-icon-cog"></a>
+                        </div>
+                    </div>
+                    <div class="widget-body  widget-body-lg am-fr messageAll">
+                        <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                            <thead>
+                            <tr>
+                                <th>用户名</th>
+                                <th>性别</th>
+                                <th>手机号</th>
+                                <th>注册时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <%users.forEach(function (user){%>
+                            <tr class="gradeX">
+                                <td class="user"><span class="pushMess">发送</span><%= user.username%></td>
+                                <td><%= user.gender%></td>
+                                <td><%= user.mobile%></td>
+                                <td><%= user.createTime%></td>
+                                <td>
+                                    <div class="tpl-table-black-operation">
+                                        <a href="/backstage/users/update/<%= user.id%>" @click="openmyform">
+                                            <i class="am-icon-pencil"></i> 编辑
+                                        </a>
+                                        <a href="/backstage/users/detail/<%= user.id%>" @click="openmyform">
+                                            更多信息
+                                        </a>
+                                        <a href="/backstage/users/delete/<%= user.id%>" class="tpl-table-black-operation-del">
+                                            <i class="am-icon-trash"></i> 删除
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <%})%>
+                            <!-- more data -->
+                            </tbody>
+                        </table>
+                        <%if(totalPage != 1) {%>
+                        <ul class="page">
+                            <%for (var i = 0; i < totalPage; i++) {%>
+                            <%if(currentPage == (i + 1)) {%>
+                            <li class="active">
+                                <span><%= currentPage%></span>
+                            </li>
+                            <%}else {%>
+                            <li>
+                                <a href="/backstage/users?pageNum=<%- i + 1%>"><%- i + 1%></a>
+                            </li>
+                            <%}%>
+                            <%}%>
+                        </ul>
+                        <%}%>
+                        <% console.log(users)%>
+                        <a href="/backstage/users/add" class="add">
+                            增加
+                        </a>
+                        <textarea id="message">
+
+                        </textarea>
+                        <span class="confirm">确定</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.pushMess').click(function (){
+        $('#message').css({'display': 'block'});
+        $('.confirm').css({'display': 'block'});
+    });
+    $('.confirm').click(function (){
+        $('#message').css({'display': 'none'});
+        $('.confirm').css({'display': 'none'});
+    });
+</script>
+<%- include ../include/footer.html%>

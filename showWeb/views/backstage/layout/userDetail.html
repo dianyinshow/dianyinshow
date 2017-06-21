@@ -1,0 +1,146 @@
+<%- include ../include/header.html%>
+<%- include ../include/left.html%>
+<script>
+    function closewindow() {
+        document.getElementById("settingscontent").style.visibility = 'hidden';
+        window.location.href = '/backstage/users?pageNum=1';
+    }
+
+</script>
+<style>
+    .bankBtn, .accountBtn {
+        cursor: pointer;
+        font-size: 24px;
+        color: #00B7FF;
+        margin-left: 86px;
+    }
+    .bank, .account {
+        margin-top: 20px;
+    }
+
+    .bankMessage, .accountMessage {
+        height: 0;
+        overflow: hidden;
+    }
+    .bankMessage li, .accountMessage li {
+        height: 60px;
+        line-height: 60px;
+        margin-left: 100px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: inherit;
+    }
+    .bankMessage li label, .accountMessage li label {
+        width: 100px;
+        text-align: right;
+        margin-right: 20px;
+    }
+    .edit {
+        margin-top: 20px;
+        margin-left: 83px;
+    }
+</style>
+<div class="row" id="settingscontent" style="background: #ffffff;width: 768px;margin-left: 300px">
+    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+        <div class="widget am-cf">
+            <div class="widget-head am-cf">
+                <div class="widget-title am-fl">前台板块发布系统</div>
+                <div class="widget-function am-fr">
+                    <a onclick="closewindow()">关闭</a>
+                </div>
+            </div>
+            <div class="widget-body am-fr">
+                <form class="am-form tpl-form-line-form" method="post" action="/backstage/users/add"
+                      enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<%=result.id%>">
+                    <div class=" bank">
+                        <span class="bankBtn">银行卡信息</span>
+                    </div>
+                    <ul class="bankMessage">
+                        <li>
+                            <label for="bankName" class="">银行卡名称 :</label>
+                            <span><%= result.bankName%></span>
+                        </li>
+                        <li>
+                            <label for="bankNumber" class="">银行卡号 :</label>
+                            <span><%= result.bankNumber%></span>
+                        </li>
+                        <li>
+                            <label for="bankUser" class="">持卡人 :</label>
+                            <span><%= result.bankUser%></span>
+                        </li>
+                        <li>
+                            <label for="idCard" class="">身份证号 :</label>
+                            <span><%= result.idCard%></span>
+                        </li>
+                        <li>
+                            <label for="phoneNumber" class="">绑定手机号:</label>
+                            <span><%= result.phoneNumber%></span>
+                        </li>
+                    </ul>
+                    <div class=" account ">
+                        <span class="accountBtn">个人账户</span>
+                    </div>
+                    <ul class="accountMessage">
+                        <li>
+                            <label for="idCard" class="">秀豆 :</label>
+                            <span><%= value.showBean%></span>
+                        </li>
+                        <li>
+                            <label for="phoneNumber" class="">秀币 :</label>
+                            <span><%= value.showCoin%></span>
+                        </li>
+                        <li>
+                            <label for="phoneNumber" class="">代金券 :</label>
+                            <span><%= value.showVoucher%></span>
+                        </li>
+                    </ul>
+
+                    <div class="edit">
+                        <div class="" onclick="closewindow()">
+                            <%if(result.id){%>
+                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">修改</button>&nbsp;
+                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success "
+                                    onclick="closewindow()">关闭
+                            </button>
+                            <%}else{%>
+                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">确认</button>
+                            <%}%>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var flag = true;
+    $('.bankBtn').click(function () {
+        if (flag) {
+            $('.bankMessage').stop().animate({
+                height: 280
+            }, 500);
+            flag = false;
+        } else {
+            $('.bankMessage').stop().animate({
+                height: 0
+            }, 500);
+            flag = true;
+        }
+    });
+    var index = true;
+    $('.accountBtn').click(function () {
+        if (index) {
+            $('.accountMessage').stop().animate({
+                height: 200
+            }, 500);
+            index = false;
+        } else {
+            $('.accountMessage').stop().animate({
+                height: 0
+            }, 500);
+            index = true;
+        }
+    });
+</script>
+<%- include ../include/footer.html%>
