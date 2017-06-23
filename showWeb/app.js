@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var moment = require('moment');
+var http = require('http');
+
 
 global.inspect = require('util').inspect;
 global.base = require('./model/base.js');
@@ -25,8 +27,6 @@ var template = require('./routes/backstage/template');
 
 var webIndex = require('./routes/website/index');
 var webUser = require('./routes/website/webRouteUser');
-var webShowMyShow = require('./routes/website/show/myshow');
-var webShowIndex = require('./routes/website/show/index');
 var webLogin = require('./routes/website/index/login');
 var webReg = require('./routes/website/index/register');
 var webRegMobileVerify = require('./routes/website/index/regMobileVerify');
@@ -35,12 +35,25 @@ var webRegEmail = require('./routes/website/index/regEmail');
 var webConList = require('./routes/website/index/conlist');
 var webComShow = require('./routes/website/index/comshow');
 var webComment = require('./routes/website/index/comment');
+
+var webShowMyShow = require('./routes/website/show/myshow');
+var webShowIndex = require('./routes/website/show/index');
+var personalCenter = require('./routes/website/show/personalCenter');
+var myNews = require('./routes/website/show/myNews');
+var myWalletVoucher = require('./routes/website/show/myWalletVoucher');
+var myGoods = require('./routes/website/show/myGoods');
+var myCollect = require('./routes/website/show/myCollect');
+var accountset = require('./routes/website/show/accountset');
+var sendMessage = require('./routes/website/show/sendMessage');
 //var newApp = require('./routes/app/app');
 
 var community = require('./routes/website/community');
 var fun = require('./routes/website/fun');
 
 var app = express();
+var server = http.createServer(app);
+sendMessage.listen(server);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -54,6 +67,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use(session({
     secret: 'wh',//加密的cookie的密钥
@@ -92,13 +106,21 @@ app.use('/website/reg/regMobile', webRegMobile);
 app.use('/website/reg/regEmail', webRegEmail);
 app.use('/website/user', webUser);
 app.use('/website/login', webLogin);//官网登录路由
-app.use('/website/show/myShow', webShowMyShow);
-app.use('/website/show/index', webShowIndex);
 app.use('/website/comshow/conlist', webConList);
 app.use('/website/comshow', webComShow);
 app.use('/website/community', community);
 app.use('/website/fun', fun);
 app.use('/website/comment', webComment);//评论
+
+app.use('/website/show/myShow', webShowMyShow);
+app.use('/website/show/index', webShowIndex);
+app.use('/website/show/personalCenter', personalCenter);
+app.use('/website/show/myNews', myNews);
+app.use('/website/show/myWalletVoucher', myWalletVoucher);
+app.use('/website/show/myGoods', myGoods);
+app.use('/website/show/myCollect', myCollect);
+app.use('/website/show/accountset', accountset);
+app.use('/website/show/sendMessage', sendMessage.router);
 //app.use('./app/app',newApp);
 
 

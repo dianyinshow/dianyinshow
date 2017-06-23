@@ -1,0 +1,368 @@
+/*设置导航*/
+.my-wallet{
+	background-color: #FFFFFF;
+	height: 664px;
+	position: relative;
+}
+.w-nav-menu{
+	width: 100%;
+	height: 65px;
+	border-bottom: 1px solid #dbdbdb;
+}
+.my-wallet-nav li{
+	height: 65px;
+	line-height: 30px;
+	text-align: center;
+	float: left;
+}
+.my-wallet-nav li a{
+	display: block;
+	color: #666666;
+	font-size: 18px;
+	margin: 33px 0 0 40px;
+
+}
+.my-wallet-nav li.cur  a{
+	border-bottom: 2px solid #ea5147;
+}
+/*内容框*/
+.account-cont-sec{
+	padding-left:40px;
+	padding-right:40px;
+}
+/*账号名*/
+.accountname{
+	margin-top: 35px;
+	font-size: 18px;
+	color: #666;
+	margin-bottom: 40px;
+}
+.accountname span{
+	display: block;
+	float: left;
+}
+.accountname .accountuser-tit{
+	width: 115px;
+}
+/*退出*/
+.account-signout{
+	width: 90px;
+    height: 30px;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    background: #f8f8f8;
+    text-align: center;
+    line-height: 30px;
+}
+.account-signout a{
+	color:#333333;
+}
+/*安全设置*/
+.securitySet{
+	width: 100%;
+	border-bottom: 1px solid #dbdbdb;
+	margin-top: 30px;
+	font-size: 18px;
+	line-height: 34px;
+
+}
+.securitySet a{
+	color:#666;
+}
+/*各种设置*/
+.security-table{
+	margin-top: 10px;
+	font-size: 14px;
+	color:#666;
+}
+.security-table tr{
+	line-height: 50px;
+
+}
+.security-table tr td+td{
+	padding-left:40px;
+	padding-right:40px;
+}
+/*按钮*/
+.security-table .acc-btn{
+	width: 90px;
+	height: 30px;
+	border:1px solid #dbdbdb;
+	border-radius:4px;
+	background: #f8f8f8;
+	font-size: 14px;
+	color:#333;
+}
+.security-table .acc-btn:hover{
+	color:#ea5147;
+}
+.action-h{
+	color:#ea5147;
+}
+/*修改密码弹出框*/
+.modifypass-page{
+	width: 100%;
+	height:100%;
+	background: rgba(0,0,0,.4);
+	position: fixed;
+	z-index: 666;
+	top:0;
+	left:0;
+	display: none;
+
+}
+/*修改登录框*/
+.modify-frame{
+width: 626px;
+height: 390px;
+position:absolute;
+left: 50%;
+margin-left: -323px;
+top:50%;
+margin-top: -195px;
+}
+/*修改登录框头部*/
+.modify-frame .modify-pass-header{
+line-height: 64px;
+border-bottom: 1px solid #dbdbdb;
+padding:0 40px;
+font-size: 18px;
+color:#333;
+background: #f2f2f2;
+position: relative;
+}
+.modify-frame .close-modify{
+	width: 18px;
+	height: 18px;
+	display: block;
+	/*background: #fff000;*/
+	float: right;
+	margin-top: 23px;
+	background:url(../../assets/img/closepass.png) no-repeat;
+	cursor: pointer;
+}
+/*修改密码*/
+.modify-frame .modify-cont-h{
+	height: 325px;
+	background: #fff;
+	padding:0 40px;
+	border: 1px solid transparent;
+}
+.modify-frame .modify-contin-h{
+	width: 408px;
+	margin:0 auto;
+	margin-top: 40px;
+}
+.modify-contin-h ul{
+	border: 1px solid transparent;
+}
+.modify-contin-h li{
+	margin-bottom: 20px;
+	line-height: 40px;
+	display: block;
+}
+.modify-contin-h li span{
+	display: block;
+	float: left;
+	width: 124px;
+}
+.modify-contin-h li input{
+	width: 280px;
+	float: left;
+	height: 40px;
+	padding:0 8px;
+	border: 1px solid #dbdbdb;
+	color: #999999;
+	font-size: 14px;
+	line-height: 40px;
+	outline: none;
+}
+/*取消保存*/
+.canle-preserve{
+	    bottom: 40px;
+    position: absolute;
+    right: 40px;
+}
+.canle-preserve span{
+	display: block;
+	width: 130px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin-left: 24px;
+	color: #333;
+	font-size: 14px;
+	border-radius:4px;
+	cursor: pointer;
+}
+.canle-preserve span:hover,.canle-preserve .pass-action{
+	background: #ea5147;
+	color: #fff;
+}
+/*更换手机*/
+.phont-input{
+	width: 280px;
+    float: left;
+    border: 1px solid #dbdbdb;
+     border-radius: 4px;
+}
+.phont-span{
+	width: 280px;
+	float: left;
+
+}
+.Verification{
+	width: 280px;
+    float: left;
+}
+/*输入号码*/
+.modify-contin-h .phont-input label{
+	float: left;
+    width: 45px;
+    text-align: center;
+    color: #666;
+}
+.modify-contin-h .phont-input label span{
+	display: inline-block;
+	height: 28px;
+	width: 1px ;
+	background: #666;
+	float: right;
+	margin-top: 6px;
+}
+.modify-contin-h .phont-input input{
+	width: 230px;
+    border: none;
+}
+/*获取验证码*/
+.modify-contin-h .Verification input{
+	width: 170px;
+	float: left;
+	margin-right: 20px;
+	border:1px solid #666666;
+	border-radius: 4px;
+}
+
+.modify-contin-h .Verification button{
+	width: 88px;
+    float: left;
+    font-size: 14px;
+    background: #ea5147;
+    color: #fff;
+    border-radius: 4px;
+    height: 40px;
+    border: none;
+
+}
+/*手机提示*/
+.addph-tit {
+	display: none;
+}
+.addph-tit span{
+	height:12px;
+	width: 124px;
+	display: block;
+	float: left;
+}
+.addph-tit p{
+	color:#ea5147;
+	font-size: 12px;
+	float:left;
+	line-height: 0px;
+}
+/*发送成功*/
+.modify-send-secc{
+	width: 140px;
+	margin:0 auto;
+	margin-top: 10px;
+	margin-bottom: 20px; 
+	font-size: 20px;
+	color: #333;
+	display: none
+}
+.modify-send-secc span{
+	margin-right: 22px;
+}
+/*更改邮箱流程图*/
+.validate-process{
+	width: 390px;
+	margin:0 auto;
+	margin-top: 30px;
+}
+.validate-process span{
+	display:block;
+	float: left;
+}
+.process-step{
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	border:1px solid #d8d6d6;
+	line-height: 38px;
+	text-align: center;
+	color: #666;
+	font-size: 18px;
+}
+.process-course{
+	width: 138px;
+	height: 2px;
+	background: #dbdbdb;
+	margin-top: 18px;
+}
+.step-action{
+	background: #ea5147;
+	border:1px solid #ea5147;
+	color: #fff;
+}
+/*手机号码*/
+.holdphont{
+	color: #666;
+	font-size: 14px;
+}
+/*更改邮箱，检查重新发送按钮*/
+.check-send{
+	position: absolute;
+	bottom: 40px;
+	right: 40px;
+}
+.email-e{
+	text-align: center;
+	font-size: 14px;
+	color:#333;
+	line-height: 44px
+}
+.check-send span{
+	display: block;
+	width: 130px;
+	margin-left: 20px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	text-align: center;
+	border-radius: 4px;
+}
+.check-send span a{
+	color: #fff;
+}
+.check-send .check-accept{
+	background: #ea5147;
+}
+.check-send .sendagain-e{
+	background: #4bb7f5;
+}
+.modify-contin-img{
+	width: 56px;
+	height: 56px;
+	background:url(../../assets/img/submit-ok.png) no-repeat;
+	margin: 75px auto;
+}
+.modify-contin-span{
+	width: 315px;
+	height: 20px;
+	margin: -25px auto;
+}
+.modify-contin-span span{
+	text-align: center;
+	font-size: 16px;
+	color: #333333;
+}

@@ -208,6 +208,7 @@ module.exports = {
             });
         });
     },
+
     //通过用户手机号修改用户密码
     updateWebUserPasswordByMobile: function (req, res, callback) {
         //获取表单提交的内容

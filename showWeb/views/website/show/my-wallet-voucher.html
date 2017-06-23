@@ -14,19 +14,19 @@
 	<!-- No Baidu Siteapp-->
 	<meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-	<link rel="icon" type="image/png" href="webAssets/i/favicon.png">
-	<link rel="stylesheet" href="webAssets/css/amazeui.css">
-	<link rel="stylesheet" href="webAssets/css/app.css">
-	<link rel="stylesheet" href="webAssets/css/header.css">
-	<link rel="stylesheet" href="webAssets/css/baces.css">
-	<link rel="stylesheet" href="webAssets/css/my-wallet.css">
-	<script src="webAssets/js/jquery-1.12.0.js"></script>
-	<script src="webAssets/js/personal-center-header.js"></script>
+	<link rel="icon" type="image/png" href="/assets/i/favicon.png">
+	<link rel="stylesheet" href="/assets/css/amazeui.css">
+	<link rel="stylesheet" href="/assets/css/app.css">
+	<link rel="stylesheet" href="/assets/css/header.css">
+	<link rel="stylesheet" href="/assets/css/baces.css">
+	<link rel="stylesheet" href="/assets/css/my-wallet.css">
+	<script src="/assets/js/jquery-1.12.0.js"></script>
+	<script src="/assets/js/personal-center-header.js"></script>
 </head>
 <body>
 <header class="am-topbar am-h-header">
 	<h1 class="am-topbar-brand">
-		<a href="#"><img src="webAssets/img/logo.png" alt="" width=''><span>点映秀</span></a>
+		<a href="#"><img src="/assets/img/logo.png" alt="" width=''><span>点映秀</span></a>
 	</h1>
 	<div class="am-topbar-right top-img">
 		<div class='selfpic'>
@@ -52,24 +52,24 @@
 			<li>
 				<a href="#">
 					<span class='search'></span>
-					<!-- <img src="webAssets/img/searchshow.png" alt="" class='modelicon'>
-					<img src="webAssets/img/searchshowa.png" alt="" class='activeicon'> -->
+					<!-- <img src="/assets/img/searchshow.png" alt="" class='modelicon'>
+					<img src="/assets/img/searchshowa.png" alt="" class='activeicon'> -->
 					找秀场
 				</a>
 			</li>
 			<li>
 				<a href="#">
 					<span class='viewshow'></span>
-					<!-- <img src="webAssets/img/viewshow.png" alt="" class='modelicon'>
-					<img src="webAssets/img/viewshowa.png" alt="" class='activeicon'> -->
+					<!-- <img src="/assets/img/viewshow.png" alt="" class='modelicon'>
+					<img src="/assets/img/viewshowa.png" alt="" class='activeicon'> -->
 					映秀场
 				</a>
 			</li>
 			<li>
 				<a href="#">
 					<span class='grades'></span>
-					<!-- <img src="webAssets/img/grades.png" alt="" class='modelicon'>
-					<img src="webAssets/img/grades.png" alt="" class='activeicon'> -->
+					<!-- <img src="/assets/img/grades.png" alt="" class='modelicon'>
+					<img src="/assets/img/grades.png" alt="" class='activeicon'> -->
 					映秀社区
 				</a>
 			</li>
@@ -81,23 +81,27 @@
 		<div class="am-conleft-h">
 			<div class="conleft-img">
 				<div class="conleft-imgin">
-					<img src="webAssets/img/selfimg.png" alt="">
+					<%if(user.avatarWeb) {%>
+					<img src="/photo/show<%= user.avatarWeb%>" title="头像" alt="头像">
+					<%}else {%>
+					<img src="/assets/img/selfimg.png" alt="">
+					<%}%>
 				</div>
-				<p>kist</p>
+				<p><%= user.username%></p>
 			</div>
 			<div class="conleft-item">
 				<ul>
-		          <li class='conleft-list conleft-list-active'>
-		            <a href="personal-center-header.html"><span class='baceicon'></span>基本信息</a>
-		          </li>
-		          <li class='conleft-list'><a href="myNews.html"><span class='mesicon'></span>我的消息</a></li>
-		          <li class='conleft-list'><a href="my-wallet-voucher.html"><span class='moneyicon'></span>我的钱包</a></li>
-		          <li class='conleft-list'><a href=""><span class='extendicon'></span>秀场推广</a></li>
-		          <li class='conleft-list'><a href=""><span class='membericon'></span>会员中心</a></li>
-		          <li class='conleft-list'><a href="my-goods.html"><span class='ordericon'></span>我的订单</a></li>
-		          <li class='conleft-list'><a href="my-collect.html"><span class='collecticon'></span>我的收藏</a></li>
-		          <li class='conleft-list'><a href="Accountset.html"><span class='aseticon'></span>账户设置</a></li>
-		        </ul>
+					<li class='conleft-list'>
+						<a href="/website/show/personalCenter"><span class='baceicon'></span>基本信息</a>
+					</li>
+					<li class='conleft-list'><a href="/website/show/myNews"><span class='mesicon'></span>我的消息</a></li>
+					<li class='conleft-list conleft-list-active'><a href="/website/show/myWalletVoucher"><span class='moneyicon'></span>我的钱包</a></li>
+					<li class='conleft-list'><a href=""><span class='extendicon'></span>秀场推广</a></li>
+					<li class='conleft-list'><a href=""><span class='membericon'></span>会员中心</a></li>
+					<li class='conleft-list'><a href="/website/show/myGoods"><span class='ordericon'></span>我的订单</a></li>
+					<li class='conleft-list'><a href="/website/show/myCollect"><span class='collecticon'></span>我的收藏</a></li>
+					<li class='conleft-list'><a href="/website/show/Accountset"><span class='aseticon'></span>账户设置</a></li>
+				</ul>
 			</div>
 			<div class="stardirect">
 				<div class="directbtn">
@@ -125,13 +129,13 @@
 								<p class="xb-all">共有<span>500</span>秀币</p>
 								<p class="xb-profit">
 									收益:<span>200</span>秀币
-									<i><img src="webAssets/img/gh_04.png" alt="gh"></i>
+									<i><img src="/assets/img/gh_04.png" alt="gh"></i>
 									充值:<span>200</span>秀币
 								</p>
 
 							</div>
 							<div class="dgh">
-								<img src="webAssets/img/dgh_07.png" alt="">
+								<img src="/assets/img/dgh_07.png" alt="">
 							</div>
 							<div class="xb-btn">
 								<a class="btn-rxb" href="#">充值</a>
@@ -146,7 +150,7 @@
 								<p class="xd-all">共有<span>500</span>秀豆</p>
 							</div>
 							<div class="dgh">
-								<img src="webAssets/img/dgh_07.png" alt="">
+								<img src="/assets/img/dgh_07.png" alt="">
 							</div>
 							<div class="xd-btn">
 								<a class="btn-cash" href="#">兑换</a>
@@ -233,7 +237,7 @@
 								</ul>
 							</div>
 							<div class="no-voucher">
-								<img src="webAssets/img/voucher.png" alt="">
+								<img src="/assets/img/voucher.png" alt="">
 								<span>暂无代金券</span>
 							</div>
 						</li>
@@ -248,7 +252,7 @@
 			<div class="exchange-top">
 				<h3>兑换</h3>
 				<a class="popup-close" href="#">
-					<img src="webAssets/img/closess_03.png" alt="关闭">
+					<img src="/assets/img/closess_03.png" alt="关闭">
 				</a>
 			</div>
 			<div class="exchange-middle">
@@ -289,7 +293,7 @@
 					<a class="rn-btn" href="#">立即兑换</a>
 					<input class="rn-checkbox" type="checkbox">
 					<a class="rn-cb" href="#">
-						<img src="webAssets/img/green-ok.png" alt="">
+						<img src="/assets/img/green-ok.png" alt="">
 					</a>
 					<span>同意充值服务协议</span>
 				</div>
@@ -303,15 +307,15 @@
 <!--在这里编写你的代码-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="webAssets/js/jquery.js"></script>
+<script src="/assets/js/jquery.js"></script>
 <!--<![endif]-->
 <!--[if lte IE 8 ]>
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-<script src="webAssets/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
-<script src="webAssets/js/amazeui.min.js"></script>
-<script src="webAssets/js/index.js"></script>
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/assets/js/index.js"></script>
 
 
 </body>

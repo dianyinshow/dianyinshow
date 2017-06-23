@@ -23,6 +23,7 @@
     "mysql": "^2.13.0",
     "nodemailer": "^4.0.1",
     "querystring": "^0.2.0",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "socket.io": "^2.0.3"
   }
 }

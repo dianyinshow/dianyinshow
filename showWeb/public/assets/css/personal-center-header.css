@@ -1,0 +1,277 @@
+body{
+	background-color: #f2f2f2;
+}
+
+h3,span,p,input{
+	font-family: "microsoft yahei";
+}
+
+.am-conright-h .am-main-personal{
+	background-color: #FFFFFF;
+	height: 664px;
+}
+
+.am-conright-h .am-main-personal  h3{
+	font-size: 18px;
+	color: #666666;
+	margin: 40px 0 0 39px;
+}
+.am-conright-h .am-main-personal  hr{
+	width: 100%;
+	margin-top: 5px;
+	border: 1px solid #dbdbdb;
+}
+.am-conright-h .am-main-personal>img{
+	position: relative;
+	top: -34px;
+	left: 39px;
+}
+
+.personal-info li{
+	list-style-type: none;
+	width: 640px;
+	height: 52px;
+	margin-left: 39px;
+
+}
+
+.personal-info li span{
+	font-size: 14px;
+	display: block;
+	line-height: 52px;
+	margin-right: 32px;
+	color: #666666;
+	float: left;
+
+}
+.personal-info li p{
+	float: left;
+}
+
+
+.am-head-portrait{
+	display: block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+
+	float: left;
+	overflow: hidden;
+
+}
+
+ .am-btn-button{
+	width: 78px;
+	height: 24px;
+	border-radius: 4px;
+	border: 1px solid #ea5147;
+	display: block;
+	font-size: 12px;
+	color: #ea5147;
+	text-align: center;
+	margin: 14px 0 0 40px;
+	float: left;
+	background-color: #FFFFFF;
+
+}
+
+.pml-file{
+	position: absolute;
+	border: 1px solid rebeccapurple;
+	font-size: 100px;
+	left: 120px;
+	top: 93px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	cursor: pointer;
+	width: 100px;
+	height: 34px;
+
+}
+.am-btn-button:hover{
+	background-color: #ea5147;
+	color: #FFFFFF;
+	border: 1px solid #ea5147;
+}
+.personal-head a>img{
+	width:50px ;
+	height:50px;
+}
+.personal-head p{
+	line-height: 52px;
+	margin-left: 20px;
+	font-size: 12px;
+	color: #666666;
+}
+.personal-account{
+	margin:20px 0 0 39px;
+}
+.personal-account p{
+	line-height: 52px;
+	font-size: 14px;
+	color: #666666;
+}
+.personal-name{
+	margin:15px 0 0 39px;
+}
+.personal-name i img{
+	width: 12px;
+	height: 12px;
+
+}
+.personal-save{
+	margin:30px 0 0 39px;
+}
+.showInput{
+	width: 280px;
+	height: 40px;
+	border: 1px solid #666666;
+	border-radius: 4px;
+	color: #666666;
+	font-size: 14px;
+	margin-top:5px;
+	padding-left: 8px;
+	float: left;
+	display: none;
+}
+.eName{
+	line-height: 52px;
+	font-size: 14px;
+	color: #666666;
+}
+
+.editName{
+	cursor: pointer;
+	margin: 12px 0 0 5px;
+	display: block;
+	float: left;
+}
+
+.stn-submit{
+	width: 100px;
+	height: 34px;
+	border-radius: 4px;
+	background-color: #ea5147;
+	display: block;
+	font-size: 14px;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 34px;
+}
+
+/*******************弹框样式*********************/
+.popup-anb{
+	position: fixed;
+	left: 50%;
+	margin-left: -450px;
+	margin-top: 100px;
+}
+
+.popup-top{
+	width: 100%;
+	height: 64px;
+	background-color: #F2F2F2;
+	border-bottom: 1px solid #dbdbdb;
+}
+.popup-top h3{
+	font-size: 18px;
+	color: #333333;
+	float: left;
+	width: 100px;
+	margin: 20px 0 0 32px;
+	font-weight: normal;
+
+}
+.popup-close{
+	float: right;
+	margin: 20px 40px 0 0;
+}
+
+.popup-middle{
+	width: 100%;
+	height:554px ;
+	background-color: #FFFFFF;
+}
+
+.popup-upload-photo {
+	margin: 0 auto;
+}
+.popup-upload-photo li{
+	clear: both;
+}
+.popup-upload-photo span{
+	font-size: 14px;
+	color: #333333;
+	display: block;
+	width: 100px;
+	margin: 39px 0 0 20px;
+	float: left;
+}
+.popup-btn-load{
+	width: 100px;
+	height: 34px;
+	border-radius: 4px;
+	text-align: center;
+	color: #FFFFFF;
+	line-height: 34px;
+	text-decoration: none;
+	background-color: #ea5147;
+	float: left;
+	margin-top:29px;
+}
+.popup-upload-photo p{
+	color: #ea5147;
+	font-size: 14px;
+	margin: 39px 0 0 36px;
+	width: 450px;
+	float: left;
+
+}
+.popup-img-box{
+	width: 334px;
+	height: 334px;
+	border: 2px solid #dad9d9;
+	margin: 30px 0 0 42px;
+	float: left;
+}
+.popup-img-group{
+	width: 161px;
+	height: 361px;
+	float: left;
+	margin: 30px 0 0 292px;
+}
+@media screen and (max-width: 860px){
+	.popup-img-group{
+		display: none;
+	}
+	.popup-btn-save{
+		display: none;
+	}
+}
+.popup-img-group .pigl1{
+	width: 160px;
+}
+.popup-img-group .pigl2{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin: 20px auto;
+}
+.popup-img-group .pigl3{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	margin: 20px auto;
+}
+.popup-btn-save{
+	width: 142px;
+	height: 34px;
+	border-radius: 4px;
+	text-align: center;
+	color: #FFFFFF;
+	line-height: 34px;
+	text-decoration: none;
+	background-color: #ea5147;
+	float: left;
+	margin: 30px 0 0 185px;
+}

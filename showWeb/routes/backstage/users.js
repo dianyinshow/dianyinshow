@@ -8,6 +8,7 @@ var upload = multer({dest: 'public/photo/show'});
 var Users = require('../../model/backstage-user');
 var My_bank = require('../../model/my_bank');
 var My_account = require('../../model/my_account');
+var Message = require('../../model/message');
 
 router.get('/', function (req, res) {
     var pageSize = 10;
@@ -115,5 +116,23 @@ router.get('/detail/:id', function (req, res){
             }
         }
     }, id)
+});
+// 群发消息
+router.post('/send', function (req, res){
+    Message.create(req, res, function (err, result){
+        if(err) {
+            console.log(err);
+        }else {
+            if(result) {
+                res.send({
+                    code: '1'
+                })
+            }else {
+                res.send({
+                    code: '0'
+                });
+            }
+        }
+    })
 });
 module.exports = router;

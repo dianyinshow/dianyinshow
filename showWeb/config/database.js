@@ -3,10 +3,10 @@
  */
 module.exports = {
     showMysql: {
-        host: '127.0.0.1',
-        user: 'root',
-        password: '123456go',
-        database: 'dianyinshow',
+        host: '103.251.89.83',
+        user: 'pwwpccom_wan',
+        password: '123456',
+        database: 'pwwpccom_show',
         port: 3306
     },
     tables: {
@@ -24,6 +24,7 @@ module.exports = {
         my_bank_table: 'my_bank',
         my_account_table: 'my_account',
         template_table: 'template',
+        message_table: 'message',
         appUser:'appUser'
     }
 };

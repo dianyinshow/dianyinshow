@@ -164,7 +164,7 @@
                         <a href="/backstage/users/add" class="add">
                             增加
                         </a>
-                        <textarea id="message">
+                        <textarea id="message" name="message" class="mes">
 
                         </textarea>
                         <span class="confirm">确定</span>
@@ -175,13 +175,28 @@
     </div>
 </div>
 <script>
-    $('.pushMess').click(function (){
-        $('#message').css({'display': 'block'});
-        $('.confirm').css({'display': 'block'});
+    $(function (){
+        $('.pushMess').click(function (){
+            $('#message').css({'display': 'block'});
+            $('.confirm').css({'display': 'block'});
+        });
+
+        $('.confirm').click(function (){
+            var data = {};
+            data.message = $('.mes').val();
+            $.ajax({
+                type: 'POST',
+                url: '/backstage/users/send',
+                data: data,
+                dataType: 'JSON',
+                success: function (result){
+                    if(result.code == 1) {
+                        window.location.href = '/backstage/users?pageNum=1';
+                    }
+                }
+            });
+        });
     });
-    $('.confirm').click(function (){
-        $('#message').css({'display': 'none'});
-        $('.confirm').css({'display': 'none'});
-    });
+
 </script>
 <%- include ../include/footer.html%>
