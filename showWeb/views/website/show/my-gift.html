@@ -36,9 +36,9 @@
 		</div>
 	</div>
 
-	<div class="am-topbar-right top-img">
+	<div class="am-topbar-right top-img messList">
 		<div class="notice">
-			<span class="am-badge am-badge-red am-round am-notice">6</span>
+			<span class="am-badge am-badge-red am-round am-notice"><%= value.length%></span>
 		</div>
 	</div>
 	<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
@@ -187,6 +187,12 @@
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/index.js"></script>
 
-
+<script>
+    $(function (){
+        $('.messList').click(function (){
+            window.location.href = '/website/show/myMessage?pageNum=1';
+        });
+    });
+</script>
 </body>
 </html>

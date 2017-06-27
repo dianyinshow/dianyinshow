@@ -3,7 +3,25 @@
  */
 var express = require('express');
 var router = express.Router();
+var Message = require('../../../model/message');
 router.get('/', function (req, res){
-    res.render('website/show/Accountset');
+    Message.findAll(req, res, function (err, value){
+        if(err) {
+            console.log(err);
+        }else {
+            if(value.length) {
+                res.render('website/show/Accountset', {
+                    user: req.session.user[0],
+                    value: value
+                });
+            }else {
+                res.render('website/show/Accountset', {
+                    user: req.session.user[0],
+                    value: []
+                });
+            }
+        }
+    });
+
 });
 module.exports = router;

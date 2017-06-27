@@ -3,12 +3,28 @@
  */
 var express = require('express');
 var router = express.Router();
+var Message = require('../../../model/message');
 /* 我的秀 */
 router.get('/', function (req, res){
-
-    console.log(req.session.user);
-    res.render('website/show/index',{"user":req.session.user});
-    //res.render('webIndex/show/myshow',{"user":req.session.user});
+    Message.findAll(req, res, function (err, result){
+        if(err) {
+            console.log(err);
+        }else {
+            req.session.value = result;
+            if(result.length) {
+                res.render('website/show/index',{
+                    "user":req.session.user[0],
+                    result: result
+                });
+            }else {
+                console.log('查找结果不存在');
+                res.render('website/show/index', {
+                    user: req.session.user[0],
+                    result: []
+                });
+            }
+        }
+    });
 
 });
 

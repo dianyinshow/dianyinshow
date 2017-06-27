@@ -34,9 +34,9 @@
         </div>
     </div>
 
-    <div class="am-topbar-right top-img">
+    <div class="am-topbar-right top-img messList">
         <div class="notice">
-            <span class="am-badge am-badge-red am-round am-notice">6</span>
+            <span class="am-badge am-badge-red am-round am-notice"><%= value.length%></span>
         </div>
     </div>
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-show-sm-only"
@@ -96,7 +96,7 @@
                     <li class='conleft-list'>
                         <a href="/website/show/personalCenter"><span class='baceicon'></span>基本信息</a>
                     </li>
-                    <li class='conleft-list conleft-list-active'><a href="/website/show/myNews"><span class='mesicon'></span>我的消息</a></li>
+                    <li class='conleft-list conleft-list-active'><a href="/website/show/myNews?pageNum=1"><span class='mesicon'></span>我的消息</a></li>
                     <li class='conleft-list'><a href="/website/show/myWalletVoucher"><span class='moneyicon'></span>我的钱包</a></li>
                     <li class='conleft-list'><a href=""><span class='extendicon'></span>秀场推广</a></li>
                     <li class='conleft-list'><a href=""><span class='membericon'></span>会员中心</a></li>
@@ -133,26 +133,7 @@
                 </div>
                 <div class="myNews-list">
                     <ul class='myNews-list-ul'>
-                        <li class='myNews-item'>
-                            <div class='linkup-img am-fl'><img src="/assets/img/selfimg.png" alt=""></div>
-                            <div class="myNews-cont am-fl">
-                                <div class="myNews-cont-text">
-                                    <span>白小小1</span>—<span>时光网</span>—<span>焦点图</span>
-                                </div>
-                                <div class="myNews-cont-mes">
-                                    "好的"
-                                </div>
-                            </div>
-                            <div class="myNews-right-edit am-fr">
-								<span class='myNews-delall am-fr'> 
-									<input type="checkbox" name='check'>
-									<label class='myNew-del-state'></label>	
-								</span>
-                                <span class='myNews-datas am-fr'>12-03</span>
-                                <span class='myNews-communicate am-fr'>继续沟通</span>
-                            </div>
-                            <div class="clear"></div>
-                        </li>
+                        <% messages.forEach(function (message){%>
                         <li class='myNews-item'>
                             <div class='linkup-img am-fl'><img src="/assets/img/selfimg.png" alt=""></div>
                             <div class="myNews-cont am-fl">
@@ -160,90 +141,48 @@
                                     <span>白小小2</span>—<span>时光网</span>—<span>焦点图</span>
                                 </div>
                                 <div class="myNews-cont-mes">
-                                    "好的"
+                                    <%= message.message%>
                                 </div>
                             </div>
                             <div class="myNews-right-edit am-fr">
-								<span class='myNews-delall am-fr'> 
+								<span class='myNews-delall am-fr'>
 									<input type="checkbox">
-									<label class='myNew-del-state'></label>	
+									<label class='myNew-del-state'></label>
 								</span>
-                                <span class='myNews-datas am-fr'>12-03</span>
-                                <span class='myNews-communicate am-fr'>继续沟通</span>
-
-
-                            </div>
-                            <div class="clear"></div>
-
-                        </li>
-                        <li class='myNews-item'>
-                            <div class='linkup-img am-fl'><img src="/assets/img/selfimg.png" alt=""></div>
-                            <div class="myNews-cont am-fl">
-                                <div class="myNews-cont-text">
-                                    <span>白小小3</span>—<span>时光网</span>—<span>焦点图</span>
-                                </div>
-                                <div class="myNews-cont-mes">
-                                    "好的"
-                                </div>
-                            </div>
-                            <div class="myNews-right-edit am-fr">
-								<span class='myNews-delall am-fr'> 
-									<input type="checkbox">
-									<label class='myNew-del-state'></label>	
-								</span>
-                                <span class='myNews-datas am-fr'>12-03</span>
-                                <span class='myNews-communicate am-fr'>继续沟通</span>
-
-
+                                <span class='myNews-datas am-fr'><%= message.createTime%></span>
+                                <span class='myNews-communicate am-fr communicate '>继续沟通</span>
                             </div>
                             <div class="clear"></div>
                         </li>
+                        <%})%>
                     </ul>
                     <div class="mynew-page">
-                        <ul data-am-widget="pagination"
-                            class="am-pagination am-pagination-default"
-                        >
+                        <ul data-am-widget="pagination" class="am-pagination am-pagination-default">
 
                             <li class="am-pagination-first ">
-                                <a href="#" class="">首页</a>
+                                <a href="/website/show/myNews?pageNum=1" class="">首页</a>
                             </li>
-
                             <li class="am-pagination-prev ">
-                                <a href="#" class=""><</a>
+                                <a href="/website/show/myNews?pageNum=<%- (currentPage>1)?currentPage-1:1%>" class=""><</a>
                             </li>
+                            <%for(var i=1;i<=totalPage;i++){%>
+                            <%if(i == currentPage) {%>
                             <li class="">
-                                <a href="#" class="">1</a>
+                                <a class="am-active" href="/website/show/myNews?pageNum=<%- i%>"><%- i%></a>
                             </li>
-                            <li class="am-active">
-                                <a href="#" class="am-active">2</a>
-                            </li>
+                            <%}else {%>
                             <li class="">
-                                <a href="#" class="">3</a>
+                                <a href="/website/show/myNews?pageNum=<%- i%>"><%- i%></a>
                             </li>
-                            <li class="">
-                                <a href="#" class="">4</a>
-                            </li>
-                            <li class="">
-                                <a href="#" class="">5</a>
-                            </li>
-                            <li class="">
-                                <a href="#">6</a>
-                            </li>
-                            <li class="">
-                                <a href="#" class="">7</a>
-                            </li>
-                            <li class="">
-                                <a href="#" class="">8</a>
-                            </li>
-                            <li class="">
-                                <a href="#" class="">9</a>
-                            </li>
+                            <%}%>
+                            <%}%>
+
                             <li class="am-pagination-next ">
-                                <a href="#" class="">></a>
+                                <a href="/website/show/myNews?pageNum=<%- (currentPage<totalPage)?parseInt(currentPage)+1:totalPage%>" class="">></a>
                             </li>
 
                             <li class="am-pagination-last ">
-                                <a href="#" class="">尾页</a>
+                                <a href="/website/show/myNews?pageNum=<%- totalPage%>" class="">尾页</a>
                             </li>
 
                         </ul>
@@ -271,7 +210,21 @@
 <script src="/assets/js/amazeui.min.js"></script>
 <script src="/assets/js/index.js"></script>
 <script type="text/javascript" src='/assets/js/myNews.js'></script>
-
+<script>
+    $(function (){
+        $('.messList').click(function (){
+            window.location.href = '/website/show/myMessage?pageNum=1';
+        });
+        $('.myNews-list-ul li').each(function (index){
+            $('.communicate').click(function (){
+                $.ajax({
+                    type: 'GET',
+                    url: '/website/show/dialog'
+                });
+            });
+        });
+    });
+</script>
 
 </body>
 </html>

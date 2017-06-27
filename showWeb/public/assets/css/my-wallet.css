@@ -2,8 +2,11 @@
 .my-wallet{
 	position: relative;
 	background-color: #FFFFFF;
-	height: auto;
+	/*height: auto;*/
 	margin-bottom: 35px;
+}
+.my-con-h{
+	height: 640px;
 }
 .w-nav-menu{
 	width: 100%;
@@ -54,6 +57,20 @@
 	background-color: #F2F2F2;
 	font-weight: normal;
 }
+/**/
+.box-btn{
+	width: 110px;
+	height: 30px;
+	background: #ea5147;
+	color: #FFFFFF;
+	font-size: 14px;
+	border: 1px solid #ea5147;
+	border-radius: 4px;
+	position: absolute;
+	left: 778px;
+	top: 113px;
+}
+/**/
 .xb-recharge-info{
 	margin: 0 0 0 100px;
 	float: left;
@@ -65,10 +82,15 @@
 .xb-all{
 	margin-top: 17px;
 }
+/**/
+.xb-all img{
+	margin-left: 5px;
+}
+/**/
 .xb-all span{
 	font-size: 56px;
 	color: #ea5147;
-	margin: 56px 40px 0 40px;
+	margin: 56px 28px 0 5px;
 	position: relative;
 	top: 15px;
 }
@@ -135,10 +157,15 @@
 .xd-all{
 	margin-top: 17px;
 }
+/**/
+.xd-all img{
+	margin-left: 10px;
+}
+/**/
 .xd-all span{
 	font-size: 56px;
 	color: #ea5147;
-	margin: 56px 40px 0 40px;
+	margin: 56px 32px 0 10px;
 	position: relative;
 	top: 15px;
 }

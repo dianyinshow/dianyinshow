@@ -20,8 +20,10 @@
 	<link rel="stylesheet" href="/assets/css/header.css">
 	<link rel="stylesheet" href="/assets/css/baces.css">
 	<link rel="stylesheet" href="/assets/css/my-wallet.css">
+	<link rel="stylesheet" href="/assets/css/accountset.css">
 	<script src="/assets/js/jquery-1.12.0.js"></script>
 	<script src="/assets/js/personal-center-header.js"></script>
+
 </head>
 <body>
 <header class="am-topbar am-h-header">
@@ -34,9 +36,9 @@
 		</div>
 	</div>
 
-	<div class="am-topbar-right top-img">
+	<div class="am-topbar-right top-img messList">
 		<div class="notice">
-			<span class="am-badge am-badge-red am-round am-notice">6</span>
+			<span class="am-badge am-badge-red am-round am-notice"><%= value.length%></span>
 		</div>
 	</div>
 	<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
@@ -94,7 +96,7 @@
 					<li class='conleft-list'>
 						<a href="/website/show/personalCenter"><span class='baceicon'></span>基本信息</a>
 					</li>
-					<li class='conleft-list'><a href="/website/show/myNews"><span class='mesicon'></span>我的消息</a></li>
+					<li class='conleft-list'><a href="/website/show/myNews?pageNum=1"><span class='mesicon'></span>我的消息</a></li>
 					<li class='conleft-list conleft-list-active'><a href="/website/show/myWalletVoucher"><span class='moneyicon'></span>我的钱包</a></li>
 					<li class='conleft-list'><a href=""><span class='extendicon'></span>秀场推广</a></li>
 					<li class='conleft-list'><a href=""><span class='membericon'></span>会员中心</a></li>
@@ -125,8 +127,12 @@
 					<ul class="account-xiubi-info">
 						<li class="account-xb">
 							<h3 class="a-title">账户秀币</h3>
+							<button class="box-btn">支付设置</button>
 							<div class="xb-recharge-info">
-								<p class="xb-all">共有<span>500</span>秀币</p>
+								<p class="xb-all">共有
+									<img src="/assets/img/xixb.png" alt="">
+									<span>500</span>秀币
+								</p>
 								<p class="xb-profit">
 									收益:<span>200</span>秀币
 									<i><img src="/assets/img/gh_04.png" alt="gh"></i>
@@ -141,13 +147,18 @@
 								<a class="btn-rxb" href="#">充值</a>
 								<a class="btn-wxb" href="#">提现</a>
 							</div>
-							<p class="ac-ts">温馨提示：仅支持通过制作模板和收取红包赚取收益的提现，充值方式获取的秀币不可提现</p>
+							<p class="ac-ts">
+								温馨提示：仅支持通过制作模板和收取红包赚取收益的提现，充值方式获取的秀币不可提现
+							</p>
 						</li>
 
 						<li class="account-xd">
 							<h3 class="a-title">账户秀豆</h3>
 							<div class="xd-account-info">
-								<p class="xd-all">共有<span>500</span>秀豆</p>
+								<p class="xd-all">共有
+									<img src="/assets/img/xixd.png" alt="">
+									<span>500</span>秀豆
+								</p>
 							</div>
 							<div class="dgh">
 								<img src="/assets/img/dgh_07.png" alt="">
@@ -299,7 +310,11 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="clear"></div>
+
+	</div>
+	<div class="modifypass-page">
 
 	</div>
 </div>
@@ -316,7 +331,15 @@
 <![endif]-->
 <script src="/assets/js/amazeui.min.js"></script>
 <script src="/assets/js/index.js"></script>
+<script src="/assets/js/setPay.js"></script>
+<script>
+    $(function (){
+        $('.messList').click(function (){
+            window.location.href = '/website/show/myMessage?pageNum=1';
+        });
+    });
 
+</script>
 
 </body>
 </html>

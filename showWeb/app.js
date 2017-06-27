@@ -45,15 +45,13 @@ var myGoods = require('./routes/website/show/myGoods');
 var myCollect = require('./routes/website/show/myCollect');
 var accountset = require('./routes/website/show/accountset');
 var sendMessage = require('./routes/website/show/sendMessage');
+var myMessage = require('./routes/website/show/myMessage');
 //var newApp = require('./routes/app/app');
 
 var community = require('./routes/website/community');
 var fun = require('./routes/website/fun');
 
 var app = express();
-var server = http.createServer(app);
-sendMessage.listen(server);
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -83,6 +81,7 @@ app.use(function (req, res, next) {
     res.locals.error = req.session.error;
     //把回话对象的user属性取出来 赋给res.locals
     res.locals.user = req.session.userOs;
+    res.locals.value = req.session.value;
     req.session.success = req.session.error = null;
     next();
 });
@@ -121,6 +120,7 @@ app.use('/website/show/myGoods', myGoods);
 app.use('/website/show/myCollect', myCollect);
 app.use('/website/show/accountset', accountset);
 app.use('/website/show/sendMessage', sendMessage.router);
+app.use('/website/show/myMessage', myMessage);
 //app.use('./app/app',newApp);
 
 

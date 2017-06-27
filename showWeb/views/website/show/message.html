@@ -1,282 +1,231 @@
 <!doctype html>
 <html class="no-js">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<!-- <meta name="viewport"
-		  content="width=device-width, initial-scale=1"> -->
-	<title>message</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- <meta name="viewport"
+          content="width=device-width, initial-scale=1"> -->
+    <title>message</title>
 
-	<!-- Set render engine for 360 browser -->
-	<meta name="renderer" content="webkit">
-	<!-- No Baidu Siteapp-->
-	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-	<link rel="icon" type="image/png" href="assets/i/favicon.png">
-	<link rel="stylesheet" href="assets/css/amazeui.css">
-	<link rel="stylesheet" href="assets/css/app.css">
-	<link rel="stylesheet" href="assets/css/header.css">
-	<link rel="stylesheet" href="assets/css/baces.css">
-	<link rel="stylesheet" href="assets/css/myNews.css">
+    <link rel="icon" type="image/png" href="/assets/i/favicon.png">
+    <link rel="stylesheet" href="/assets/css/amazeui.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/baces.css">
+    <link rel="stylesheet" href="/assets/css/myNews.css">
 </head>
 <body>
 <header class="am-topbar am-h-header">
-	<h1 class="am-topbar-brand">
-		<a href="#"><img src="assets/img/logo.png" alt="" width=''><span>点映秀</span></a>
-	</h1>
-	<div class="am-topbar-right top-img">
-		<div class='selfpic'>
-			<img class="am-circle" src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80" width="36" height="36"/>
-		</div>
-	</div>
+    <h1 class="am-topbar-brand">
+        <a href="#"><img src="/assets/img/logo.png" alt="" width=''><span>点映秀</span></a>
+    </h1>
+    <div class="am-topbar-right top-img">
+        <div class='selfpic'>
+            <img class="am-circle"
+                 src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/1000/h/1000/q/80" width="36"
+                 height="36"/>
+        </div>
+    </div>
 
-	<div class="am-topbar-right top-img">
-		<div class="notice">
-			<span class="am-badge am-badge-red am-round am-notice">6</span>
-		</div>
-	</div>
-	<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+    <div class="am-topbar-right top-img">
+        <div class="notice">
+            <span class="am-badge am-badge-red am-round am-notice"><%= value.length%></span>
+        </div>
+    </div>
+    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-show-sm-only"
+            data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span
+            class="am-icon-bars"></span></button>
 
-	<div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
-		<ul class="am-nav am-nav-pills am-topbar-nav topnav">
-			<li class="am-active">
-				<a href="#">
-					<span class='homesi'></span>
-					首页
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<span class='search'></span>
-					<!-- <img src="assets/img/searchshow.png" alt="" class='modelicon'>
-					<img src="assets/img/searchshowa.png" alt="" class='activeicon'> -->
-					找秀场
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<span class='viewshow'></span>
-					<!-- <img src="assets/img/viewshow.png" alt="" class='modelicon'>
-					<img src="assets/img/viewshowa.png" alt="" class='activeicon'> -->
-					映秀场
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<span class='grades'></span>
-					<!-- <img src="assets/img/grades.png" alt="" class='modelicon'>
-					<img src="assets/img/grades.png" alt="" class='activeicon'> -->
-					映秀社区
-				</a>
-			</li>
-		</ul>
-
+    <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+        <ul class="am-nav am-nav-pills am-topbar-nav topnav">
+            <li class="am-active">
+                <a href="#">
+                    <span class='homesi'></span>
+                    首页
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class='search'></span>
+                    <!-- <img src="/assets/img/searchshow.png" alt="" class='modelicon'>
+                    <img src="/assets/img/searchshowa.png" alt="" class='activeicon'> -->
+                    找秀场
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class='viewshow'></span>
+                    <!-- <img src="/assets/img/viewshow.png" alt="" class='modelicon'>
+                    <img src="/assets/img/viewshowa.png" alt="" class='activeicon'> -->
+                    映秀场
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class='grades'></span>
+                    <!-- <img src="/assets/img/grades.png" alt="" class='modelicon'>
+                    <img src="/assets/img/grades.png" alt="" class='activeicon'> -->
+                    映秀社区
+                </a>
+            </li>
+        </ul>
+    </div>
 </header>
 <div class="contents">
-	<div class="am-messcont-h">
-		<div class="am-messconright-h">
-			<div class="all-message-up">
-				<ul>
-					<li class='all-message-list am-fl'>
-						<a href=""><span class='all-msg-new'></span> 消息</a>
-					</li>
-					<li class='all-message-list am-fl'>
-						<a href=""><span class='all-msg-show'></span> 预约秀场</a>
-					</li>
-					<li class='all-message-list am-fl'>
-						<a href=""><span class='all-msg-item'></span> 宣发项目</a>
-					</li>
-				</ul>
-			</div>
-			<div class="all-message-down">
-				<div class="qrcode-img">
-					<img src="assets/img/qrcodeimg.png" alt="">
-				</div>
-				<div class='qrcode-notes'>下载点映秀立即制作素材把TA传播出去吧!</div>
-				<div class="downshow-app"><a href="">立即下载</a></div>
-			</div>
-		</div>
-		<!--头像-->
-		<div class="am-conright-h">
-			<div class="mynewscont">
-				<div class="am-main-header">
+    <div class="am-messcont-h">
+        <div class="am-messconright-h">
+            <div class="all-message-up">
+                <ul>
+                    <li class='all-message-list am-fl'>
+                        <a href=""><span class='all-msg-new'></span> 消息</a>
+                    </li>
+                    <li class='all-message-list am-fl'>
+                        <a href=""><span class='all-msg-show'></span> 预约秀场</a>
+                    </li>
+                    <li class='all-message-list am-fl'>
+                        <a href=""><span class='all-msg-item'></span> 宣发项目</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="all-message-down">
+                <div class="qrcode-img">
+                    <img src="/assets/img/qrcodeimg.png" alt="">
+                </div>
+                <div class='qrcode-notes'>下载点映秀立即制作素材把TA传播出去吧!</div>
+                <div class="downshow-app"><a href="">立即下载</a></div>
+            </div>
+        </div>
+        <!--头像-->
+        <div class="am-conright-h">
+            <div class="mynewscont">
+                <div class="am-main-header">
 
-					<h3>我的消息</h3>
-					<div class="edit edit-mynews"><span></span>编辑</div>
-					<div class="editvd am-fr">
+                    <h3>我的消息</h3>
+                    <div class="edit edit-mynews"><span></span>编辑</div>
+                    <div class="editvd am-fr">
 						<span class="allcheck"><input type="checkbox"> 
 							<lable class='discheck-state'></lable>
 							全选
 						</span>
-						|<span class="edit-del ">删除</span>
-						|<span class="edit-voer ">完成</span>				
+                        |<span class="edit-del ">删除</span>
+                        |<span class="edit-voer ">完成</span>
 
-					</div>
-					<span class='linebottom'></span>
-					<div class="clear"></div>
-				</div>
-				<div class="myNews-list">
-					<ul class='myNews-list-ul'>
-						<li class='myNews-item'>
-							<div class='linkup-img am-fl'><img src="assets/img/selfimg.png" alt=""></div>
-							<div class="myNews-cont am-fl">
-								<div class="myNews-cont-text">
-									<span>白小小2</span>—<span>时光网</span>—<span>焦点图</span>		
-								</div>
-								<div class="myNews-cont-mes">
-									"好的"
-								</div>
-							</div>
-							<div class="myNews-right-edit am-fr">
-								<span class='myNews-delall am-fr'> 
+                    </div>
+                    <span class='linebottom'></span>
+                    <div class="clear"></div>
+                </div>
+                <div class="myNews-list">
+                    <ul class='myNews-list-ul'>
+                        <% messages.forEach(function (message){%>
+                        <li class='myNews-item'>
+                            <div class='linkup-img am-fl'><img src="/assets/img/selfimg.png" alt=""></div>
+                            <div class="myNews-cont am-fl">
+                                <div class="myNews-cont-text">
+                                    <span>白小小2</span>—<span>时光网</span>—<span>焦点图</span>
+                                </div>
+                                <div class="myNews-cont-mes">
+                                    <%= message.message%>
+                                </div>
+                                <span class="messId" style="display: none"><%= message.id%></span>
+                            </div>
+                            <div class="myNews-right-edit am-fr">
+								<span class='myNews-delall am-fr'>
 									<input type="checkbox">
-									<label class='myNew-del-state'></label>	
+									<label class='myNew-del-state'></label>
 								</span>
-								<span class='myNews-datas am-fr'>12-03</span>
-								<span class='myNews-communicate am-fr'>继续沟通</span>
-								
-								
-							</div>
-							<div class="clear"></div>
-							
-						</li>
-						<li class='myNews-item'>
-							<div class='linkup-img am-fl'><img src="assets/img/selfimg.png" alt=""></div>
-							<div class="myNews-cont am-fl">
-								<div class="myNews-cont-text">
-									<span>白小小2</span>—<span>时光网</span>—<span>焦点图</span>		
-								</div>
-								<div class="myNews-cont-mes">
-									"好的"
-								</div>
-							</div>
-							<div class="myNews-right-edit am-fr">
-								<span class='myNews-delall am-fr'> 
-									<input type="checkbox">
-									<label class='myNew-del-state'></label>	
-								</span>
-								<span class='myNews-datas am-fr'>12-03</span>
-								<span class='myNews-communicate am-fr'>继续沟通</span>
-								
-								
-							</div>
-							<div class="clear"></div>
-							
-						</li>
-						<li class='myNews-item'>
-							<div class='linkup-img am-fl'><img src="assets/img/selfimg.png" alt=""></div>
-							<div class="myNews-cont am-fl">
-								<div class="myNews-cont-text">
-									<span>白小小2</span>—<span>时光网</span>—<span>焦点图</span>		
-								</div>
-								<div class="myNews-cont-mes">
-									"好的"
-								</div>
-							</div>
-							<div class="myNews-right-edit am-fr">
-								<span class='myNews-delall am-fr'> 
-									<input type="checkbox">
-									<label class='myNew-del-state'></label>	
-								</span>
-								<span class='myNews-datas am-fr'>12-03</span>
-								<span class='myNews-communicate am-fr'>继续沟通</span>
-								
-								
-							</div>
-							<div class="clear"></div>
-							
-						</li>
-					</ul>
-					
-					<div class="mynew-page">
-						<ul data-am-widget="pagination"
-						  class="am-pagination am-pagination-default"
-						  >
+                                <span class='myNews-datas am-fr'><%= message.createTime%></span>
+                                <span class='myNews-communicate am-fr communicate'>继续沟通</span>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                        <%})%>
+                    </ul>
+                    <div class="mynew-page">
+                        <ul data-am-widget="pagination" class="am-pagination am-pagination-default">
 
-						  <li class="am-pagination-first ">
-						    <a href="#" class="">首页</a>
-						  </li>
+                            <li class="am-pagination-first ">
+                                <a href="/website/show/myMessage?pageNum=1" class="">首页</a>
+                            </li>
+                            <li class="am-pagination-prev ">
+                                <a href="/website/show/myMessage?pageNum=<%- (currentPage>1)?currentPage-1:1%>" class=""><</a>
+                            </li>
+                            <%for(var i=1;i<=totalPage;i++){%>
+                            <%if(i == currentPage) {%>
+                            <li class="">
+                                <a class="am-active" href="/website/show/myMessage?pageNum=<%- i%>"><%- i%></a>
+                            </li>
+                            <%}else {%>
+                            <li class="">
+                                <a href="/website/show/myMessage?pageNum=<%- i%>"><%- i%></a>
+                            </li>
+                            <%}%>
+                            <%}%>
 
-						  <li class="am-pagination-prev ">
-						    <a href="#" class=""><</a>
-						  </li>
-					        <li class="">
-					          <a href="#" class="">1</a>
-					        </li>
-					        <li class="am-active">
-					          <a href="#" class="am-active">2</a>
-					        </li>
-					        <li class="">
-					          <a href="#" class="">3</a>
-					        </li>
-					        <li class="">
-					          <a href="#" class="">4</a>
-					        </li>
-					        <li class="">
-					          <a href="#" class="">5</a>
-					        </li>
-					        <li class="">
-					          <a href="#">6</a>
-					        </li>
-					        <li class="">
-					          <a href="#" class="">7</a>
-					        </li>
-					        <li class="">
-					          <a href="#" class="">8</a>
-					        </li>
-					        <li class="">
-					          <a href="#" class="">9</a>
-					        </li>
-						  <li class="am-pagination-next ">
-						    <a href="#" class="">></a>
-						  </li>
+                            <li class="am-pagination-next ">
+                                <a href="/website/show/myMessage?pageNum=<%- (currentPage<totalPage)?parseInt(currentPage)+1:totalPage%>" class="">></a>
+                            </li>
 
-						  <li class="am-pagination-last ">
-						    <a href="#" class="">尾页</a>
-						  </li>
+                            <li class="am-pagination-last ">
+                                <a href="/website/show/myMessage?pageNum=<%- totalPage%>" class="">尾页</a>
+                            </li>
 
-						</ul>
-						<div class="clear"></div>
-					</div>
-				</div>
-				<div class="clear"></div>
-			</div>
-			<!-- <div class="conments">
-				<div class="am-main-header">
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!-- <div class="conments">
+                <div class="am-main-header">
 
-					<h3 class='conin-text-mynews'><a href="">我的消息 > </a><span>白小小-时光网</span></h3>
-					<div class="edit edit-mynews"><span></span>编辑</div>
-					<div class="allcheck am-fr">
-						<span ><input type="checkbox"> 
-							<lable class='discheck-state'></lable>
-						</span>全选
-					</div>
-					<span class='linebottom'></span>
-					<div class="clear"></div>
-				</div>
-				<div class="dialog"></div>
-			</div> -->
-		</div>
-		<div class="clear"></div>
-	</div>
+                    <h3 class='conin-text-mynews'><a href="">我的消息 > </a><span>白小小-时光网</span></h3>
+                    <div class="edit edit-mynews"><span></span>编辑</div>
+                    <div class="allcheck am-fr">
+                        <span ><input type="checkbox">
+                            <lable class='discheck-state'></lable>
+                        </span>全选
+                    </div>
+                    <span class='linebottom'></span>
+                    <div class="clear"></div>
+                </div>
+                <div class="dialog"></div>
+            </div> -->
+        </div>
+        <div class="clear"></div>
+    </div>
 </div>
 
 <!--在这里编写你的代码-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.js"></script>
 <!--<![endif]-->
 <!--[if lte IE 8 ]>
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
-<script src="assets/js/amazeui.min.js"></script>
-<script src="assets/js/index.js"></script>
-<script type="text/javascript" src='assets/js/myNews.js'></script>
-
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/assets/js/index.js"></script>
+<script type="text/javascript" src='/assets/js/myNews.js'></script>
+<script>
+    $(function (){
+        $('.myNews-list-ul li').each(function (){
+            var that = $(this);
+            $(this).find('.communicate').click(function (){
+                var id = that.find('.messId').html();
+                window.location.href = '/website/show/myMessage/dialog?pageNum=<%= currentPage%>' + '&id=' + id;
+            });
+        });
+    });
+</script>
 
 </body>
 </html>

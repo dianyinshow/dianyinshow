@@ -36,7 +36,7 @@
 		</div>
 	</div>
 
-	<div class="am-topbar-right top-img">
+	<div class="am-topbar-right top-img messList">
 		<div class="notice">
 			<span class="am-badge am-badge-red am-round am-notice">6</span>
 		</div>
@@ -132,21 +132,21 @@
 						<tr>
 							<td>名称名称名称</td>
 							<td>h5秀</td>
-							<td>2017-03-03</td>
+							<td>2017-03-03  12 : 01</td>
 							<td class="t-cur">正在审核中</td>
 							<td class="t-cur">暂无</td>
 						</tr>
 						<tr>
 							<td>名称名称名称</td>
 							<td>h5秀</td>
-							<td>2017-03-03</td>
+							<td>2017-03-03  12 : 01</td>
 							<td>已发布</td>
 							<td>10秀币</td>
 						</tr>
 						<tr>
 							<td>名称名称名称</td>
 							<td>h5秀</td>
-							<td>2017-03-03</td>
+							<td>2017-03-03  12 : 01</td>
 							<td>已发布</td>
 							<td>10秀币</td>
 						</tr>
@@ -227,7 +227,13 @@
 <![endif]-->
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/index.js"></script>
-
+<script>
+    $(function (){
+        $('.messList').click(function (){
+            window.location.href = '/website/show/myMessage?pageNum=1';
+        });
+    });
+</script>
 
 </body>
 </html>

@@ -34,7 +34,7 @@ module.exports = {
         } else {
             photo.nature = '审核未通过';
         }
-        photo.photo = req.file.filename;
+        photo.photo = 'photo/photos/' + req.file.filename;
         photo.id = id;
         photo.createTime = moment().format('YYYY-MM-DD  HH:mm:ss');
         var data = base.formatDbString(photo, " ,");
@@ -71,7 +71,7 @@ module.exports = {
         } else {
             photo.nature = '审核未通过';
         }
-        photo.photo = '' + req.file.filename;
+        photo.photo = 'photo/photos/' + req.file.filename;
         var data = base.formatDbString(photo, " ,");
         var id = photo.id;
         pool.getConnection(function (err, connection) {

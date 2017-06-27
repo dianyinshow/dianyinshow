@@ -40,9 +40,10 @@
         </div>
     </div>
 
-    <div class="am-topbar-right top-img">
+    <div class="am-topbar-right top-img messList">
         <div class="notice">
-            <span class="am-badge am-badge-red am-round am-notice">1</span>
+
+            <span class="am-badge am-badge-red am-round am-notice"><%= value.length%></span>
         </div>
     </div>
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-show-sm-only"
@@ -103,13 +104,17 @@
                     <li class='conleft-list conleft-list-active'>
                         <a href="/website/show/personalCenter"><span class='baceicon'></span>基本信息</a>
                     </li>
-                    <li class='conleft-list'><a href="/website/show/myNews"><span class='mesicon'></span>我的消息</a></li>
-                    <li class='conleft-list'><a href="/website/show/myWalletVoucher"><span class='moneyicon'></span>我的钱包</a></li>
+                    <li class='conleft-list'><a href="/website/show/myNews?pageNum=1"><span class='mesicon'></span>我的消息</a></li>
+                    <li class='conleft-list'><a href="/website/show/myWalletVoucher"><span class='moneyicon'></span>我的钱包</a>
+                    </li>
                     <li class='conleft-list'><a href=""><span class='extendicon'></span>秀场推广</a></li>
                     <li class='conleft-list'><a href=""><span class='membericon'></span>会员中心</a></li>
-                    <li class='conleft-list'><a href="/website/show/myGoods"><span class='ordericon'></span>我的订单</a></li>
-                    <li class='conleft-list'><a href="/website/show/myCollect"><span class='collecticon'></span>我的收藏</a></li>
-                    <li class='conleft-list'><a href="/website/show/Accountset"><span class='aseticon'></span>账户设置</a></li>
+                    <li class='conleft-list'><a href="/website/show/myGoods"><span class='ordericon'></span>我的订单</a>
+                    </li>
+                    <li class='conleft-list'><a href="/website/show/myCollect"><span class='collecticon'></span>我的收藏</a>
+                    </li>
+                    <li class='conleft-list'><a href="/website/show/Accountset"><span class='aseticon'></span>账户设置</a>
+                    </li>
                 </ul>
             </div>
             <div class="stardirect">
@@ -130,9 +135,9 @@
                         <span>头像:</span>
                         <a class="am-head-portrait" href="#">
                             <%if(user.avatarWeb) {%>
-                                <img src="/photo/show<%= user.avatarWeb%>" title="头像" alt="头像">
+                            <img src="/photo/show<%= user.avatarWeb%>" title="头像" alt="头像">
                             <%}else {%>
-                                <img src="/assets/img/headersss.png" title="头像" alt="头像">
+                            <img src="/assets/img/headersss.png" title="头像" alt="头像">
                             <%}%>
                         </a>
                         <button type="button"
@@ -230,8 +235,8 @@
 <script src="/assets/js/index.js"></script>
 
 <script>
-    $(function (){
-        $('.save').click(function (){
+    $(function () {
+        $('.save').click(function () {
             var data = {};
             data.username = $('.showInput').val();
             $.ajax({
@@ -239,14 +244,19 @@
                 url: '/website/show/personalCenter/updateAll',
                 dataType: 'json',
                 data: data,
-                success: function (result){
-                    if(result.code == 1) {
+                success: function (result) {
+                    if (result.code == 1) {
                         window.location.href = '/website/show/personalCenter';
                     }
                 }
             });
         });
     });
+
+    $('.messList').click(function () {
+        window.location.href = '/website/show/myMessage?pageNum=1';
+    });
+
 </script>
 </body>
 </html>

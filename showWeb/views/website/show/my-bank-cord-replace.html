@@ -37,7 +37,7 @@
 		</div>
 	</div>
 
-	<div class="am-topbar-right top-img">
+	<div class="am-topbar-right top-img messList">
 		<div class="notice">
 			<span class="am-badge am-badge-red am-round am-notice">6</span>
 		</div>
@@ -168,7 +168,13 @@
 <![endif]-->
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/index.js"></script>
-
+<script>
+    $(function (){
+        $('.messList').click(function (){
+            window.location.href = '/website/show/myMessage?pageNum=1';
+        });
+    });
+</script>
 
 </body>
 </html>

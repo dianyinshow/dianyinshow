@@ -3,10 +3,15 @@
  */
 module.exports = {
     showMysql: {
-        host: '103.251.89.83',
+        /*host: '103.251.89.83',
         user: 'pwwpccom_wan',
         password: '123456',
         database: 'pwwpccom_show',
+        port: 3306*/
+        host: 'localhost',
+        user: 'root',
+        password: '123456go',
+        database: 'dianyinshow',
         port: 3306
     },
     tables: {

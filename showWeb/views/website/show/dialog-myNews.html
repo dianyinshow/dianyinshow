@@ -14,17 +14,17 @@
 	<!-- No Baidu Siteapp-->
 	<meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-	<link rel="icon" type="image/png" href="assets/i/favicon.png">
-	<link rel="stylesheet" href="assets/css/amazeui.css">
-	<link rel="stylesheet" href="assets/css/app.css">
-	<link rel="stylesheet" href="assets/css/header.css">
-	<link rel="stylesheet" href="assets/css/baces.css">
-	<link rel="stylesheet" href="assets/css/myNews.css">
+	<link rel="icon" type="image/png" href="/assets/i/favicon.png">
+	<link rel="stylesheet" href="/assets/css/amazeui.css">
+	<link rel="stylesheet" href="/assets/css/app.css">
+	<link rel="stylesheet" href="/assets/css/header.css">
+	<link rel="stylesheet" href="/assets/css/baces.css">
+	<link rel="stylesheet" href="/assets/css/myNews.css">
 </head>
 <body>
 <header class="am-topbar am-h-header">
 	<h1 class="am-topbar-brand">
-		<a href="#"><img src="assets/img/logo.png" alt="" width=''><span>点映秀</span></a>
+		<a href="#"><img src="//assets/img/logo.png" alt="" width=''><span>点映秀</span></a>
 	</h1>
 	<div class="am-topbar-right top-img">
 		<div class='selfpic'>
@@ -32,9 +32,9 @@
 		</div>
 	</div>
 
-	<div class="am-topbar-right top-img">
+	<div class="am-topbar-right top-img messList">
 		<div class="notice">
-			<span class="am-badge am-badge-red am-round am-notice">6</span>
+			<span class="am-badge am-badge-red am-round am-notice"><%= value.length%></span>
 		</div>
 	</div>
 	<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
@@ -50,24 +50,24 @@
 			<li>
 				<a href="#">
 					<span class='search'></span>
-					<!-- <img src="assets/img/searchshow.png" alt="" class='modelicon'>
-					<img src="assets/img/searchshowa.png" alt="" class='activeicon'> -->
+					<!-- <img src="/assets/img/searchshow.png" alt="" class='modelicon'>
+					<img src="/assets/img/searchshowa.png" alt="" class='activeicon'> -->
 					找秀场
 				</a>
 			</li>
 			<li>
 				<a href="#">
 					<span class='viewshow'></span>
-					<!-- <img src="assets/img/viewshow.png" alt="" class='modelicon'>
-					<img src="assets/img/viewshowa.png" alt="" class='activeicon'> -->
+					<!-- <img src="/assets/img/viewshow.png" alt="" class='modelicon'>
+					<img src="/assets/img/viewshowa.png" alt="" class='activeicon'> -->
 					映秀场
 				</a>
 			</li>
 			<li>
 				<a href="#">
 					<span class='grades'></span>
-					<!-- <img src="assets/img/grades.png" alt="" class='modelicon'>
-					<img src="assets/img/grades.png" alt="" class='activeicon'> -->
+					<!-- <img src="/assets/img/grades.png" alt="" class='modelicon'>
+					<img src="/assets/img/grades.png" alt="" class='activeicon'> -->
 					映秀社区
 				</a>
 			</li>
@@ -77,25 +77,29 @@
 <div class="contents">
 	<div class="am-conin-h">
 		<div class="am-conleft-h">
-      <div class="conleft-img">
-        <div class="conleft-imgin">
-          <img src="assets/img/selfimg.png" alt="">
-        </div>
-        <p>kist</p>
-      </div>
+			<div class="conleft-img">
+				<div class="conleft-imgin">
+					<%if(user.avatarWeb) {%>
+					<img src="/photo/show<%= user.avatarWeb%>" title="头像" alt="头像">
+					<%}else {%>
+					<img src="/assets/img/selfimg.png" alt="">
+					<%}%>
+				</div>
+				<p><%= user.username%></p>
+			</div>
       <div class="conleft-item">
-        <ul>
-          <li class='conleft-list conleft-list-active'>
-            <a href="personal-center-header.html"><span class='baceicon'></span>基本信息</a>
-          </li>
-          <li class='conleft-list'><a href="myNews.html"><span class='mesicon'></span>我的消息</a></li>
-          <li class='conleft-list'><a href="my-wallet.html"><span class='moneyicon'></span>我的钱包</a></li>
-          <li class='conleft-list'><a href=""><span class='extendicon'></span>秀场推广</a></li>
-          <li class='conleft-list'><a href=""><span class='membericon'></span>会员中心</a></li>
-          <li class='conleft-list'><a href="my-goods"><span class='ordericon'></span>我的订单</a></li>
-          <li class='conleft-list'><a href="my-collect.html"><span class='collecticon'></span>我的收藏</a></li>
-          <li class='conleft-list'><a href="Accountset.html"><span class='aseticon'></span>账户设置</a></li>
-        </ul>
+		  <ul>
+			  <li class='conleft-list'>
+				  <a href="/website/show/personalCenter"><span class='baceicon'></span>基本信息</a>
+			  </li>
+			  <li class='conleft-list conleft-list-active'><a href="/website/show/myNews?pageNum=1"><span class='mesicon'></span>我的消息</a></li>
+			  <li class='conleft-list'><a href="/website/show/myWalletVoucher"><span class='moneyicon'></span>我的钱包</a></li>
+			  <li class='conleft-list'><a href=""><span class='extendicon'></span>秀场推广</a></li>
+			  <li class='conleft-list'><a href=""><span class='membericon'></span>会员中心</a></li>
+			  <li class='conleft-list'><a href="/website/show/myGoods"><span class='ordericon'></span>我的订单</a></li>
+			  <li class='conleft-list'><a href="/website/show/myCollect"><span class='collecticon'></span>我的收藏</a></li>
+			  <li class='conleft-list'><a href="/website/show/Accountset"><span class='aseticon'></span>账户设置</a></li>
+		  </ul>
       </div>
       <div class="stardirect">
         <div class="directbtn">
@@ -120,127 +124,129 @@
 				</div>
 				<div class='dialog-myNew'>
 					<div class="dialog-mynew-up">
+						<% messages.forEach(function (message){%>
 						<div class="chatbox-receiver chat-box-left">
-				            <div class="chatbox-img am-fl">
-				            	<img src="assets/img/selfimg.png" class="border-radius-circle" alt="" title="">
-				            </div>
-				            <div class="chatbox-main am-fl">
-				                <div class="chatbox-content chatbox-content-left" style="">
-				                    <div class="position-relative">
-				                        <div class="chatbox-content-text">嗨，我是金手掌。</div>
-				                        
-				                    </div>
-				                    <div class="pointwho pointwholeft"></div>
-				                    <div class="pointwho pointwhoinleft"></div>
+							<div class="chatbox-img am-fl">
+								<img src="/assets/img/selfimg.png" class="border-radius-circle" alt="" title="">
+							</div>
+							<div class="chatbox-main am-fl">
+								<div class="chatbox-content chatbox-content-left" style="">
+									<div class="position-relative">
+										<div class="chatbox-content-text">嗨，你好。</div>
+									</div>
+									<div class="pointwho pointwholeft"></div>
+									<div class="pointwho pointwhoinleft"></div>
 
-				                </div>
-				                <!-- <div class="H-chatbox-status H-flex-item H-padding-horizontal-both-10 H-box-sizing-border-box H-text-align-left H-padding-vertical-top-12"></div> -->
-				            </div>
-				            <div class="clear"></div>
-				        </div>
-				        <div class="chatbox-receiver chat-box-right">
-				            <div class="chatbox-img am-fr">
-				            	<img src="assets/img/selfimg.png" class="border-radius-circle" alt="" title="">
-				            </div>
-				            <div class="chatbox-main am-fr">
-				                <div class="chatbox-content chatbox-content-right" style="">
-				                    <div class="position-relative">
-				                        <div class="chatbox-content-text">嗨，我是金手掌。</div>
-				                        
-				                    </div>
-				                    <div class="pointwho pointwhoright"></div>
-				                    <div class="pointwho pointwhoinright"></div>
+								</div>
+								<!-- <div class="H-chatbox-status H-flex-item H-padding-horizontal-both-10 H-box-sizing-border-box H-text-align-left H-padding-vertical-top-12"></div> -->
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="chatbox-receiver chat-box-right">
+							<div class="chatbox-img am-fr">
+								<img src="/assets/img/selfimg.png" class="border-radius-circle" alt="" title="">
+							</div>
+							<div class="chatbox-main am-fr">
+								<div class="chatbox-content chatbox-content-right" style="">
+									<div class="position-relative">
+										<div class="chatbox-content-text"><%= message.message%></div>
 
-				                </div>
-				                <!-- <div class="H-chatbox-status H-flex-item H-padding-horizontal-both-10 H-box-sizing-border-box H-text-align-left H-padding-vertical-top-12"></div> -->
-				            </div>
-				            <div class="clear"></div>
-				        </div>
-				        <div class="dialog-data">
-				        	6月1日12:13	
-				        </div>
-				        <div class="chatbox-receiver chat-box-left">
-				            <div class="chatbox-img am-fl">
-				            	<img src="assets/img/selfimg.png" class="border-radius-circle" alt="" title="">
-				            </div>
-				            <div class="chatbox-main am-fl">
-				                <div class="chatbox-content chatbox-content-left" style="">
-				                    <div class="position-relative">
-				                        <div class="chatbox-content-text">如何实现在有限的空间内显示更多的内容呢?其实很多页面的实现上都考虑了这样的一个问题。</div>
-				                        
-				                    </div>
-				                    <div class="pointwho pointwholeft"></div>
-				                    <div class="pointwho pointwhoinleft"></div>
+									</div>
+									<div class="pointwho pointwhoright"></div>
+									<div class="pointwho pointwhoinright"></div>
 
-				                </div>
-				                <!-- <div class="H-chatbox-status H-flex-item H-padding-horizontal-both-10 H-box-sizing-border-box H-text-align-left H-padding-vertical-top-12"></div> -->
-				            </div>
-				            <div class="clear"></div>
-				        </div>
-				        <div class="chatbox-receiver chat-box-right">
-				            <div class="chatbox-img am-fr">
-				            	<img src="assets/img/selfimg.png" class="border-radius-circle" alt="" title="">
-				            </div>
-				            <div class="chatbox-main am-fr chatbox-transferfolder">
-				                <div class="chatbox-folder chatbox-content-right " style="">
-				                    <div class="position-relative">
-				                       <!--  <div class="chatbox-content-text">嗨，我是金手掌。</div> -->
-				                        <div class="transfer-folder-up">
-				                        	<div class="transfer-folder">
-				                        		<img src="assets/img/floer.png" alt="">
-				                        	</div>
-				                        </div>
-				                        <div class="transfer-folder-down">
-				                        	<div class="folder-text">时光文件</div>
-				                        	<div class="folder-num">5.3kB</div>
-				                        </div>		
-				                    </div>
-				                    <div class="pointwho transferfolder-point"></div>
-				                    <div class="pointwho transferfolder-pointin"></div>
+								</div>
+								<!-- <div class="H-chatbox-status H-flex-item H-padding-horizontal-both-10 H-box-sizing-border-box H-text-align-left H-padding-vertical-top-12"></div> -->
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="dialog-data">
+							<%= message.readTime%>
+						</div>
+						<!--<div class="chatbox-receiver chat-box-left">
+                            <div class="chatbox-img am-fl">
+                                <img src="/assets/img/selfimg.png" class="border-radius-circle" alt="" title="">
+                            </div>
+                            <div class="chatbox-main am-fl">
+                                <div class="chatbox-content chatbox-content-left" style="">
+                                    <div class="position-relative">
+                                        <div class="chatbox-content-text">如何实现在有限的空间内显示更多的内容呢?其实很多页面的实现上都考虑了这样的一个问题。</div>
 
-				                </div>
-				                <!-- <div class="H-chatbox-status H-flex-item H-padding-horizontal-both-10 H-box-sizing-border-box H-text-align-left H-padding-vertical-top-12"></div> -->
-				            </div>
+                                    </div>
+                                    <div class="pointwho pointwholeft"></div>
+                                    <div class="pointwho pointwhoinleft"></div>
 
-				            <div class="clear"></div>
-				        </div>
-				        <div class="chatbox-receiver chat-box-left">
-				            <div class="chatbox-img am-fl">
-				            	<img src="assets/img/selfimg.png" class="border-radius-circle" alt="" title="">
-				            </div>
-				            <div class="chatbox-main am-fl">
-				                <div class="chatbox-addfriend chatbox-content-left" style="">
-				                    <div class="position-relative">
-				                        <div class="chatbox-content-text">
-				                        	<div class="addfriend-txt">加好友</div>
-				                        	<div class="friendmsg">
-				                        		<div class="friendimg am-fl"><img src="assets/img/selfimg.png" class="border-radius-circle" alt="" title=""></div>
-				                        		<div class="friendtxt am-fl">
-				                        			<div class="friendname">啦啦啦</div>
-				                        			<div class="friendsource">三生三世桃花项目负责人</div>
+                                </div>
+                                &lt;!&ndash; <div class="H-chatbox-status H-flex-item H-padding-horizontal-both-10 H-box-sizing-border-box H-text-align-left H-padding-vertical-top-12"></div> &ndash;&gt;
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="chatbox-receiver chat-box-right">
+                            <div class="chatbox-img am-fr">
+                                <img src="/assets/img/selfimg.png" class="border-radius-circle" alt="" title="">
+                            </div>
+                            <div class="chatbox-main am-fr chatbox-transferfolder">
+                                <div class="chatbox-folder chatbox-content-right " style="">
+                                    <div class="position-relative">
+                                       &lt;!&ndash;  <div class="chatbox-content-text">嗨，我是金手掌。</div> &ndash;&gt;
+                                        <div class="transfer-folder-up">
+                                            <div class="transfer-folder">
+                                                <img src="/assets/img/floer.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="transfer-folder-down">
+                                            <div class="folder-text">时光文件</div>
+                                            <div class="folder-num">5.3kB</div>
+                                        </div>
+                                    </div>
+                                    <div class="pointwho transferfolder-point"></div>
+                                    <div class="pointwho transferfolder-pointin"></div>
 
-				                        		</div>
-				                        		<div class="clear"></div>
-				                        		<div class="verifyMessage">
-				                        			验证信息：同意一下，找你有事
-				                        		</div>
-				                        	</div>
-				                        	
-				                        </div>
-				                        <div class="statebtn">
-				                        	<div class="agreement am-fr">同意</div>
-			                        		<div class="refuse am-fr">拒绝</div>
+                                </div>
+                                &lt;!&ndash; <div class="H-chatbox-status H-flex-item H-padding-horizontal-both-10 H-box-sizing-border-box H-text-align-left H-padding-vertical-top-12"></div> &ndash;&gt;
+                            </div>
 
-			                        		<div class="clear"></div>
-				                        </div>
-				                    </div>
-				                    <div class="pointwho pointwholeft"></div>
-				                    <div class="pointwho pointwhoinleft"></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="chatbox-receiver chat-box-left">
+                            <div class="chatbox-img am-fl">
+                                <img src="/assets/img/selfimg.png" class="border-radius-circle" alt="" title="">
+                            </div>
+                            <div class="chatbox-main am-fl">
+                                <div class="chatbox-addfriend chatbox-content-left" style="">
+                                    <div class="position-relative">
+                                        <div class="chatbox-content-text">
+                                            <div class="addfriend-txt">加好友</div>
+                                            <div class="friendmsg">
+                                                <div class="friendimg am-fl"><img src="/assets/img/selfimg.png" class="border-radius-circle" alt="" title=""></div>
+                                                <div class="friendtxt am-fl">
+                                                    <div class="friendname">啦啦啦</div>
+                                                    <div class="friendsource">三生三世桃花项目负责人</div>
 
-				                </div>
-				            </div>
-				            <div class="clear"></div>
-				        </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                                <div class="verifyMessage">
+                                                    验证信息：同意一下，找你有事
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="statebtn">
+                                            <div class="agreement am-fr">同意</div>
+                                            <div class="refuse am-fr">拒绝</div>
+
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    <div class="pointwho pointwholeft"></div>
+                                    <div class="pointwho pointwhoinleft"></div>
+
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>-->
+						<%})%>
+
 					</div>
 					<div class="lialog-mynew-write">
 						<div class="lialog-brow">
@@ -254,7 +260,6 @@
 							发送
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>
@@ -265,16 +270,22 @@
 <!--在这里编写你的代码-->
 
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.js"></script>
 <!--<![endif]-->
 <!--[if lte IE 8 ]>
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<script src="/assets/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
-<script src="assets/js/amazeui.min.js"></script>
-<script src="assets/js/index.js"></script>
-<script type="text/javascript" src='assets/js/myNews.js'></script>
-   
+<script src="/assets/js/amazeui.min.js"></script>
+<script src="/assets/js/index.js"></script>
+<script type="text/javascript" src='/assets/js/myNews.js'></script>
+<script>
+    $(function (){
+        $('.messList').click(function (){
+            window.location.href = '/website/show/myMessage?pageNum=1';
+        });
+    });
+</script>
 </body>
 </html>

@@ -4,12 +4,10 @@
 
 $(function () {
 	$('.editName').on('click',function () {
-
 		if($('.showInput').css('display','none')){
 			$('.showInput').css('display','block');
 			$('.editName').css('display','none');
 			$('.eName').css('display','none');
-
 		}
 	});
 	$('.am-btn-botton').on('click',function () {
@@ -17,8 +15,6 @@ $(function () {
 			$('.am-conin-h').css('z-index','-1')
 			$('.am-main-popup').css('display','block');
 			$('.pop').css('display','block');
-
-
 		}
 	});
 	$('.popup-close').on('click',function () {

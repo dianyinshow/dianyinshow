@@ -35,9 +35,9 @@
         </div>
     </div>
 
-    <div class="am-topbar-right top-img">
+    <div class="am-topbar-right top-img messList">
         <div class="notice">
-            <span class="am-badge am-badge-red am-round am-notice">6</span>
+            <span class="am-badge am-badge-red am-round am-notice"><%= value.length%></span>
         </div>
     </div>
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-show-sm-only"
@@ -97,7 +97,7 @@
                     <li class='conleft-list'>
                         <a href="/website/show/personalCenter"><span class='baceicon'></span>基本信息</a>
                     </li>
-                    <li class='conleft-list'><a href="/website/show/myNews"><span class='mesicon'></span>我的消息</a></li>
+                    <li class='conleft-list'><a href="/website/show/myNews?pageNum=1"><span class='mesicon'></span>我的消息</a></li>
                     <li class='conleft-list'><a href="/website/show/myWalletVoucher"><span class='moneyicon'></span>我的钱包</a></li>
                     <li class='conleft-list'><a href=""><span class='extendicon'></span>秀场推广</a></li>
                     <li class='conleft-list'><a href=""><span class='membericon'></span>会员中心</a></li>
@@ -364,7 +364,13 @@
 <script src="/assets/js/amazeui.min.js"></script>
 <script src="/assets/js/index.js"></script>
 <script src="/assets/js/accountset.js"></script>
-
+<script>
+    $(function (){
+        $('.messList').click(function (){
+            window.location.href = '/website/show/myMessage?pageNum=1';
+        });
+    });
+</script>
 
 </body>
 </html>

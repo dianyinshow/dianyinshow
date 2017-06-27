@@ -70,7 +70,7 @@ module.exports = {
         }else {
             music.nature = '审核未通过';
         }
-        music.photo = '' + req.file.filename;
+        music.photo = '/photo/music/' + req.file.filename;
         var data = base.formatDbString(music, " ,");
         var id = music.id;
         pool.getConnection(function (err, connection) {

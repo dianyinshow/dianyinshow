@@ -1,7 +1,7 @@
 /*设置导航*/
 .my-wallet{
 	background-color: #FFFFFF;
-	height: 664px;
+	/*height: auto;*/
 	position: relative;
 }
 .w-nav-menu{
@@ -29,6 +29,7 @@
 .account-cont-sec{
 	padding-left:40px;
 	padding-right:40px;
+	padding-bottom: 110px;
 }
 /*账号名*/
 .accountname{
@@ -195,7 +196,7 @@ position: relative;
 	border-radius:4px;
 	cursor: pointer;
 }
-.canle-preserve span:hover,.canle-preserve .pass-action{
+.canle-preserve span:hover,.canle-preserve .pass-action,.go-pay,.cp-over{
 	background: #ea5147;
 	color: #fff;
 }
@@ -365,4 +366,20 @@ position: relative;
 	text-align: center;
 	font-size: 16px;
 	color: #333333;
+}
+/**/
+.modify-ch{
+	width: 120px;
+	margin: 75px auto;
+	text-align: center;
+}
+.modify-ch button{
+	width: 129px;
+	height: 40px;
+	color: #FFFFFF;
+	font-size: 14px;
+	background: #ea5147;
+	border-radius:4px;
+	border:1px solid #ea5147;
+	margin-top: 64px;
 }

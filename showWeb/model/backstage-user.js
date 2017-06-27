@@ -30,7 +30,6 @@ module.exports = {
         pool.getConnection(function (err, connection) {
             var sql = "select * from " + dbConfig.tables.user_table;
             connection.query(sql, function (err, result) {
-                console.log(result);
                 callback(err, result);
                 // 释放连接
                 connection.release();
